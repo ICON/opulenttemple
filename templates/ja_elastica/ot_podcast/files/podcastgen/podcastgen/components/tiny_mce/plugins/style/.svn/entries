@@ -1,0 +1,92 @@
+8
+
+dir
+5
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen/components/tiny_mce/plugins/style
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen
+
+
+
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+30dc1123-3d68-4ce6-b511-1f8584badd10
+
+editor_plugin.js
+file
+
+
+
+
+2009-11-16T16:02:39.000000Z
+2213b8b49cbd4f8bd7bcfe2575182e00
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+jscripts
+dir
+
+langs
+dir
+
+images
+dir
+
+editor_plugin_src.js
+file
+
+
+
+
+2009-11-16T16:02:39.000000Z
+358fdf53c4bf8e7afcc4bbb2ce02a1de
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+css
+dir
+
+props.htm
+file
+
+
+
+
+2009-11-16T16:02:39.000000Z
+5d9c9a296dfc41a26966a31dff3e11e9
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+readme.txt
+file
+
+
+
+
+2009-11-16T16:02:39.000000Z
+fe81b122bcf0e8599bb841cca33f967a
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+

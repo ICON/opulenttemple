@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svnroot/podcastgen/!svn/ver/4/core/admin
+END
+loadjavascripts.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/podcastgen/!svn/ver/3/core/admin/loadjavascripts.php
+END
+createconfig.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/podcastgen/!svn/ver/3/core/admin/createconfig.php
+END
+sendfile.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/podcastgen/!svn/ver/3/core/admin/sendfile.php
+END
+freebox.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/podcastgen/!svn/ver/3/core/admin/freebox.php
+END
+scriptconfig.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/podcastgen/!svn/ver/3/core/admin/scriptconfig.php
+END
+pgRSSnews.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/podcastgen/!svn/ver/3/core/admin/pgRSSnews.php
+END
+categories_add.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/podcastgen/!svn/ver/3/core/admin/categories_add.php
+END
+checklogged.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/podcastgen/!svn/ver/3/core/admin/checklogged.php
+END
+delete.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/podcastgen/!svn/ver/3/core/admin/delete.php
+END
+categories_remove.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/podcastgen/!svn/ver/3/core/admin/categories_remove.php
+END
+readXMLcategories.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/podcastgen/!svn/ver/3/core/admin/readXMLcategories.php
+END
+selecttheme.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/podcastgen/!svn/ver/3/core/admin/selecttheme.php
+END
+podcastdetails.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/podcastgen/!svn/ver/3/core/admin/podcastdetails.php
+END
+itunesimg.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/podcastgen/!svn/ver/3/core/admin/itunesimg.php
+END
+ftpfeature.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/podcastgen/!svn/ver/3/core/admin/ftpfeature.php
+END
+login.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/podcastgen/!svn/ver/3/core/admin/login.php
+END
+showcat.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/podcastgen/!svn/ver/3/core/admin/showcat.php
+END
+readitunescategories.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/podcastgen/!svn/ver/3/core/admin/readitunescategories.php
+END
+editdel.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/podcastgen/!svn/ver/3/core/admin/editdel.php
+END
+itunescategories.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/podcastgen/!svn/ver/3/core/admin/itunescategories.php
+END
+feedgenerate.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/podcastgen/!svn/ver/3/core/admin/feedgenerate.php
+END
+server_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/podcastgen/!svn/ver/3/core/admin/server_info.php
+END
+sendchanges.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/podcastgen/!svn/ver/3/core/admin/sendchanges.php
+END
+upload.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/podcastgen/!svn/ver/4/core/admin/upload.php
+END
+edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svnroot/podcastgen/!svn/ver/3/core/admin/edit.php
+END
+categories.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/podcastgen/!svn/ver/3/core/admin/categories.php
+END
+VERSION.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/podcastgen/!svn/ver/4/core/admin/VERSION.php
+END
+readfeedlanguages.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/podcastgen/!svn/ver/3/core/admin/readfeedlanguages.php
+END
+readscriptlanguages.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/podcastgen/!svn/ver/3/core/admin/readscriptlanguages.php
+END
+admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/podcastgen/!svn/ver/3/core/admin/admin.php
+END

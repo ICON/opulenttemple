@@ -1,0 +1,54 @@
+8
+
+dir
+5
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen/components/tiny_mce/plugins/bbcode
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen
+
+
+
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+30dc1123-3d68-4ce6-b511-1f8584badd10
+
+editor_plugin.js
+file
+
+
+
+
+2009-11-16T16:02:45.000000Z
+b62df284c1e1c21b7e9e5059c96d7134
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+editor_plugin_src.js
+file
+
+
+
+
+2009-11-16T16:02:45.000000Z
+710706fd9c9b241c482352ad00556c2c
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+

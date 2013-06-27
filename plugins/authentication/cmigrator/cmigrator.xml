@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="authentication" method="upgrade">
+	<name>plg_authentication_cmigrator</name>
+	<author>Compojoom</author>
+	<creationDate>2012-06-29</creationDate>
+	<copyright>Copyright (C) 2012. All rights reserved.</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>daniel@compojoom.com</authorEmail>
+	<authorUrl>https://compojoom.com</authorUrl>
+	<version>0.5</version>
+	<description>This plugin updates all passwords from Drupal and WordPress
+                in Joomla! database to Joomla! like passwords. It also provide user
+                login with original Joomla!, Drupal and WordPress passwords.</description>
+	<files>
+		<file plugin="cmigrator">cmigrator.php</file>
+<file>index.html</file>
+	</files>
+    <languages folder="administrator/language/">
+        <language tag="en-GB">en-GB/en-GB.plg_authentication_cmigrator.ini</language>
+<language tag="en-GB">en-GB/en-GB.plg_authentication_cmigrator.sys.ini</language>
+    </languages>     	
+</extension>

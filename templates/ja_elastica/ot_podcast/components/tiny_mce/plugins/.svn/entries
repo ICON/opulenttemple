@@ -1,0 +1,137 @@
+8
+
+dir
+5
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen/components/tiny_mce/plugins
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen
+
+
+
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+30dc1123-3d68-4ce6-b511-1f8584badd10
+
+media
+dir
+
+insertdatetime
+dir
+
+noneditable
+dir
+
+inlinepopups
+dir
+
+emotions
+dir
+
+iespell
+dir
+
+save
+dir
+
+advhr
+dir
+
+_template
+dir
+
+layer
+dir
+
+advimage
+dir
+
+preview
+dir
+
+directionality
+dir
+
+visualchars
+dir
+
+zoom
+dir
+
+devkit
+dir
+
+cleanup
+dir
+
+autosave
+dir
+
+table
+dir
+
+advlink
+dir
+
+print
+dir
+
+flash
+dir
+
+nonbreaking
+dir
+
+fullpage
+dir
+
+style
+dir
+
+searchreplace
+dir
+
+fullscreen
+dir
+
+contextmenu
+dir
+
+readme.txt
+file
+
+
+
+
+2009-11-16T16:02:45.000000Z
+b7ebe9c943f635853a60c4b37200ba11
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+template
+dir
+
+paste
+dir
+
+xhtmlxtras
+dir
+
+bbcode
+dir
+

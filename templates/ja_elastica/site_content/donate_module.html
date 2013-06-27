@@ -1,0 +1,13 @@
+<p>The Opulent Temple is gearing up for our 10-year anniversary on the playa. Thanks to you! If you ever came and enjoyed our offering, please consider making a donation to our efforts. Like all theme camps, we are completely self funded by fundraising, camp members' dues, and most importantly, the support of the wider Burning Man community.</p>
+<form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input type="hidden" name="cmd" value="_s-xclick" /> 
+<input type="hidden" name="hosted_button_id" value="6JHVEFNQPGZG4" /> 
+<a id="paypal_donate" class="arrow_btn"><span class="donate">Donate with</span></a>
+</form>
+<script>
+(function($) { //paypal button
+  $("a#paypal_donate").click(function() {
+    $("#donate").submit();
+  });
+})(jQuery);
+</script>

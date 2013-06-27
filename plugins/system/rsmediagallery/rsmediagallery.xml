@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system" method="upgrade">
+	<name>System - RSMediaGallery!</name>
+	<author>RSJoomla!</author>
+	<creationDate>January 2012</creationDate>
+	<copyright>(C) 2012 www.rsjoomla.com</copyright>
+	<license>GNU General Public License</license>
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0.0 R3</version>
+	<description><![CDATA[RSMG_SYSTEM_DESC]]></description>
+	<files>
+		<filename plugin="rsmediagallery">rsmediagallery.php</filename>
+		<filename>index.html</filename>
+		<folder>plg_system_rsmediagallery</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_rsmediagallery.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_rsmediagallery.sys.ini</language>
+	</languages>
+	<params addPath="/administrator/components/com_rsmediagallery/elements">
+		<param name="thumb_resolution" size="5"	type="resolution" default="w,280" label="RSMG_PARAM_THUMB_RESOLUTION" description="RSMG_PARAM_THUMB_RESOLUTION_DESC" />
+		<param name="full_resolution"  size="5" type="resolution" default="w,600" label="RSMG_PARAM_FULL_RESOLUTION"  description="RSMG_PARAM_FULL_RESOLUTION_DESC"  />
+		<param name="use_original" type="list" default="0" label="RSMG_PARAM_USE_ORIGINAL" description="RSMG_PARAM_USE_ORIGINAL_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="ordering" type="list" default="ordering" label="RSMG_PARAM_ORDERING" description="RSMG_PARAM_ORDERING_DESC">
+			<option value="ordering">RSMG_FREE_ORDERING</option>
+			<option value="title">RSMG_TITLE</option>
+			<option value="description">RSMG_DESC</option>
+			<option value="hits">RSMG_HITS</option>
+			<option value="created">RSMG_CREATED_DATE</option>
+			<option value="modified">RSMG_MODIFIED_DATE</option>
+		</param>
+		<param name="direction" type="list" default="asc" label="RSMG_PARAM_DIRECTION" description="RSMG_PARAM_DIRECTION_DESC">
+			<option value="asc">RSMG_ASCENDING</option>
+			<option value="desc">RSMG_DESCENDING</option>
+		</param>
+		<param name="limit" size="10" type="text" default="5" label="RSMG_PARAM_LIMIT" description="RSMG_PARAM_LIMIT_DESC" />
+		<param name="show_title" type="radio" default="1" label="RSMG_PARAM_SHOW_TITLE" description="RSMG_PARAM_SHOW_TITLE_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="show_description" type="radio" default="1" label="RSMG_PARAM_SHOW_DESCRIPTION" description="RSMG_PARAM_SHOW_DESCRIPTION_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_rsmediagallery/fields">
+				<field name="thumb_resolution" size="5"	type="resolution" default="w,280" label="RSMG_PARAM_THUMB_RESOLUTION" description="RSMG_PARAM_THUMB_RESOLUTION_DESC" />
+				<field name="full_resolution"  size="5" type="resolution" default="w,600" label="RSMG_PARAM_FULL_RESOLUTION"  description="RSMG_PARAM_FULL_RESOLUTION_DESC"  />
+				<field name="use_original" type="list" default="0" label="RSMG_PARAM_USE_ORIGINAL" description="RSMG_PARAM_USE_ORIGINAL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="ordering" type="list" default="ordering" label="RSMG_PARAM_ORDERING" description="RSMG_PARAM_ORDERING_DESC">
+					<option value="ordering">RSMG_FREE_ORDERING</option>
+					<option value="title">RSMG_TITLE</option>
+					<option value="description">RSMG_DESC</option>
+					<option value="hits">RSMG_HITS</option>
+					<option value="created">RSMG_CREATED_DATE</option>
+					<option value="modified">RSMG_MODIFIED_DATE</option>
+				</field>
+				<field name="direction" type="list" default="asc" label="RSMG_PARAM_DIRECTION" description="RSMG_PARAM_DIRECTION_DESC">
+					<option value="asc">RSMG_ASCENDING</option>
+					<option value="desc">RSMG_DESCENDING</option>
+				</field>
+				<field name="limit" size="10" type="text" default="5" label="RSMG_PARAM_LIMIT" description="RSMG_PARAM_LIMIT_DESC" />				
+				<field name="show_title" type="radio" default="1" label="RSMG_PARAM_SHOW_TITLE" description="RSMG_PARAM_SHOW_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_description" type="radio" default="1" label="RSMG_PARAM_SHOW_DESCRIPTION" description="RSMG_PARAM_SHOW_DESCRIPTION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</install>

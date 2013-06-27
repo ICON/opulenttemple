@@ -1,0 +1,28 @@
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+version: 2,
+type: 'profile',
+rpp: 4,
+interval: 30000,
+width: 'auto',
+height: 195,
+theme: {
+shell: {
+background: 'white',
+color: '#00aeef'
+},
+tweets: {
+background: 'white',
+color: '#333333',
+links: '#ff7909'
+}
+},
+features: {
+scrollbar: true,
+loop: false,
+live: false,
+behavior: 'all'
+}
+}).render().setUser('opulenttemple').start();
+</script>

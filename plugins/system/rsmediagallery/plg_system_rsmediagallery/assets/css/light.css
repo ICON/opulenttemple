@@ -1,0 +1,39 @@
+ul.rsmg_system_gallery li div.rsmg_system_container {
+	border: 1px solid #cccccc;
+	background: #fff;
+	box-shadow: 5px 5px 0 #dedede;
+}
+
+.piro_html_system .h_t_l,
+.piro_html_system .h_t_r,
+.piro_html_system .h_t_c,
+.piro_html_system .h_c_l,
+.piro_html_system .h_c_c,
+.piro_html_system .h_c_r,
+.piro_html_system .h_b_c,
+.piro_html_system .h_b_l,
+.piro_html_system .h_b_r {
+	background:#ffffff;
+}
+
+.piro_html_system .h_c_c .div_reg_system {
+	background:#ffffff;
+}
+
+.piro_loader_system span {
+	background-image: url(../images/lightbox-loader-light.gif);
+}
+
+.piro_overlay_system {
+	background:#000;
+}
+
+.piro_html_system {
+	-moz-box-shadow:    1px 1px 8px 4px #5C5C5C;
+	-webkit-box-shadow: 1px 1px 8px 4px #5C5C5C;
+	box-shadow:         1px 1px 8px 4px #5C5C5C;
+}
+
+.piro_close_system {
+	background:#fff url(../images/close-light.png) center center no-repeat;
+}

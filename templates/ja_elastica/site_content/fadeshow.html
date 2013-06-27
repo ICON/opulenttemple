@@ -1,0 +1,21 @@
+<script type="text/javascript">
+(function($) {
+  $(document).ready(function () {
+    $('#ja-header .main-inner1').attr('id', 'fadeshow');
+    var mygallery=new fadeSlideShow({
+      wrapperid: "fadeshow",
+      dimensions: ['100%', '100%'],
+      imagearray: [
+      ["templates/ja_elastica/images/hero_img1.jpg", ""],
+      ["templates/ja_elastica/images/hero_img2.jpg", ""],
+      ["templates/ja_elastica/images/hero_img3.jpg", ""],
+      ],
+      displaymode: {type:'auto', pause:5000, cycles:0, wraparound:false},
+      persist: false,
+      fadeduration: 800,
+      descreveal: "ondemand",
+      togglerid: ""
+    });
+  });
+})(jQuery);
+</script>

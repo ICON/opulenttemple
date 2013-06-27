@@ -1,0 +1,89 @@
+8
+
+dir
+5
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen/components/tiny_mce/plugins/advlink
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen
+
+
+
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+30dc1123-3d68-4ce6-b511-1f8584badd10
+
+editor_plugin.js
+file
+
+
+
+
+2009-11-16T16:02:37.000000Z
+f4c6c2631108ec5d207f0b8b482442c8
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+jscripts
+dir
+
+langs
+dir
+
+link.htm
+file
+
+
+
+
+2009-11-16T16:02:37.000000Z
+b0e299e0511f08085a88fac2ad91ee62
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+editor_plugin_src.js
+file
+
+
+
+
+2009-11-16T16:02:37.000000Z
+4e3ff5f18db32e85775e653b72309e7d
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+css
+dir
+
+readme.txt
+file
+
+
+
+
+2009-11-16T16:02:37.000000Z
+fe81b122bcf0e8599bb841cca33f967a
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+

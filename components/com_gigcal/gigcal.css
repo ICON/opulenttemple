@@ -1,0 +1,184 @@
+#main ul#gc_top_nav, #main ul#gc_bottom_nav {
+  clear: both;
+  float: left;
+  list-style-type: none; 
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+#main ul#gc_top_nav li, #main ul#gc_bottom_nav li {
+  display: inline; 
+  padding: .2em 1em;
+  color: #fff;
+  background-color: blue;
+}
+
+#main ul#gc_top_nav li a, #main ul#gc_bottom_nav li a {
+  text-decoration: none; 
+  color: yellow;
+  background-color: blue;
+}
+
+#main ul#gc_top_nav li a:hover, #main ul#gc_bottom_nav li a:hover {
+  color: red;
+}
+
+#gc_title {
+  clear: both;
+  float: left;
+  font-size: 20px;
+}
+
+#gc_body {
+  clear: both;
+  float: left;
+  font-size: 14px;
+  min-height: 300px;
+}
+
+/*****************************************
+************* table styles ***************
+*****************************************/
+.gc_table th{
+  color: #9e9e9e;
+  font-weight: bold;
+  height: 2em;
+  line-height: 2em;
+  background: #101010;
+  padding-left: 10px;
+  border: solid 1px #131313
+}
+
+.gc_table_even td,
+.gc_table_odd td{
+  padding-left: 10px;
+  color: #ccc;
+}
+
+.gc_table_even td{
+  background: #492929;
+  border: solid 1px #492929;
+}
+
+.gc_table_odd td{
+  background: #292929;
+  border: solid 1px #292929;
+}
+
+.gc_table_even:hover,
+.gc_table_odd:hover{
+  border: 2px solid #ff0000;
+}
+
+
+
+/*****************************************
+************* calendar styles ************
+*****************************************/
+.gc_calendar th{
+  color: #9e9e9e;
+  font-weight: bold;
+  text-align: center;
+  height: 2em;
+  line-height: 2em;
+  background: #101010;
+  border: solid 1px #131313;
+}
+
+.gc_calendar thead th span{
+/* makes day of the week abbreviated */
+  display: none;
+}
+
+.gc_calendar td.gc_calendar_weekday:hover,
+.gc_calendar td.gc_calendar_weekend:hover,
+.gc_calendar td.gc_calendar_current:hover,
+.gc_calendar td.gc_calendar_weekend_current:hover{
+  border: 2px solid #ff0000;
+}
+
+/*= empty cells */
+.gc_calendar td.gc_calendar_empty{
+  border: 1px solid #000;
+  background: #131313;
+}
+
+/*= weekdays */
+.gc_calendar td.gc_calendar_weekday{
+  border: 1px solid #000;
+  vertical-align: top;
+  background: #292929;
+  color: #ccc;
+  height: 6em;
+}
+
+/*= weekends */
+.gc_calendar td.gc_calendar_weekend{
+  border: 1px solid #000;
+  vertical-align: top;
+  background: #492929;
+  color: #ccc;
+  height: 6em;
+}
+
+/*= current date */
+.gc_calendar td.gc_calendar_current,
+.gc_calendar td.gc_calendar_weekend_current{
+  border: 2px solid #000;
+  vertical-align: top;
+  background: #414040;
+color: #ccc;
+}
+
+.gc_calendar td.gc_calendar_current span,
+.gc_calendar td.gc_calendar_weekend_current span{
+  color: #f67d11;
+  font-weight: bold;
+}
+
+/*= days with events  */
+.gc_calendar 
+.gc_calendar_event a,
+.gc_calendar 
+.gc_calendar_event{
+/* min-height: 6em;
+*/
+/* this should match ".gc_calendar tbody tr" height above */
+/* margin: -.2em;
+*/
+/* overwrites default cell padding so bgcolor extends to edges */
+/* padding: .2em;
+*/
+/* puts padding back */
+  color: #898989;
+}
+
+.gc_calendar 
+.gc_calendar_event a:hover,
+.gc_calendar 
+.gc_calendar_event:hover{
+/* border: 1px solid yellow;
+*/
+  background: #694949;
+  color: #fff;
+}
+
+.gc_calendar dl{
+  text-align: left;
+  padding: 0 .2em .2em 9px;
+}
+
+.gc_calendar dt{
+  display: none;
+}
+
+.gc_calendar dd,
+.gc_calendar dd a{
+  color: #556063;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 1em;
+  margin-bottom: .5em;
+}
+

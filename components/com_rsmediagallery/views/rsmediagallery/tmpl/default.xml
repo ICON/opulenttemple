@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="RSMG_DEFAULT_GALLERY_LAYOUT">
+		<message>
+			<![CDATA[RSMG_DEFAULT_GALLERY_LAYOUT_DESC]]>
+		</message>
+	</layout>
+	<state>
+		<name>RSMG_DEFAULT_GALLERY_LAYOUT</name>
+		<description>RSMG_DEFAULT_GALLERY_LAYOUT_DESC</description>
+		<params addPath="/administrator/components/com_rsmediagallery/elements">
+			<param name="tags" type="tags" label="RSMG_PARAM_TAGS" description="RSMG_PARAM_TAGS_DESC" />
+		</params>
+		<advanced addPath="/administrator/components/com_rsmediagallery/elements">
+			<param name="separator" type="separator" value="RSMG_PARAM_SEPARATOR_LIST_VIEW" />
+			<param name="thumb_resolution" size="5"	type="resolution" default="w,280" label="RSMG_PARAM_THUMB_RESOLUTION" description="RSMG_PARAM_THUMB_RESOLUTION_DESC" />
+			<param name="ordering" type="list" default="ordering" label="RSMG_PARAM_ORDERING" description="RSMG_PARAM_ORDERING_DESC">
+				<option value="ordering">RSMG_FREE_ORDERING</option>
+				<option value="title">RSMG_TITLE</option>
+				<option value="description">RSMG_DESC</option>
+				<option value="hits">RSMG_HITS</option>
+				<option value="created">RSMG_CREATED_DATE</option>
+				<option value="modified">RSMG_MODIFIED_DATE</option>
+			</param>
+			<param name="direction" type="list" default="asc" label="RSMG_PARAM_DIRECTION" description="RSMG_PARAM_DIRECTION_DESC">
+				<option value="asc">RSMG_ASCENDING</option>
+				<option value="desc">RSMG_DESCENDING</option>
+			</param>
+			<param name="limit" size="10" type="text" default="5" label="RSMG_PARAM_LIMIT" description="RSMG_PARAM_LIMIT_DESC" />
+			<param name="open_in" type="list" default="slideshow" label="RSMG_PARAM_OPEN_IMAGES_IN" description="RSMG_PARAM_OPEN_IMAGES_IN_DESC">
+				<option value="slideshow">RSMG_PARAM_OPEN_SLIDESHOW</option>
+				<option value="detail">RSMG_PARAM_OPEN_DETAIL_PAGE</option>
+				<option value="url">RSMG_PARAM_OPEN_URL</option>
+			</param>
+			<param name="open_in_new_page" type="radio" default="0" label="RSMG_PARAM_OPEN_IMAGES_IN_NEW_PAGE" description="RSMG_PARAM_OPEN_IMAGES_IN_NEW_PAGE_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="show_title_list" type="radio" default="1" label="RSMG_PARAM_SHOW_TITLE" description="RSMG_PARAM_SHOW_TITLE_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="show_description_list" type="radio" default="1" label="RSMG_PARAM_SHOW_DESCRIPTION" description="RSMG_PARAM_SHOW_DESCRIPTION_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="separator2" type="separator" value="RSMG_PARAM_SEPARATOR_DETAIL_VIEW" />
+			<param name="use_original" type="list" default="0" label="RSMG_PARAM_USE_ORIGINAL" description="RSMG_PARAM_USE_ORIGINAL_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="full_resolution"  size="5" type="resolution" default="w,800" label="RSMG_PARAM_FULL_RESOLUTION"  description="RSMG_PARAM_FULL_RESOLUTION_DESC"  />
+			<param name="download_original" type="radio" default="1" label="RSMG_PARAM_DOWNLOAD_ORIGINAL" description="RSMG_PARAM_DOWNLOAD_ORIGINAL_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="show_title_detail" type="radio" default="1" label="RSMG_PARAM_SHOW_TITLE" description="RSMG_PARAM_SHOW_TITLE_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="show_description_detail" type="radio" default="1" label="RSMG_PARAM_SHOW_DESCRIPTION" description="RSMG_PARAM_SHOW_DESCRIPTION_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="show_hits" type="radio" default="1" label="RSMG_PARAM_SHOW_HITS" description="RSMG_PARAM_SHOW_HITS_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="show_tags" type="radio" default="1" label="RSMG_PARAM_SHOW_TAGS" description="RSMG_PARAM_SHOW_TAGS_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="show_created" type="radio" default="1" label="RSMG_PARAM_SHOW_CREATED" description="RSMG_PARAM_SHOW_CREATED_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="show_modified" type="radio" default="1" label="RSMG_PARAM_SHOW_MODIFIED" description="RSMG_PARAM_SHOW_MODIFIED_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+			<param name="separator3" type="separator" value="RSMG_PARAM_SUPPORT_US" />
+			<param name="show_credits" type="radio" default="1" label="RSMG_PARAM_SHOW_CREDITS" description="RSMG_PARAM_SHOW_CREDITS_DESC">
+				<option value="0">NO</option>
+				<option value="1">YES</option>
+			</param>
+		</advanced>
+	</state>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_rsmediagallery/fields">
+				<field name="tags" type="tags" label="RSMG_PARAM_TAGS" description="RSMG_PARAM_TAGS_DESC" />
+			</fieldset>
+			<fieldset name="advanced" addfieldpath="/administrator/components/com_rsmediagallery/fields">
+				<field name="spacer1" type="spacer" class="text" label="RSMG_PARAM_SEPARATOR_LIST_VIEW" />
+				<field name="thumb_resolution" size="5"	type="resolution" default="w,280" label="RSMG_PARAM_THUMB_RESOLUTION" description="RSMG_PARAM_THUMB_RESOLUTION_DESC" />
+				<field name="ordering" type="list" default="ordering" label="RSMG_PARAM_ORDERING" description="RSMG_PARAM_ORDERING_DESC">
+					<option value="ordering">RSMG_FREE_ORDERING</option>
+					<option value="title">RSMG_TITLE</option>
+					<option value="description">RSMG_DESC</option>
+					<option value="hits">RSMG_HITS</option>
+					<option value="created">RSMG_CREATED_DATE</option>
+					<option value="modified">RSMG_MODIFIED_DATE</option>
+				</field>
+				<field name="direction" type="list" default="asc" label="RSMG_PARAM_DIRECTION" description="RSMG_PARAM_DIRECTION_DESC">
+					<option value="asc">RSMG_ASCENDING</option>
+					<option value="desc">RSMG_DESCENDING</option>
+				</field>
+				<field name="limit" size="10" type="text" default="5" label="RSMG_PARAM_LIMIT" description="RSMG_PARAM_LIMIT_DESC" />
+				<field name="open_in" type="list" default="slideshow" label="RSMG_PARAM_OPEN_IMAGES_IN" description="RSMG_PARAM_OPEN_IMAGES_IN_DESC">
+					<option value="slideshow">RSMG_PARAM_OPEN_SLIDESHOW</option>
+					<option value="detail">RSMG_PARAM_OPEN_DETAIL_PAGE</option>
+					<option value="url">RSMG_PARAM_OPEN_URL</option>
+				</field>
+				<field name="open_in_new_page" type="radio" default="0" label="RSMG_PARAM_OPEN_IMAGES_IN_NEW_PAGE" description="RSMG_PARAM_OPEN_IMAGES_IN_NEW_PAGE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_title_list" type="radio" default="1" label="RSMG_PARAM_SHOW_TITLE" description="RSMG_PARAM_SHOW_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_description_list" type="radio" default="1" label="RSMG_PARAM_SHOW_DESCRIPTION" description="RSMG_PARAM_SHOW_DESCRIPTION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="spacer2" type="spacer" class="text" label="RSMG_PARAM_SEPARATOR_DETAIL_VIEW" />
+				<field name="use_original" type="list" default="0" label="RSMG_PARAM_USE_ORIGINAL" description="RSMG_PARAM_USE_ORIGINAL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="full_resolution"  size="5" type="resolution" default="w,800" label="RSMG_PARAM_FULL_RESOLUTION"  description="RSMG_PARAM_FULL_RESOLUTION_DESC"  />
+				<field name="download_original" type="radio" default="1" label="RSMG_PARAM_DOWNLOAD_ORIGINAL" description="RSMG_PARAM_DOWNLOAD_ORIGINAL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_title_detail" type="radio" default="1" label="RSMG_PARAM_SHOW_TITLE" description="RSMG_PARAM_SHOW_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_description_detail" type="radio" default="1" label="RSMG_PARAM_SHOW_DESCRIPTION" description="RSMG_PARAM_SHOW_DESCRIPTION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_hits" type="radio" default="1" label="RSMG_PARAM_SHOW_HITS" description="RSMG_PARAM_SHOW_HITS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_tags" type="radio" default="1" label="RSMG_PARAM_SHOW_TAGS" description="RSMG_PARAM_SHOW_TAGS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_created" type="radio" default="1" label="RSMG_PARAM_SHOW_CREATED" description="RSMG_PARAM_SHOW_CREATED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_modified" type="radio" default="1" label="RSMG_PARAM_SHOW_MODIFIED" description="RSMG_PARAM_SHOW_MODIFIED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="spacer3" type="spacer" class="text" label="RSMG_PARAM_SUPPORT_US" />
+				<field name="show_credits" type="radio" default="1" label="RSMG_PARAM_SHOW_CREDITS" description="RSMG_PARAM_SHOW_CREDITS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</metadata>

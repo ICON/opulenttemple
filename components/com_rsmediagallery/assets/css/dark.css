@@ -1,0 +1,132 @@
+#rsmg_main {
+	color: #e6e6e6;
+}
+
+ul#rsmg_gallery li div.rsmg_item_container {
+	border: 1px solid #000;
+	background: #171717;
+	box-shadow: 5px 5px 0 #333333;
+}
+
+ul#rsmg_gallery li div.rsmg_item_container a {
+	color: #D36B03;
+}
+
+#rsmg_main a.rsmg_big_button {
+	background: none repeat scroll 0 0 #171717;
+    border: 1px solid #000;
+	box-shadow: 0 0 1px 1px #333333 inset;
+    color: #E6E6E6;
+	text-shadow: 0 1px 0 #333333;
+}
+
+#rsmg_main a:hover.rsmg_big_button,
+#rsmg_main a:focus.rsmg_big_button,
+#rsmg_main a:active.rsmg_big_button
+{
+	background: none repeat scroll 0 0 #131313;
+    box-shadow: 0 0 1px 1px #282828 inset;
+    color: #fff;
+    cursor: pointer;
+}
+
+div#rsmg_image_container {
+	border: 1px solid #000;
+	background: #171717;
+	box-shadow: 5px 5px 0 #333333;
+}
+
+div#rsmg_image_container a {
+	color: #D36B03;
+}
+
+div#rsmg_image_container a:hover,
+div#rsmg_image_container a:focus,
+div#rsmg_image_container a:active
+{
+	color: #FB8A18;
+}
+
+ul#rsmg_gallery li div.rsmg_item_container a:hover,
+ul#rsmg_gallery li div.rsmg_item_container a:focus,
+ul#rsmg_gallery li div.rsmg_item_container a:active {
+	color: #FB8A18;
+}
+
+div#rsmg_thumb_container .rsmg_back {
+	background: #171717;
+	border: 1px solid #5C5C5C;
+}
+
+div#rsmg_thumb_container .rsmg_back a {
+	color: #e6e6e6;
+}
+
+#lightbox-image-details-caption .rsmg_toolbox,
+div#rsmg_thumb_container .rsmg_toolbox {
+	border: 1px solid #5C5C5C;
+	color: #e6e6e6;
+	background-color: #171717;
+}
+
+#lightbox-image-details-caption .rsmg_views,
+div#rsmg_thumb_container .rsmg_views {
+	background-image: url(../images/eye-dark.png);
+}
+
+#lightbox-image-details-caption .rsmg_download,
+div#rsmg_thumb_container .rsmg_download {
+	background-image: url(../images/download-dark.png);
+}
+
+#lightbox-image-details-caption .rsmg_download a,
+div#rsmg_thumb_container .rsmg_download a {
+	color: #D36B03;
+}
+
+p.rsmg_tags strong {
+	color: #D36B03;
+}
+
+/* lightbox */
+
+#jquery-overlay {
+	background: #c1c1c1;
+}
+
+#lightbox-nav-btnPrev, #lightbox-nav-btnNext {
+	background-color: #171717;
+	border: 1px solid #000000;
+	box-shadow: 2px 2px 0 #333333;
+}
+
+#lightbox-nav-btnPrev:hover, #lightbox-nav-btnNext:hover,
+#lightbox-nav-btnPrev:active, #lightbox-nav-btnNext:active,
+#lightbox-nav-btnPrev:focus, #lightbox-nav-btnNext:focus {
+	background-color: #000000;
+}
+
+#lightbox-container-image-box {
+	background-color: #171717;
+}
+
+#lightbox-container-image-data-box {
+	background-color: #171717;
+}
+
+#lightbox-container-image-data {
+	color: #E6E6E6;
+}
+
+#lightbox-loading {
+	background-image: url("../images/lightbox-loader-dark.gif");
+}
+
+#lightbox-btnClose {
+	background: none repeat scroll 0 0 #171717;
+	border: 1px solid #000000;
+}
+
+a#lightbox-secNav-btnClose {
+	color: #D36B03;
+}

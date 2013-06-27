@@ -1,0 +1,76 @@
+8
+
+dir
+5
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen/components/tiny_mce/plugins/inlinepopups
+https://yellowjug@podcastgen.svn.sourceforge.net/svnroot/podcastgen
+
+
+
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+30dc1123-3d68-4ce6-b511-1f8584badd10
+
+editor_plugin.js
+file
+
+
+
+
+2009-11-16T16:02:30.000000Z
+d4da00d3348e0200a5b8f93d874db130
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+jscripts
+dir
+
+images
+dir
+
+editor_plugin_src.js
+file
+
+
+
+
+2009-11-16T16:02:30.000000Z
+2c203519448616d542536ddd7f59da85
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
+css
+dir
+
+readme.txt
+file
+
+
+
+
+2009-11-16T16:02:30.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2009-07-24T20:17:32.198553Z
+3
+yellowjug
+has-props
+
