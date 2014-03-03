@@ -34,8 +34,9 @@ ul.megamenu li {
 }
 
 .ja-megamenu ul.level0 li.mega a.mega {
+  font-size: 16px !important;
   font-weight: bold;
-  padding: 0 1.25em;
+  padding: 0 1em;
   color: #FFF;
   text-transform: none;
   height: 65px;

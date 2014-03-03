@@ -219,6 +219,47 @@ h4, span {
     }
   }
 }
+// mega menu
+ul.level0 li.mega {
+  a.mega {
+    color: white;
+    &:hover, &:active, &:focus {
+      color: $cyan-blue !important;
+    }
+  }
+  &.active a.first {
+    color: $cyan-blue !important;
+  }
+}
+ul.level1 li.mega a.mega {
+  color: white !important;
+  &:hover, &:active, &:focus {
+    color: $orange !important;
+  }
+}
+// form fields
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 60%;
+  background: #e1e1e1;
+  color: #333333;
+  font-size: 1.2em;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #6dcff6;
+  &:hover, &:active, &:focus {
+    background: white;
+    border-color: #ff7909;
+  }
+}
+button[type="submit"] {
+  @extend .arrow_btn;
+}
+#member-registration > fieldset > legend {
+  @extend .subhead;
+}
 /*ul.pagenav li a {    
   @include button('../images/arrow_btn_sm.png');
   font-size: .85em;
@@ -834,4 +875,36 @@ ul.lineup_pics,
 }
 .sale {
   color: $orange;
+}
+.login-links {
+  padding-left: 8rem;
+  ul li {
+    background: none;
+  }
+}
+.star, .red {
+  color: $orange;
+}
+#Mod106 {
+  ul li {
+    background: none;
+    padding-left: 0;
+  }
+  a {
+    color: white !important; 
+    text-transform: none;
+    &:hover, &:active {
+      color: $orange !important;
+    }
+  }
+}
+blockquote {
+  margin: 1rem 3rem;
+  padding: 1rem;
+  background: #e1e1e1;
+  font-family: inherit;
+}
+address {
+  font-style: none !important;
+  font-weight: bold;
 }

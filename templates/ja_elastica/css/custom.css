@@ -50,7 +50,7 @@ h4.subhead, span.subhead {
   background: url("../images/shiva_header.png") no-repeat 0 0;
   padding-left: 26px; }
 
-.arrow_btn, p.readmore a {
+.arrow_btn, button[type="submit"], p.readmore a {
   background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
   color: white;
   display: block;
@@ -62,18 +62,18 @@ h4.subhead, span.subhead {
   margin-top: 10px;
   padding: 0 1.5em 0 1em;
   border: 0; }
-  .arrow_btn:hover, .arrow_btn:focus, .arrow_btn:active, p.readmore a:hover, p.readmore a:focus, p.readmore a:active {
+  .arrow_btn:hover, button[type="submit"]:hover, .arrow_btn:focus, button[type="submit"]:focus, .arrow_btn:active, button[type="submit"]:active, p.readmore a:hover, p.readmore a:focus, p.readmore a:active {
     background-position: right bottom !important;
     color: white; }
-  .arrow_btn span, p.readmore a span {
+  .arrow_btn span, button[type="submit"] span, p.readmore a span {
     display: block;
     float: left; }
-    .arrow_btn span.paypal, p.readmore a span.paypal {
+    .arrow_btn span.paypal, button[type="submit"] span.paypal, p.readmore a span.paypal {
       background-position: right center;
       padding: 0 52px 0 0;
       background-image: url("../images/paypal_logo.png");
       background-repeat: no-repeat; }
-  .arrow_btn.sm, p.readmore a.sm {
+  .arrow_btn.sm, button.sm[type="submit"], p.readmore a.sm {
     background-image: url("../images/arrow_btn_sm.png") !important;
     line-height: 20px !important;
     margin-top: 3px; }
@@ -162,6 +162,42 @@ h4.subhead, span.subhead {
       background-position-y: bottom !important; }
     .frontpage #ja-social .social a:last-child {
       margin-right: 0; }
+
+ul.level0 li.mega a.mega {
+  color: white; }
+  ul.level0 li.mega a.mega:hover, ul.level0 li.mega a.mega:active, ul.level0 li.mega a.mega:focus {
+    color: #00aeef !important; }
+ul.level0 li.mega.active a.first {
+  color: #00aeef !important; }
+
+ul.level1 li.mega a.mega {
+  color: white !important; }
+  ul.level1 li.mega a.mega:hover, ul.level1 li.mega a.mega:active, ul.level1 li.mega a.mega:focus {
+    color: #ff7909 !important; }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 60%;
+  background: #e1e1e1;
+  color: #333333;
+  font-size: 1.2em;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #6dcff6; }
+  input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus,
+  input[type="email"]:hover,
+  input[type="email"]:active,
+  input[type="email"]:focus,
+  input[type="password"]:hover,
+  input[type="password"]:active,
+  input[type="password"]:focus,
+  textarea:hover,
+  textarea:active,
+  textarea:focus {
+    background: white;
+    border-color: #ff7909; }
 
 /*ul.pagenav li a {    
   @include button('../images/arrow_btn_sm.png');
@@ -382,7 +418,7 @@ ul.lineup_pics,
   .resdj .badge_btn {
     top: 25px;
     left: 155px; }
-  .resdj .arrow_btn {
+  .resdj .arrow_btn, .resdj button[type="submit"] {
     margin-top: 0; }
 
 .first_row {
@@ -655,3 +691,30 @@ ul.lineup_pics,
 
 .sale {
   color: #ff7909; }
+
+.login-links {
+  padding-left: 8rem; }
+  .login-links ul li {
+    background: none; }
+
+.star, .red {
+  color: #ff7909; }
+
+#Mod106 ul li {
+  background: none;
+  padding-left: 0; }
+#Mod106 a {
+  color: white !important;
+  text-transform: none; }
+  #Mod106 a:hover, #Mod106 a:active {
+    color: #ff7909 !important; }
+
+blockquote {
+  margin: 1rem 3rem;
+  padding: 1rem;
+  background: #e1e1e1;
+  font-family: inherit; }
+
+address {
+  font-style: none !important;
+  font-weight: bold; }

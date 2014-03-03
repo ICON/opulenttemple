@@ -12,23 +12,23 @@
 /* RESPONSIVE FONT SIZES
 --------------------------------------------------------- */
 body.fs1 #ja-wrapper {
-  font-size: 1.1em !important;
-}
-
-body.fs2 #ja-wrapper {
   font-size: 1.2em !important;
 }
 
-body.fs3 #ja-wrapper {
+body.fs2 #ja-wrapper {
   font-size: 1.3em !important;
 }
 
-body.fs4 #ja-wrapper {
+body.fs3 #ja-wrapper {
   font-size: 1.4em !important;
 }
 
-body.fs5 #ja-wrapper {
+body.fs4 #ja-wrapper {
   font-size: 1.5em !important;
+}
+
+body.fs5 #ja-wrapper {
+  font-size: 1.6em !important;
 }
 
 body.fs6 #ja-wrapper {
