@@ -57,7 +57,7 @@ h4.subhead, span.subhead {
   float: left;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: .85em;
+  font-size: 11px;
   line-height: 30px;
   margin-top: 10px;
   padding: 0 1.5em 0 1em;
@@ -163,13 +163,14 @@ h4.subhead, span.subhead {
     .frontpage #ja-social .social a:last-child {
       margin-right: 0; }
 
-ul.level0 li.mega a.mega {
+ul.level0 > li a.mega {
   color: white; }
-  ul.level0 li.mega a.mega:hover, ul.level0 li.mega a.mega:active, ul.level0 li.mega a.mega:focus {
+  ul.level0 > li a.mega:hover, ul.level0 > li a.mega:active, ul.level0 > li a.mega:focus, ul.level0 > li a.mega.active {
     color: #00aeef !important; }
-ul.level0 li.mega.active a.first {
-  color: #00aeef !important; }
-
+ul.level0 > li.active {
+  background: #F0F0F0 !important; }
+  ul.level0 > li.active a.active {
+    color: #00aeef !important; }
 ul.level1 li.mega a.mega {
   color: white !important; }
   ul.level1 li.mega a.mega:hover, ul.level1 li.mega a.mega:active, ul.level1 li.mega a.mega:focus {
@@ -369,7 +370,14 @@ textarea {
 ul.lineup_pics,
 .contact-image,
 .img_wide {
-  border: 10px solid #464646; }
+  border-width: 10px;
+  border-style: solid;
+  -moz-border-image: url("../images/lines_image_border.png") 10 10 round;
+  -webkit-border-image: url("../images/lines_image_border.png") 10 10 round;
+  border-image: url("../images/lines_image_border.png") 10 10 round;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
 
 .info {
   display: none;
@@ -564,10 +572,15 @@ ul.lineup_pics,
 .tour_notes, .tour_notes th {
   text-align: left; }
 
-#system-message > .warning > ul {
-  background: none;
-  border: 0;
-  color: red; }
+#system-message ul {
+  background-image: none !important;
+  padding: 5px 0 !important;
+  border: 0 !important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+#system-message dd {
+  text-indent: 5px !important; }
 
 .cmp_buttons_container {
   clear: both; }
@@ -692,8 +705,13 @@ ul.lineup_pics,
 .sale {
   color: #ff7909; }
 
+.login label {
+  width: 6rem; }
+.login button {
+  margin-left: 6.5rem; }
+
 .login-links {
-  padding-left: 8rem; }
+  padding-left: 5.5rem; }
   .login-links ul li {
     background: none; }
 

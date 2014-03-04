@@ -30,6 +30,7 @@ div.moduletable h3 {
   font-size: 1.25em;
   text-transform: uppercase;
   margin: 0 0 5px;
+  padding: 0 !important;
   color: #00aeef;
 }
 
