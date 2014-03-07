@@ -3,23 +3,10 @@
 
 #ja-container {
   position: relative;
-  background: url("../images/lines_tile_light.png") repeat 0 0;
-  /*background:{
-    color: $top-gradient;
-  };
-  background-image: linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -o-linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -moz-linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -webkit-linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -ms-linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.00, $top-gradient),
-    color-stop(0.40, $bottom-gradient)
-  );
-  }*/ }
+  background: url("../images/lines_tile_light.png") repeat 0 0; }
+
+#ja-content-main, .item-page {
+  min-height: 625px; }
 
 #zoom {
   z-index: 1000; }
@@ -46,34 +33,58 @@ h4.subhead, span.subhead {
   font-weight: bold;
   text-transform: uppercase; }
 
+h1.contentheading,
+h2.contentheading,
+.contentheading,
+#ja-content-main h1 {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #00aeef), color-stop(1, rgba(255, 255, 255, 0)));
+  background-image: -o-linear-gradient(right, #00aeef 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -moz-linear-gradient(right, #00aeef 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -webkit-linear-gradient(right, #00aeef 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -ms-linear-gradient(right, #00aeef 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to right, #00aeef 0%, rgba(255, 255, 255, 0) 100%);
+  padding: 10px 20px 10px 15px;
+  color: white;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
 .shiva {
   background: url("../images/shiva_header.png") no-repeat 0 0;
   padding-left: 26px; }
 
-.arrow_btn, button[type="submit"], p.readmore a {
+.arrow_btn, button[type="submit"], .formResponsive input[type="submit"], p.readmore a {
   background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
   color: white;
   display: block;
   float: left;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: 11px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 14px;
   line-height: 30px;
   margin-top: 10px;
   padding: 0 1.5em 0 1em;
   border: 0; }
-  .arrow_btn:hover, button[type="submit"]:hover, .arrow_btn:focus, button[type="submit"]:focus, .arrow_btn:active, button[type="submit"]:active, p.readmore a:hover, p.readmore a:focus, p.readmore a:active {
+  .arrow_btn:hover, button[type="submit"]:hover, .formResponsive input[type="submit"]:hover, .arrow_btn:focus, button[type="submit"]:focus, .formResponsive input[type="submit"]:focus, .arrow_btn:active, button[type="submit"]:active, .formResponsive input[type="submit"]:active, p.readmore a:hover, p.readmore a:focus, p.readmore a:active {
     background-position: right bottom !important;
     color: white; }
-  .arrow_btn span, button[type="submit"] span, p.readmore a span {
+  .arrow_btn span, button[type="submit"] span, .formResponsive input[type="submit"] span, p.readmore a span {
     display: block;
     float: left; }
-    .arrow_btn span.paypal, button[type="submit"] span.paypal, p.readmore a span.paypal {
+    .arrow_btn span.paypal, button[type="submit"] span.paypal, .formResponsive input[type="submit"] span.paypal, p.readmore a span.paypal {
+      font-size: 12px !important;
       background-position: right center;
       padding: 0 52px 0 0;
       background-image: url("../images/paypal_logo.png");
       background-repeat: no-repeat; }
-  .arrow_btn.sm, button.sm[type="submit"], p.readmore a.sm {
+  .arrow_btn.clear-right, button.clear-right[type="submit"], .formResponsive input.clear-right[type="submit"], p.readmore a.clear-right {
+    clear: right; }
+  .arrow_btn.sm, button.sm[type="submit"], .formResponsive input.sm[type="submit"], p.readmore a.sm {
     background-image: url("../images/arrow_btn_sm.png") !important;
     line-height: 20px !important;
     margin-top: 3px; }
@@ -232,9 +243,9 @@ textarea {
 .lineup_pics,
 .contact-image,
 .img_wide {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px; }
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
 
 .mod-contrast.contrast-violet .moduletable-inner {
   background: #464646;
@@ -251,9 +262,9 @@ textarea {
   padding: 0;
   min-height: 270px; }
   #Mod88 .moduletable-inner iframe {
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px; }
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
 
 #Mod89 .moduletable-inner, #Mod99 .moduletable-inner {
   padding: 0;
@@ -316,7 +327,7 @@ textarea {
   display: block;
   margin-bottom: 3px; }
 #Mod93 input[type="text"] {
-  background: #cccccc;
+  background: #e1e1e1;
   color: #333333;
   font-size: 1.2em;
   padding: 5px;
@@ -336,6 +347,34 @@ textarea {
   color: white !important; }
   #Mod102 a:hover, #Mod102 a:active, #Mod102 a:focus {
     color: #00aeef !important; }
+
+#Mod104 .moduletable-inner p, #Mod104 .moduletable-inner div {
+  margin-top: 10px; }
+#Mod104 .moduletable-inner .itunes {
+  background: url("../images/logo_itunes.png") no-repeat right top;
+  color: white;
+  display: block;
+  float: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100px;
+  height: 29px; }
+  #Mod104 .moduletable-inner .itunes:hover, #Mod104 .moduletable-inner .itunes:focus, #Mod104 .moduletable-inner .itunes:active {
+    background-position: right bottom !important;
+    color: white; }
+#Mod104 .moduletable-inner .icon-bg.podcasts {
+  min-height: 30px;
+  padding-top: 5px; }
+
+#Mod106 ul li, #Mod107 ul li {
+  background: none;
+  padding-left: 0;
+  margin-bottom: 3px !important; }
+#Mod106 a, #Mod107 a {
+  color: white !important;
+  text-transform: none; }
+  #Mod106 a:hover, #Mod106 a:active, #Mod107 a:hover, #Mod107 a:active {
+    color: #ff7909 !important; }
 
 .article_img {
   width: 300px;
@@ -375,9 +414,9 @@ ul.lineup_pics,
   -moz-border-image: url("../images/lines_image_border.png") 10 10 round;
   -webkit-border-image: url("../images/lines_image_border.png") 10 10 round;
   border-image: url("../images/lines_image_border.png") 10 10 round;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px; }
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
 
 .info {
   display: none;
@@ -426,7 +465,7 @@ ul.lineup_pics,
   .resdj .badge_btn {
     top: 25px;
     left: 155px; }
-  .resdj .arrow_btn, .resdj button[type="submit"] {
+  .resdj .arrow_btn, .resdj button[type="submit"], .resdj .formResponsive input[type="submit"], .formResponsive .resdj input[type="submit"] {
     margin-top: 0; }
 
 .first_row {
@@ -576,9 +615,9 @@ ul.lineup_pics,
   background-image: none !important;
   padding: 5px 0 !important;
   border: 0 !important;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px; }
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
 #system-message dd {
   text-indent: 5px !important; }
 
@@ -600,30 +639,22 @@ ul.lineup_pics,
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
-  min-height: 4000px;
+  min-height: 5000px;
   width: 110%;
   margin-top: 10px; }
   #podframe.archives {
     min-height: 8800px !important; }
 
-#Mod104 .moduletable-inner p, #Mod104 .moduletable-inner div {
-  margin-top: 10px; }
-#Mod104 .moduletable-inner .itunes {
-  background: url("../images/logo_itunes.png") no-repeat right top;
-  color: white;
-  display: block;
-  float: left;
-  text-transform: uppercase;
-  cursor: pointer;
-  width: 100px;
-  height: 29px; }
-  #Mod104 .moduletable-inner .itunes:hover, #Mod104 .moduletable-inner .itunes:focus, #Mod104 .moduletable-inner .itunes:active {
-    background-position: right bottom !important;
-    color: white; }
-#Mod104 .moduletable-inner .icon-bg.podcasts {
-  min-height: 30px;
-  padding-top: 5px; }
-
+.frontpage h1.contentheading,
+.frontpage h2.contentheading,
+.frontpage .contentheading,
+.frontpage #ja-content-main h1 {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #959595), color-stop(1, rgba(255, 255, 255, 0)));
+  background-image: -o-linear-gradient(right, #959595 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -moz-linear-gradient(right, #959595 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -webkit-linear-gradient(right, #959595 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -ms-linear-gradient(right, #959595 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to right, #959595 0%, rgba(255, 255, 255, 0) 100%); }
 .frontpage .contentpaneopen {
   background-color: #464646 !important;
   color: white; }
@@ -635,8 +666,6 @@ ul.lineup_pics,
     color: #2fcef9 !important; }
 .frontpage #Mod88 .moduletable-inner, .frontpage #Mod89 .moduletable-inner, .frontpage #Mod99 .moduletable-inner {
   background-color: white !important; }
-.frontpage .contentheading {
-  background-image: url("../images/header_grad_blue_dark.png") !important; }
 
 #error {
   font-size: 2.5em;
@@ -705,27 +734,16 @@ ul.lineup_pics,
 .sale {
   color: #ff7909; }
 
-.login label {
-  width: 6rem; }
 .login button {
-  margin-left: 6.5rem; }
+  margin-left: 8.8rem; }
 
 .login-links {
-  padding-left: 5.5rem; }
+  padding-left: 7.8rem; }
   .login-links ul li {
     background: none; }
 
 .star, .red {
   color: #ff7909; }
-
-#Mod106 ul li {
-  background: none;
-  padding-left: 0; }
-#Mod106 a {
-  color: white !important;
-  text-transform: none; }
-  #Mod106 a:hover, #Mod106 a:active {
-    color: #ff7909 !important; }
 
 blockquote {
   margin: 1rem 3rem;
@@ -736,3 +754,87 @@ blockquote {
 address {
   font-style: none !important;
   font-weight: bold; }
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="password"]
+textarea, #userForm input[type="text"],
+#userForm input[type="email"],
+#userForm input[type="password"]
+textarea {
+  height: inherit;
+  line-height: inherit;
+  background: #e1e1e1 !important;
+  color: #333333 !important;
+  font-size: 1.2em !important;
+  padding: 5px !important;
+  margin-bottom: 10px !important;
+  border: 1px solid #6dcff6 !important;
+  width: 90%; }
+  #contact-form input[type="text"]:hover, #contact-form input[type="text"]:active, #contact-form input[type="text"]:focus,
+  #contact-form input[type="email"]:hover,
+  #contact-form input[type="email"]:active,
+  #contact-form input[type="email"]:focus,
+  #contact-form input[type="password"]
+  textarea:hover,
+  #contact-form input[type="password"]
+  textarea:active,
+  #contact-form input[type="password"]
+  textarea:focus, #userForm input[type="text"]:hover, #userForm input[type="text"]:active, #userForm input[type="text"]:focus,
+  #userForm input[type="email"]:hover,
+  #userForm input[type="email"]:active,
+  #userForm input[type="email"]:focus,
+  #userForm input[type="password"]
+  textarea:hover,
+  #userForm input[type="password"]
+  textarea:active,
+  #userForm input[type="password"]
+  textarea:focus {
+    background: white;
+    border-color: #ff7909; }
+
+#contact-form dl dd input.required,
+#contact-form dl dd textarea.required {
+  width: 60% !important; }
+#contact-form legend, #contact-form label {
+  font-size: 1em;
+  font-weight: normal; }
+
+.formResponsive .formDescription {
+  margin-top: 0 !important;
+  font-size: 90%; }
+.formResponsive h2 {
+  display: none; }
+.formResponsive .formControls, .formResponsive .formControlLabel {
+  margin-bottom: 0.5em; }
+.formResponsive .formControlLabel {
+  padding-right: 10px; }
+  .formResponsive .formControlLabel .formRequired {
+    color: #ff7909; }
+.formResponsive .formError {
+  color: red;
+  padding-left: 0;
+  font-size: inherit; }
+.formResponsive .rsform-block {
+  margin-bottom: 1.5rem; }
+.formResponsive .rsform-button {
+  background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
+  color: white;
+  display: block;
+  float: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: .85em;
+  line-height: 30px;
+  margin-top: 10px;
+  padding: 0 1.5em 0 1em;
+  border: 0; }
+.formResponsive .rsform-input-box {
+  margin-bottom: 0; }
+.formResponsive select {
+  width: 40% !important;
+  font-size: 14px; }
+.formResponsive input[type="text"] {
+  margin-bottom: 0 !important; }
+.formResponsive input[type="submit"] {
+  background-color: transparent !important; }

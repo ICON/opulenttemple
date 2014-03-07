@@ -70,7 +70,7 @@ h1.logo {
 }
 
 h1.logo a {
-  padding: 0 .5em !important;
+  padding: 0 0 0 0.5em !important;
   height: 50px !important;
 }
 
@@ -179,6 +179,8 @@ h1.logo a img {
 
 .ja-megamenu ul.level0 li.mega a.mega {
   height: 50px !important;
+  font-size: 15px !important;
+  padding: 0 0.7em !important;
 }
 
 .ja-megamenu ul.level0 li.mega span.menu-title,

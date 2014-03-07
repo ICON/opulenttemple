@@ -4,11 +4,13 @@
 // variables
 $top-gradient: #cccccc;
 $bottom-gradient: #edf5f8;
+$light-grey: #959595;
 $medium-grey: #464646;
+$dark-grey: #333333;
 $cyan-blue: #00aeef;
 $orange: #ff7909;
-$dark-grey: #333333;
-$form-field: #cccccc;
+$transparent: rgba(255,255,255,0);
+$form-field: #e1e1e1;
 $border: 1px solid $medium-grey;
 //$big-border: 10px solid $medium-grey;
 $border-img: url('../images/lines_image_border.png');
@@ -35,9 +37,9 @@ $border-img: url('../images/lines_image_border.png');
   }
 }
 @mixin rounded-corners {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 @mixin border-image {
   border-width: 10px;
@@ -45,6 +47,20 @@ $border-img: url('../images/lines_image_border.png');
   -moz-border-image:$border-img 10 10 round;
   -webkit-border-image:$border-img 10 10 round;
   border-image:$border-img 10 10 round;
+}
+@mixin header-gradient($x-start-color) {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, $x-start-color),
+    color-stop(1, $transparent)
+  );
+  background-image: -o-linear-gradient(right, $x-start-color 0%, $transparent 100%);
+  background-image: -moz-linear-gradient(right, $x-start-color 0%, $transparent 100%);
+  background-image: -webkit-linear-gradient(right, $x-start-color 0%, $transparent 100%);
+  background-image: -ms-linear-gradient(right, $x-start-color 0%, $transparent 100%);
+  background-image: linear-gradient(to right, $x-start-color 0%, $transparent 100%);
 }
 
 // global
@@ -55,22 +71,9 @@ $border-img: url('../images/lines_image_border.png');
 #ja-container {
   position: relative;
   background:url('../images/lines_tile_light.png') repeat 0 0;
-  /*background:{
-    color: $top-gradient;
-  };
-  background-image: linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -o-linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -moz-linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -webkit-linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -ms-linear-gradient(top, $top-gradient 0%, $bottom-gradient 40%);
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.00, $top-gradient),
-    color-stop(0.40, $bottom-gradient)
-  );
-  }*/
+}
+#ja-content-main, .item-page {
+  min-height: 625px;
 }
 // fancyzoom styles
 #zoom {
@@ -105,6 +108,19 @@ h4, span {
     text-transform: uppercase;
   }
 }
+h1.contentheading,
+h2.contentheading,
+.contentheading, 
+#ja-content-main h1 {
+  @include header-gradient($cyan-blue);
+  padding: 10px 20px 10px 15px;
+  color: white;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
 .shiva {
   background:url('../images/shiva_header.png') no-repeat 0 0;
   padding-left: 26px;
@@ -112,7 +128,8 @@ h4, span {
 // buttons
 .arrow_btn, p.readmore a  {
   @include button('../images/arrow-bg-blue-orange.png');
-  font-size: 11px;
+  @include rounded-corners;
+  font-size: 14px;
   line-height: 30px;
   margin-top: 10px;
   padding: 0 1.5em 0 1em;
@@ -121,11 +138,15 @@ h4, span {
     display: block;
     float: left;
     &.paypal {
+      font-size: 12px !important;
       background-position: right center;
       padding: 0 52px 0 0;
       background-image:url('../images/paypal_logo.png');
       background-repeat: no-repeat;
     }
+  }
+  &.clear-right {
+    clear: right;
   }
   &.sm {
    background-image:url('../images/arrow_btn_sm.png') !important;
@@ -444,6 +465,34 @@ button[type="submit"] {
     color: white !important;
     &:hover,&:active,&:focus {
       color: $cyan-blue !important;
+    }
+  }
+}
+#Mod104 .moduletable-inner { // podcast feed
+  p, div {
+    margin-top: 10px;
+  }
+  .itunes {
+    @include button('../images/logo_itunes.png');
+    width: 100px;
+    height: 29px;
+  }
+  .icon-bg.podcasts {
+    min-height: 30px;
+    padding-top: 5px;
+  }
+}
+#Mod106, #Mod107 {
+  ul li {
+    background: none;
+    padding-left: 0;
+    margin-bottom: 3px !important;
+  }
+  a {
+    color: white !important; 
+    text-transform: none;
+    &:hover, &:active {
+      color: $orange !important;
     }
   }
 }
@@ -773,30 +822,22 @@ ul.lineup_pics,
   overflow:hidden;
   overflow-x:hidden;
   overflow-y:hidden;
-  min-height:4000px;
+  min-height:5000px;
   width:110%; 
   margin-top: 10px;
   &.archives {
     min-height:8800px !important;
   }
 }
-#Mod104 .moduletable-inner { // podcast feed
-  p, div {
-    margin-top: 10px;
-  }
-  .itunes {
-    @include button('../images/logo_itunes.png');
-    width: 100px;
-    height: 29px;
-  }
-  .icon-bg.podcasts {
-    min-height: 30px;
-    padding-top: 5px;
-  }
-}
 
 // frontpage: dark modules 
 .frontpage {
+  h1.contentheading,
+  h2.contentheading,
+  .contentheading, 
+  #ja-content-main h1 {
+    @include header-gradient($light-grey);
+  }
   .contentpaneopen {
     background-color: $medium-grey !important;
     color: white;
@@ -814,9 +855,6 @@ ul.lineup_pics,
     .moduletable-inner {
       background-color: white !important;
     }
-  }
-  .contentheading {
-    background-image:url('../images/header_grad_blue_dark.png') !important;
   }
 }
 // 404 page
@@ -896,34 +934,18 @@ ul.lineup_pics,
   color: $orange;
 }
 .login {
-  label {
-    width: 6rem;
-  }
   button {
-    margin-left: 6.5rem;
+    margin-left: 8.8rem;
   }
 }
 .login-links {
-  padding-left: 5.5rem;
+  padding-left: 7.8rem;
   ul li {
     background: none;
   }
 }
 .star, .red {
   color: $orange;
-}
-#Mod106 {
-  ul li {
-    background: none;
-    padding-left: 0;
-  }
-  a {
-    color: white !important; 
-    text-transform: none;
-    &:hover, &:active {
-      color: $orange !important;
-    }
-  }
 }
 blockquote {
   margin: 1rem 3rem;
@@ -934,4 +956,88 @@ blockquote {
 address {
   font-style: none !important;
   font-weight: bold;
+}
+#contact-form, #userForm {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"]
+  textarea {
+    height: inherit;
+    line-height: inherit;
+    background: #e1e1e1 !important;
+    color: #333333 !important;
+    font-size: 1.2em !important;
+    padding: 5px !important;
+    margin-bottom: 10px !important;
+    border: 1px solid #6dcff6 !important;
+    width: 90%;
+    &:hover, &:active, &:focus {
+      background: white;
+      border-color: #ff7909;
+    }
+  }
+}
+#contact-form {
+  dl dd input.required,
+  dl dd textarea.required {
+    width: 60% !important;
+  }
+  legend, label {
+    font-size: 1em;
+    font-weight: normal;
+  }
+}
+
+.formResponsive {
+  .formDescription {
+    margin-top: 0 !important;
+    font-size: 90%;
+  }
+  h2 {
+    display: none;
+  }
+  .formControls, .formControlLabel {
+    margin-bottom: 0.5em;
+  }
+  .formControlLabel {
+    padding-right: 10px;
+    .formRequired {
+      color: $orange;
+    }
+  }
+  .formError {
+    color: red;
+    padding-left: 0;
+    font-size: inherit;
+  }
+  .rsform-block {
+    margin-bottom: 1.5rem;
+  }
+  .rsform-button {
+    background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
+    color: white;
+    display: block;
+    float: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: .85em;
+    line-height: 30px;
+    margin-top: 10px;
+    padding: 0 1.5em 0 1em;
+    border: 0;
+  }
+  .rsform-input-box {
+    margin-bottom: 0;
+  }
+  select {
+    width: 40% !important;
+    font-size: 14px;
+  }
+  input[type="text"] {
+    margin-bottom: 0 !important;
+  }
+  input[type="submit"] {
+    @extend .arrow_btn;
+    background-color: transparent !important;
+  }
 }
