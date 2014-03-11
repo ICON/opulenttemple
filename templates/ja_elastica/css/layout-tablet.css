@@ -328,3 +328,8 @@ h1.logo img {
 .arrow_btn, p.readmore a {
   font-size: .75em;
 }
+
+.rsform-block-referral-friend {
+  width: 78% !important;
+  margin-left: 130px;
+}

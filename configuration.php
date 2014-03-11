@@ -17,7 +17,7 @@ class JConfig {
 	public $password = 'login288';
 	public $db = 'ot_joombla';
 	public $dbprefix = 'eq925_';
-	public $live_site = '/';
+	public $live_site = 'http://www.opulenttemple.org';
 	public $secret = 'qPvNnXptSP0iMxbJ';
 	public $gzip = '0';
 	public $error_reporting = 'default';

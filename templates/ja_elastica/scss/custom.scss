@@ -113,13 +113,13 @@ h2.contentheading,
 .contentheading, 
 #ja-content-main h1 {
   @include header-gradient($cyan-blue);
+  @include rounded-corners;
+  font-size: 2em;
   padding: 10px 20px 10px 15px;
   color: white;
   font-weight: normal;
   margin: 0 0 20px 0;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  line-height: 100%;
 }
 .shiva {
   background:url('../images/shiva_header.png') no-repeat 0 0;
@@ -275,26 +275,6 @@ ul {
       color: $orange !important;
     }
   }
-}
-// form fields
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
-  width: 60%;
-  background: #e1e1e1;
-  color: #333333;
-  font-size: 1.2em;
-  padding: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #6dcff6;
-  &:hover, &:active, &:focus {
-    background: white;
-    border-color: #ff7909;
-  }
-}
-button[type="submit"] {
-  @extend .arrow_btn;
 }
 /*ul.pagenav li a {    
   @include button('../images/arrow_btn_sm.png');
@@ -790,13 +770,19 @@ ul.lineup_pics,
 //system warning messages
 #system-message {
   ul {
+    background-color: $orange !important;
+    color: white !important;
     background-image: none !important;
-    padding: 5px 0 !important;
+    line-height: 100%;
+    padding: 10px !important;
     border: 0 !important;
     @include rounded-corners;
+    li {
+      line-height: 1.1 !important;
+    }
   }
   dd {
-    text-indent: 5px !important;
+    text-indent: 0 !important;
   }
 }
 .cmp_buttons_container {
@@ -933,21 +919,8 @@ ul.lineup_pics,
 .sale {
   color: $orange;
 }
-.login {
-  button {
-    margin-left: 8.8rem;
-  }
-}
-.login-links {
-  padding-left: 7.8rem;
-  ul li {
-    background: none;
-  }
-}
-.star, .red {
-  color: $orange;
-}
 blockquote {
+  @include rounded-corners;
   margin: 1rem 3rem;
   padding: 1rem;
   background: #e1e1e1;
@@ -957,32 +930,58 @@ address {
   font-style: none !important;
   font-weight: bold;
 }
-#contact-form, #userForm {
+// form fields
+form {
   input[type="text"],
   input[type="email"],
-  input[type="password"]
+  input[type="password"],
   textarea {
+    @include rounded-corners;
     height: inherit;
     line-height: inherit;
-    background: #e1e1e1 !important;
+    width: 70%;
+    background: #ebebeb !important;
     color: #333333 !important;
     font-size: 1.2em !important;
     padding: 5px !important;
     margin-bottom: 10px !important;
     border: 1px solid #6dcff6 !important;
-    width: 90%;
     &:hover, &:active, &:focus {
-      background: white;
-      border-color: #ff7909;
+      background: white !important;
+      border-color: #ff7909 !important;
     }
   }
+  button[type="submit"] {
+    @extend .arrow_btn;
+  }
 }
-#contact-form {
+.login {
+  label {
+    width: 15%;
+  }
+  button {
+    margin-left: 16%;
+  }
+}
+.login-links {
+  padding-left: 15%;
+  ul li {
+    background: none;
+  }
+}
+.star, .red {
+  color: $orange;
+}
+.form-validate {
+  dd, dt {
+    margin-bottom: 1rem;
+    min-height: 0;
+  }
   dl dd input.required,
   dl dd textarea.required {
     width: 60% !important;
   }
-  legend, label {
+  label {
     font-size: 1em;
     font-weight: normal;
   }
@@ -1001,6 +1000,7 @@ address {
   }
   .formControlLabel {
     padding-right: 10px;
+    line-height: 100%;
     .formRequired {
       color: $orange;
     }
@@ -1011,7 +1011,33 @@ address {
     font-size: inherit;
   }
   .rsform-block {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem !important;
+    &.rsform-block-referral {
+      width: 45%;
+      float: left;
+      select {
+        width: 100% !important;
+      }
+    }
+    &.rsform-block-referral-friend {
+      width: 40%;
+      float: left;
+      .formControlLabel {
+        display: none;
+      }
+      .formBody {
+        height: 30px;
+      }
+      .formControls {
+        margin-left: 30px;
+      }
+      input {
+        width: 100% !important;
+      }
+    }
+    &.rsform-block-captcha {
+      clear: both;
+    }
   }
   .rsform-button {
     background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
@@ -1036,8 +1062,35 @@ address {
   input[type="text"] {
     margin-bottom: 0 !important;
   }
-  input[type="submit"] {
+  input[type="submit"], button {
     @extend .arrow_btn;
     background-color: transparent !important;
+  }
+}
+
+@media only screen and (max-width:720px) {
+  //forms
+  form {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      width: 100%;
+    } 
+  }
+  .login {
+    label {
+      width: 100%;
+      text-align: left;
+    }
+    button {
+      margin-left: 0;
+    }
+    .login-links {
+      padding-left: 0;
+    }
+  }
+  .rsform-block-referral {
+    width: 100% !important;
   }
 }

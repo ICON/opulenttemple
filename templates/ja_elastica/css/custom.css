@@ -43,19 +43,21 @@ h2.contentheading,
   background-image: -webkit-linear-gradient(right, #00aeef 0%, rgba(255, 255, 255, 0) 100%);
   background-image: -ms-linear-gradient(right, #00aeef 0%, rgba(255, 255, 255, 0) 100%);
   background-image: linear-gradient(to right, #00aeef 0%, rgba(255, 255, 255, 0) 100%);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 2em;
   padding: 10px 20px 10px 15px;
   color: white;
   font-weight: normal;
   margin: 0 0 20px 0;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px; }
+  line-height: 100%; }
 
 .shiva {
   background: url("../images/shiva_header.png") no-repeat 0 0;
   padding-left: 26px; }
 
-.arrow_btn, button[type="submit"], .formResponsive input[type="submit"], p.readmore a {
+.arrow_btn, form button[type="submit"], .formResponsive input[type="submit"], .formResponsive button, p.readmore a {
   background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
   color: white;
   display: block;
@@ -70,21 +72,21 @@ h2.contentheading,
   margin-top: 10px;
   padding: 0 1.5em 0 1em;
   border: 0; }
-  .arrow_btn:hover, button[type="submit"]:hover, .formResponsive input[type="submit"]:hover, .arrow_btn:focus, button[type="submit"]:focus, .formResponsive input[type="submit"]:focus, .arrow_btn:active, button[type="submit"]:active, .formResponsive input[type="submit"]:active, p.readmore a:hover, p.readmore a:focus, p.readmore a:active {
+  .arrow_btn:hover, form button[type="submit"]:hover, .formResponsive input[type="submit"]:hover, .formResponsive button:hover, .arrow_btn:focus, form button[type="submit"]:focus, .formResponsive input[type="submit"]:focus, .formResponsive button:focus, .arrow_btn:active, form button[type="submit"]:active, .formResponsive input[type="submit"]:active, .formResponsive button:active, p.readmore a:hover, p.readmore a:focus, p.readmore a:active {
     background-position: right bottom !important;
     color: white; }
-  .arrow_btn span, button[type="submit"] span, .formResponsive input[type="submit"] span, p.readmore a span {
+  .arrow_btn span, form button[type="submit"] span, .formResponsive input[type="submit"] span, .formResponsive button span, p.readmore a span {
     display: block;
     float: left; }
-    .arrow_btn span.paypal, button[type="submit"] span.paypal, .formResponsive input[type="submit"] span.paypal, p.readmore a span.paypal {
+    .arrow_btn span.paypal, form button[type="submit"] span.paypal, .formResponsive input[type="submit"] span.paypal, .formResponsive button span.paypal, p.readmore a span.paypal {
       font-size: 12px !important;
       background-position: right center;
       padding: 0 52px 0 0;
       background-image: url("../images/paypal_logo.png");
       background-repeat: no-repeat; }
-  .arrow_btn.clear-right, button.clear-right[type="submit"], .formResponsive input.clear-right[type="submit"], p.readmore a.clear-right {
+  .arrow_btn.clear-right, form button.clear-right[type="submit"], .formResponsive input.clear-right[type="submit"], .formResponsive button.clear-right, p.readmore a.clear-right {
     clear: right; }
-  .arrow_btn.sm, button.sm[type="submit"], .formResponsive input.sm[type="submit"], p.readmore a.sm {
+  .arrow_btn.sm, form button.sm[type="submit"], .formResponsive input.sm[type="submit"], .formResponsive button.sm, p.readmore a.sm {
     background-image: url("../images/arrow_btn_sm.png") !important;
     line-height: 20px !important;
     margin-top: 3px; }
@@ -186,30 +188,6 @@ ul.level1 li.mega a.mega {
   color: white !important; }
   ul.level1 li.mega a.mega:hover, ul.level1 li.mega a.mega:active, ul.level1 li.mega a.mega:focus {
     color: #ff7909 !important; }
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
-  width: 60%;
-  background: #e1e1e1;
-  color: #333333;
-  font-size: 1.2em;
-  padding: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #6dcff6; }
-  input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus,
-  input[type="email"]:hover,
-  input[type="email"]:active,
-  input[type="email"]:focus,
-  input[type="password"]:hover,
-  input[type="password"]:active,
-  input[type="password"]:focus,
-  textarea:hover,
-  textarea:active,
-  textarea:focus {
-    background: white;
-    border-color: #ff7909; }
 
 /*ul.pagenav li a {    
   @include button('../images/arrow_btn_sm.png');
@@ -465,7 +443,7 @@ ul.lineup_pics,
   .resdj .badge_btn {
     top: 25px;
     left: 155px; }
-  .resdj .arrow_btn, .resdj button[type="submit"], .resdj .formResponsive input[type="submit"], .formResponsive .resdj input[type="submit"] {
+  .resdj .arrow_btn, .resdj form button[type="submit"], form .resdj button[type="submit"], .resdj .formResponsive input[type="submit"], .formResponsive .resdj input[type="submit"], .resdj .formResponsive button, .formResponsive .resdj button {
     margin-top: 0; }
 
 .first_row {
@@ -612,14 +590,19 @@ ul.lineup_pics,
   text-align: left; }
 
 #system-message ul {
+  background-color: #ff7909 !important;
+  color: white !important;
   background-image: none !important;
-  padding: 5px 0 !important;
+  line-height: 100%;
+  padding: 10px !important;
   border: 0 !important;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px; }
+  #system-message ul li {
+    line-height: 1.1 !important; }
 #system-message dd {
-  text-indent: 5px !important; }
+  text-indent: 0 !important; }
 
 .cmp_buttons_container {
   clear: both; }
@@ -734,18 +717,10 @@ ul.lineup_pics,
 .sale {
   color: #ff7909; }
 
-.login button {
-  margin-left: 8.8rem; }
-
-.login-links {
-  padding-left: 7.8rem; }
-  .login-links ul li {
-    background: none; }
-
-.star, .red {
-  color: #ff7909; }
-
 blockquote {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   margin: 1rem 3rem;
   padding: 1rem;
   background: #e1e1e1;
@@ -755,48 +730,55 @@ address {
   font-style: none !important;
   font-weight: bold; }
 
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form input[type="password"]
-textarea, #userForm input[type="text"],
-#userForm input[type="email"],
-#userForm input[type="password"]
-textarea {
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   height: inherit;
   line-height: inherit;
-  background: #e1e1e1 !important;
+  width: 70%;
+  background: #ebebeb !important;
   color: #333333 !important;
   font-size: 1.2em !important;
   padding: 5px !important;
   margin-bottom: 10px !important;
-  border: 1px solid #6dcff6 !important;
-  width: 90%; }
-  #contact-form input[type="text"]:hover, #contact-form input[type="text"]:active, #contact-form input[type="text"]:focus,
-  #contact-form input[type="email"]:hover,
-  #contact-form input[type="email"]:active,
-  #contact-form input[type="email"]:focus,
-  #contact-form input[type="password"]
-  textarea:hover,
-  #contact-form input[type="password"]
-  textarea:active,
-  #contact-form input[type="password"]
-  textarea:focus, #userForm input[type="text"]:hover, #userForm input[type="text"]:active, #userForm input[type="text"]:focus,
-  #userForm input[type="email"]:hover,
-  #userForm input[type="email"]:active,
-  #userForm input[type="email"]:focus,
-  #userForm input[type="password"]
-  textarea:hover,
-  #userForm input[type="password"]
-  textarea:active,
-  #userForm input[type="password"]
-  textarea:focus {
-    background: white;
-    border-color: #ff7909; }
+  border: 1px solid #6dcff6 !important; }
+  form input[type="text"]:hover, form input[type="text"]:active, form input[type="text"]:focus,
+  form input[type="email"]:hover,
+  form input[type="email"]:active,
+  form input[type="email"]:focus,
+  form input[type="password"]:hover,
+  form input[type="password"]:active,
+  form input[type="password"]:focus,
+  form textarea:hover,
+  form textarea:active,
+  form textarea:focus {
+    background: white !important;
+    border-color: #ff7909 !important; }
 
-#contact-form dl dd input.required,
-#contact-form dl dd textarea.required {
+.login label {
+  width: 15%; }
+.login button {
+  margin-left: 16%; }
+
+.login-links {
+  padding-left: 15%; }
+  .login-links ul li {
+    background: none; }
+
+.star, .red {
+  color: #ff7909; }
+
+.form-validate dd, .form-validate dt {
+  margin-bottom: 1rem;
+  min-height: 0; }
+.form-validate dl dd input.required,
+.form-validate dl dd textarea.required {
   width: 60% !important; }
-#contact-form legend, #contact-form label {
+.form-validate label {
   font-size: 1em;
   font-weight: normal; }
 
@@ -808,7 +790,8 @@ textarea {
 .formResponsive .formControls, .formResponsive .formControlLabel {
   margin-bottom: 0.5em; }
 .formResponsive .formControlLabel {
-  padding-right: 10px; }
+  padding-right: 10px;
+  line-height: 100%; }
   .formResponsive .formControlLabel .formRequired {
     color: #ff7909; }
 .formResponsive .formError {
@@ -816,7 +799,25 @@ textarea {
   padding-left: 0;
   font-size: inherit; }
 .formResponsive .rsform-block {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.25rem !important; }
+  .formResponsive .rsform-block.rsform-block-referral {
+    width: 45%;
+    float: left; }
+    .formResponsive .rsform-block.rsform-block-referral select {
+      width: 100% !important; }
+  .formResponsive .rsform-block.rsform-block-referral-friend {
+    width: 40%;
+    float: left; }
+    .formResponsive .rsform-block.rsform-block-referral-friend .formControlLabel {
+      display: none; }
+    .formResponsive .rsform-block.rsform-block-referral-friend .formBody {
+      height: 30px; }
+    .formResponsive .rsform-block.rsform-block-referral-friend .formControls {
+      margin-left: 30px; }
+    .formResponsive .rsform-block.rsform-block-referral-friend input {
+      width: 100% !important; }
+  .formResponsive .rsform-block.rsform-block-captcha {
+    clear: both; }
 .formResponsive .rsform-button {
   background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
   color: white;
@@ -836,5 +837,23 @@ textarea {
   font-size: 14px; }
 .formResponsive input[type="text"] {
   margin-bottom: 0 !important; }
-.formResponsive input[type="submit"] {
+.formResponsive input[type="submit"], .formResponsive button {
   background-color: transparent !important; }
+
+@media only screen and (max-width: 720px) {
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form textarea {
+    width: 100%; }
+
+  .login label {
+    width: 100%;
+    text-align: left; }
+  .login button {
+    margin-left: 0; }
+  .login .login-links {
+    padding-left: 0; }
+
+  .rsform-block-referral {
+    width: 100% !important; } }
