@@ -590,7 +590,7 @@ ul.lineup_pics,
   text-align: left; }
 
 #system-message ul {
-  background-color: #ff7909 !important;
+  background-color: #fbaf5c !important;
   color: white !important;
   background-image: none !important;
   line-height: 100%;
@@ -759,6 +759,8 @@ form textarea {
     background: white !important;
     border-color: #ff7909 !important; }
 
+.login form {
+  margin-top: 1em; }
 .login label {
   width: 15%; }
 .login button {
@@ -816,6 +818,8 @@ form textarea {
       margin-left: 30px; }
     .formResponsive .rsform-block.rsform-block-referral-friend input {
       width: 100% !important; }
+  .formResponsive .rsform-block.rsform-block-dues-paid {
+    display: none; }
   .formResponsive .rsform-block.rsform-block-captcha {
     clear: both; }
 .formResponsive .rsform-button {

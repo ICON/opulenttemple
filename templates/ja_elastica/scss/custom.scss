@@ -8,6 +8,7 @@ $light-grey: #959595;
 $medium-grey: #464646;
 $dark-grey: #333333;
 $cyan-blue: #00aeef;
+$light-orange: #fbaf5c;
 $orange: #ff7909;
 $transparent: rgba(255,255,255,0);
 $form-field: #e1e1e1;
@@ -770,7 +771,7 @@ ul.lineup_pics,
 //system warning messages
 #system-message {
   ul {
-    background-color: $orange !important;
+    background-color: $light-orange !important;
     color: white !important;
     background-image: none !important;
     line-height: 100%;
@@ -956,6 +957,9 @@ form {
   }
 }
 .login {
+  form {
+    margin-top: 1em;
+  }
   label {
     width: 15%;
   }
@@ -1034,6 +1038,9 @@ form {
       input {
         width: 100% !important;
       }
+    }
+    &.rsform-block-dues-paid {
+      display: none;
     }
     &.rsform-block-captcha {
       clear: both;
