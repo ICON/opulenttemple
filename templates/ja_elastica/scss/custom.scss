@@ -420,7 +420,7 @@ ul {
     display: block;
     margin-bottom: 3px;
   }
-  input[type="text"] {
+  input[type="text"], input[type="email"] {
     background: $form-field;
     color: $dark-grey;
     font-size: 1.2em;
@@ -1016,14 +1016,14 @@ form {
   }
   .rsform-block {
     margin-bottom: 1.25rem !important;
-    &.rsform-block-referral {
+    &.rsform-block-referral, &.rsform-block-accommodations {
       width: 45%;
       float: left;
       select {
         width: 100% !important;
       }
     }
-    &.rsform-block-referral-friend {
+    &.rsform-block-referral-friend, &.rsform-block-accommodation-info {
       width: 40%;
       float: left;
       .formControlLabel {
@@ -1042,7 +1042,7 @@ form {
     &.rsform-block-dues-paid {
       display: none;
     }
-    &.rsform-block-captcha {
+    &.rsform-block-captcha, &.rsform-block-arrival-date {
       clear: both;
     }
   }

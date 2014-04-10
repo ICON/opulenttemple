@@ -304,7 +304,7 @@ ul.level1 li.mega a.mega {
 #Mod93 label {
   display: block;
   margin-bottom: 3px; }
-#Mod93 input[type="text"] {
+#Mod93 input[type="text"], #Mod93 input[type="email"] {
   background: #e1e1e1;
   color: #333333;
   font-size: 1.2em;
@@ -312,7 +312,7 @@ ul.level1 li.mega a.mega {
   margin-bottom: 10px;
   border: 0;
   width: 90%; }
-  #Mod93 input[type="text"]:hover, #Mod93 input[type="text"]:focus {
+  #Mod93 input[type="text"]:hover, #Mod93 input[type="text"]:focus, #Mod93 input[type="email"]:hover, #Mod93 input[type="email"]:focus {
     background: white; }
 
 #Mod102 .moduletable-inner {
@@ -802,25 +802,25 @@ form textarea {
   font-size: inherit; }
 .formResponsive .rsform-block {
   margin-bottom: 1.25rem !important; }
-  .formResponsive .rsform-block.rsform-block-referral {
+  .formResponsive .rsform-block.rsform-block-referral, .formResponsive .rsform-block.rsform-block-accommodations {
     width: 45%;
     float: left; }
-    .formResponsive .rsform-block.rsform-block-referral select {
+    .formResponsive .rsform-block.rsform-block-referral select, .formResponsive .rsform-block.rsform-block-accommodations select {
       width: 100% !important; }
-  .formResponsive .rsform-block.rsform-block-referral-friend {
+  .formResponsive .rsform-block.rsform-block-referral-friend, .formResponsive .rsform-block.rsform-block-accommodation-info {
     width: 40%;
     float: left; }
-    .formResponsive .rsform-block.rsform-block-referral-friend .formControlLabel {
+    .formResponsive .rsform-block.rsform-block-referral-friend .formControlLabel, .formResponsive .rsform-block.rsform-block-accommodation-info .formControlLabel {
       display: none; }
-    .formResponsive .rsform-block.rsform-block-referral-friend .formBody {
+    .formResponsive .rsform-block.rsform-block-referral-friend .formBody, .formResponsive .rsform-block.rsform-block-accommodation-info .formBody {
       height: 30px; }
-    .formResponsive .rsform-block.rsform-block-referral-friend .formControls {
+    .formResponsive .rsform-block.rsform-block-referral-friend .formControls, .formResponsive .rsform-block.rsform-block-accommodation-info .formControls {
       margin-left: 30px; }
-    .formResponsive .rsform-block.rsform-block-referral-friend input {
+    .formResponsive .rsform-block.rsform-block-referral-friend input, .formResponsive .rsform-block.rsform-block-accommodation-info input {
       width: 100% !important; }
   .formResponsive .rsform-block.rsform-block-dues-paid {
     display: none; }
-  .formResponsive .rsform-block.rsform-block-captcha {
+  .formResponsive .rsform-block.rsform-block-captcha, .formResponsive .rsform-block.rsform-block-arrival-date {
     clear: both; }
 .formResponsive .rsform-button {
   background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
