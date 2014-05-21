@@ -844,6 +844,15 @@ form textarea {
 .formResponsive input[type="submit"], .formResponsive button {
   background-color: transparent !important; }
 
+table.rvs {
+  width: 100%;
+  border: 1px solid #333333; }
+  table.rvs thead {
+    background-color: #959595;
+    color: white; }
+  table.rvs tr {
+    border-top: 1px solid #333333; }
+
 @media only screen and (max-width: 720px) {
   form input[type="text"],
   form input[type="email"],

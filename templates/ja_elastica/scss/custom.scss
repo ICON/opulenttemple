@@ -1074,6 +1074,17 @@ form {
     background-color: transparent !important;
   }
 }
+table.rvs {
+  width: 100%;
+  border: 1px solid $dark-grey;
+  thead {
+    background-color: $light-grey;
+    color: white;
+  }
+  tr {
+    border-top: 1px solid $dark-grey;
+  }
+}
 
 @media only screen and (max-width:720px) {
   //forms
