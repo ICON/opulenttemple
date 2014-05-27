@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Installer
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -45,10 +45,8 @@ class JInstallerPackage extends JAdapterInstance
 		$extension = 'pkg_' . strtolower(JFilterInput::getInstance()->clean((string) $this->manifest->packagename, 'cmd'));
 		$lang = JFactory::getLanguage();
 		$source = $path;
-		$lang->load($extension . '.sys', $source, null, false, false)
-			|| $lang->load($extension . '.sys', JPATH_SITE, null, false, false)
-			|| $lang->load($extension . '.sys', $source, $lang->getDefault(), false, false)
-			|| $lang->load($extension . '.sys', JPATH_SITE, $lang->getDefault(), false, false);
+			$lang->load($extension . '.sys', $source, null, false, true)
+		||	$lang->load($extension . '.sys', JPATH_SITE, null, false, true);
 	}
 
 	/**
@@ -290,7 +288,7 @@ class JInstallerPackage extends JAdapterInstance
 			$path['src'] = $this->parent->getPath('source') . '/' . $this->get('manifest_script');
 			$path['dest'] = $this->parent->getPath('extension_root') . '/' . $this->get('manifest_script');
 
-			if (!file_exists($path['dest']) || $this->parent->getOverwrite())
+			if (!file_exists($path['dest']) || $this->parent->isOverwrite())
 			{
 				if (!$this->parent->copyFiles(array($path)))
 				{

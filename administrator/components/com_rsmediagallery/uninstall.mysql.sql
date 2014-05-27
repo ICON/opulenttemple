@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS `#__rsmediagallery_items`, `#__rsmediagallery_tags`;

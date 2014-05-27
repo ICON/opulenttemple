@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -108,7 +108,7 @@ abstract class multilangstatusHelper
 		// Select the language home pages
 		$query->select('l.home AS home');
 		$query->select('l.language AS home_language');
-		$query->join('LEFT', '#__menu  AS l  ON  l.language = a.lang_code AND l.home=1  AND l.language <> \'*\'' );
+		$query->join('LEFT', '#__menu  AS l  ON  l.language = a.lang_code AND l.home=1 AND l.published=1 AND l.language <> \'*\'' );
 		$query->select('e.enabled AS enabled');
 		$query->select('e.element AS element');
 		$query->join('LEFT', '#__extensions  AS e ON e.element = a.lang_code');

@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Application
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -24,7 +24,6 @@ jimport('joomla.environment.response');
  * @subpackage  Application
  * @since       11.1
  */
-
 class JApplication extends JObject
 {
 	/**
@@ -32,15 +31,6 @@ class JApplication extends JObject
 	 *
 	 * @var    integer
 	 * @since  11.1
-	 */
-	protected $clientId = null;
-
-	/**
-	 * The client identifier.
-	 *
-	 * @var    integer
-	 * @since  11.1
-	 * @deprecated use $clientId or declare as private
 	 */
 	protected $_clientId = null;
 
@@ -50,15 +40,6 @@ class JApplication extends JObject
 	 * @var    array
 	 * @since  11.1
 	 */
-	protected $messageQueue = array();
-
-	/**
-	 * The application message queue.
-	 *
-	 * @var    array
-	 * @since  11.1
-	 * @deprecated use $messageQueue or declare as private
-	 */
 	protected $_messageQueue = array();
 
 	/**
@@ -66,15 +47,6 @@ class JApplication extends JObject
 	 *
 	 * @var    array
 	 * @since  11.1
-	 */
-	protected $name = null;
-
-	/**
-	 * The name of the application.
-	 *
-	 * @var    array
-	 * @since  11.1
-	 * @deprecated use $name or declare as private
 	 */
 	protected $_name = null;
 
@@ -173,10 +145,10 @@ class JApplication extends JObject
 			$this->_createSession(self::getHash($config['session_name']));
 		}
 
-		$this->set('requestTime', gmdate('Y-m-d H:i'));
+		$this->requestTime = gmdate('Y-m-d H:i');
 
 		// Used by task system to ensure that the system doesn't go over time.
-		$this->set('startTime', JProfiler::getmicrotime());
+		$this->startTime = JProfiler::getmicrotime();
 	}
 
 	/**
@@ -430,7 +402,7 @@ class JApplication extends JObject
 		// so we will output a javascript redirect statement.
 		if (headers_sent())
 		{
-			echo "<script>document.location.href='" . htmlspecialchars($url) . "';</script>\n";
+			echo "<script>document.location.href='" . str_replace("'","&apos;",$url) . "';</script>\n";
 		}
 		else
 		{
@@ -442,14 +414,14 @@ class JApplication extends JObject
 			{
 				// MSIE type browser and/or server cause issues when url contains utf8 character,so use a javascript redirect method
 				echo '<html><head><meta http-equiv="content-type" content="text/html; charset=' . $document->getCharset() . '" />'
-					. '<script>document.location.href=\'' . htmlspecialchars($url) . '\';</script></head></html>';
+					. '<script>document.location.href=\'' . str_replace("'","&apos;",$url) . '\';</script></head></html>';
 			}
 			elseif (!$moved and $navigator->isBrowser('konqueror'))
 			{
 				// WebKit browser (identified as konqueror by Joomla!) - Do not use 303, as it causes subresources
 				// reload (https://bugs.webkit.org/show_bug.cgi?id=38690)
 				echo '<html><head><meta http-equiv="content-type" content="text/html; charset=' . $document->getCharset() . '" />'
-					. '<meta http-equiv="refresh" content="0; url=' . htmlspecialchars($url) . '" /></head></html>';
+					. '<meta http-equiv="refresh" content="0; url=' . str_replace("'","&apos;",$url) . '" /></head></html>';
 			}
 			else
 			{
@@ -751,19 +723,21 @@ class JApplication extends JObject
 				// Set the remember me cookie if enabled.
 				if (isset($options['remember']) && $options['remember'])
 				{
-					jimport('joomla.utilities.simplecrypt');
-
 					// Create the encryption key, apply extra hardening using the user agent string.
-					$key = self::getHash(@$_SERVER['HTTP_USER_AGENT']);
+					$privateKey = self::getHash(@$_SERVER['HTTP_USER_AGENT']);
 
-					$crypt = new JSimpleCrypt($key);
-					$rcookie = $crypt->encrypt(serialize($credentials));
+					$key = new JCryptKey('simple', $privateKey, $privateKey);
+					$crypt = new JCrypt(new JCryptCipherSimple, $key);
+					$rcookie = $crypt->encrypt(json_encode($credentials));
 					$lifetime = time() + 365 * 24 * 60 * 60;
 
 					// Use domain and path set in config for cookie if it exists.
 					$cookie_domain = $this->getCfg('cookie_domain', '');
 					$cookie_path = $this->getCfg('cookie_path', '/');
-					setcookie(self::getHash('JLOGIN_REMEMBER'), $rcookie, $lifetime, $cookie_path, $cookie_domain);
+
+					// Check for SSL connection
+					$secure = ((isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on')) || getenv('SSL_PROTOCOL_VERSION'));
+					setcookie(self::getHash('JLOGIN_REMEMBER'), $rcookie, $lifetime, $cookie_path, $cookie_domain, $secure, true);
 				}
 
 				return true;
@@ -1060,7 +1034,7 @@ class JApplication extends JObject
 				->where($query->qn('time') . ' < ' . $query->q((int) ($time - $session->getExpire())));
 
 			$db->setQuery($query);
-			$db->query();
+			$db->execute();
 		}
 
 		// Check to see the the session already exists.
@@ -1124,7 +1098,7 @@ class JApplication extends JObject
 			}
 
 			// If the insert failed, exit the application.
-			if (!$db->query())
+			if (!$db->execute())
 			{
 				jexit($db->getErrorMSG());
 			}

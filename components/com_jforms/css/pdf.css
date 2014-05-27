@@ -1,0 +1,12 @@
+fieldset {
+	padding: 10px;
+	border: 1px solid #bbbbbb;
+	border-radius: 10px;
+}
+
+.fieldset_table th {
+	width: 20%;
+	font-size: 80%;
+	vertical-align: middle;
+}
+

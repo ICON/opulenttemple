@@ -1,13 +1,10 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// No direct access
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.view');
 
 /**
  * HTML Article View class for the Content component
@@ -16,7 +13,7 @@ jimport('joomla.application.component.view');
  * @subpackage	com_content
  * @since		1.5
  */
-class ContentViewForm extends JView
+class ContentViewForm extends JViewLegacy
 {
 	protected $form;
 	protected $item;
@@ -51,9 +48,10 @@ class ContentViewForm extends JView
 			$this->item->images = json_decode($this->item->images);
 			$this->item->urls = json_decode($this->item->urls);
 
-			$this->form->bind($this->item);
-			$this->form->bind($this->item->urls);
-			$this->form->bind($this->item->images);
+			$tmp = new stdClass;
+			$tmp->images = $this->item->images;
+			$tmp->urls = $this->item->urls;
+			$this->form->bind($tmp);
 
 		}
 
@@ -72,8 +70,9 @@ class ContentViewForm extends JView
 		$this->params	= $params;
 		$this->user		= $user;
 
-		if ($this->params->get('enable_category') == 1) {
+		if ($params->get('enable_category') == 1) {
 			$this->form->setFieldAttribute('catid', 'default',  $params->get('catid', 1));
+			$this->form->setFieldAttribute('catid', 'readonly', 'true');
 		}
 		$this->_prepareDocument();
 		parent::display($tpl);

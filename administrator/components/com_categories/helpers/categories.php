@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -54,10 +54,8 @@ class CategoriesHelper
 					$lang = JFactory::getLanguage();
 					// loading language file from the administrator/language directory then
 					// loading language file from the administrator/components/*extension*/language directory
-						$lang->load($component, JPATH_BASE, null, false, false)
-					||	$lang->load($component, JPath::clean(JPATH_ADMINISTRATOR.'/components/'.$component), null, false, false)
-					||	$lang->load($component, JPATH_BASE, $lang->getDefault(), false, false)
-					||	$lang->load($component, JPath::clean(JPATH_ADMINISTRATOR.'/components/'.$component), $lang->getDefault(), false, false);
+						$lang->load($component, JPATH_BASE, null, false, true)
+						|| $lang->load($component, JPath::clean(JPATH_ADMINISTRATOR . '/components/' . $component), null, false, true);
  					call_user_func(array($cName, 'addSubmenu'), 'categories'.(isset($section)?'.'.$section:''));
 				}
 			}
@@ -82,17 +80,17 @@ class CategoriesHelper
 
 		if (empty($categoryId)) {
 			$assetName = $component;
+			$level = 'component';
 		}
 		else {
 			$assetName = $component.'.category.'.(int) $categoryId;
+			$level = 'category';
 		}
 
-		$actions = array(
-			'core.admin', 'core.manage', 'core.create', 'core.edit', 'core.edit.own', 'core.edit.state', 'core.delete'
-		);
+		$actions = JAccess::getActions($component, $level);
 
 		foreach ($actions as $action) {
-			$result->set($action, $user->authorise($action, $assetName));
+			$result->set($action->name, $user->authorise($action->name, $assetName));
 		}
 
 		return $result;

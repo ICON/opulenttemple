@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!--
+		$Id: venue.xml 20990 2011-03-18 16:42:30Z infograf768 $
+	-->
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL" 
+			readonly="true" class="readonly"
+			description="JGLOBAL_FIELD_ID_DESC" />
+
+		<field name="venuename" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_NAME_LABEL"
+			description="COM_GIGCAL_VENUE_NAME_DESC" required="true" />
+
+		<field name="website" type="url" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_WEBSITE_LABEL"
+			description="COM_GIGCAL_VENUE_WEBSITE_DESC" />
+
+		<field name="address1" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_ADDRESS1_LABEL"
+			description="COM_GIGCAL_VENUE_ADDRESS1_DESC" />
+
+		<field name="address2" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_ADDRESS2_LABEL"
+			description="COM_GIGCAL_VENUE_ADDRESS2_DESC" />
+
+		<field name="zip" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_ZIP_LABEL"
+			description="COM_GIGCAL_VENUE_ZIP_DESC" />
+
+		<field name="city" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_CITY_LABEL"
+			description="COM_GIGCAL_VENUE_CITY_DESC" />
+
+		<field name="state" type="text" class="inputbox"
+			size="15" label="COM_GIGCAL_VENUE_STATE_LABEL"
+			description="COM_GIGCAL_VENUE_STATE_DESC" />
+
+		<field name="country" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_COUNTRY_LABEL"
+			description="COM_GIGCAL_VENUE_COUNTRY_DESC" />
+
+		<field name="phone" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_PHONE_LABEL"
+			description="COM_GIGCAL_VENUE_PHONE_DESC" />
+
+		<field name="fax" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_FAX_LABEL"
+			description="COM_GIGCAL_VENUE_FAX_DESC" />
+
+ 		<field name="contactname" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_CONTACTNAME_LABEL"
+			description="COM_GIGCAL_VENUE_CONTACTNAME_DESC" />
+
+		<field name="contactemail" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_CONTACTEMAIL_LABEL"
+			description="COM_GIGCAL_VENUE_CONTACTEMAIL_DESC" />
+
+		<field name="contactphone" type="text" class="inputbox"
+			size="40" label="COM_GIGCAL_VENUE_CONTACTPHONE_LABEL"
+			description="COM_GIGCAL_VENUE_CONTACTPHONE_DESC" />
+
+		<field name="info" type="editor" buttons="true" hide="pagebreak,readmore"
+			class="inputbox"
+			filter="safehtml"
+			label="COM_GIGCAL_VENUE_INFO_LABEL" description="COM_GIGCAL_VENUE_INFO_DESC" />
+
+		<field name="featured"
+			type="list"
+			label="JFEATURED"
+			description="COM_GIGCAL_FIELD_FEATURED_DESC"
+			default="0">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field	name="published"
+			type="list"
+			label="JSTATUS"
+			description="COM_GIGCAL_FIELD_STATE_DESC"
+			class="inputbox"
+			size="1"
+			default="1">
+			<option	value="1">JPUBLISHED</option>
+			<option	value="0">JUNPUBLISHED</option>
+			<option	value="2">JARCHIVED</option>
+		</field>
+
+		<field name="created" type="calendar"
+			label="JGLOBAL_FIELD_CREATED_LABEL" description="JGLOBAL_FIELD_CREATED_DESC"
+			class="inputbox" size="20" format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc" />
+
+		<field name="created_by" type="user"
+			label="JGLOBAL_FIELD_CREATED_BY_LABEL" description="JGLOBAL_FIELD_CREATED_BY_Desc" />
+
+		<field name="created_by_alias" type="text"
+			label="JGLOBAL_FIELD_CREATED_BY_ALIAS_LABEL" description="JGLOBAL_FIELD_CREATED_BY_ALIAS_DESC"
+			class="inputbox" size="20" />
+
+		<field name="modified" type="calendar" class="readonly"
+			label="JGLOBAL_FIELD_MODIFIED_LABEL" description="COM_GIGCAL_FIELD_MODIFIED_DESC"
+			size="20" readonly="true" format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc" />
+
+		<field name="modified_by" type="user"
+			label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+			class="readonly"
+			readonly="true"
+			filter="unset"  />
+
+		<field name="checked_out" type="hidden" filter="unset" />
+
+		<field name="checked_out_time" type="hidden" filter="unset" />
+	</fieldset>
+</form>

@@ -1,0 +1,13 @@
+ul#rsmg_items li.rsmg_item {
+	z-index: 100;
+	position: relative;	
+}
+
+.rsmg_button {
+	padding-bottom: 0px;
+	line-height: 20px;
+}
+
+.sf-js-enabled {
+	z-index: 1000;
+}

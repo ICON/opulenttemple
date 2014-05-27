@@ -1,13 +1,10 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License, see LICENSE.php
  */
 
-// No direct access.
 defined('_JEXEC') or die;
-
-jimport( 'joomla.application.component.model' );
 
 /**
  * Login Model
@@ -16,7 +13,7 @@ jimport( 'joomla.application.component.model' );
  * @subpackage	com_login
  * @since		1.5
  */
-class LoginModelLogin extends JModel
+class LoginModelLogin extends JModelLegacy
 {
 	/**
 	 * Method to auto-populate the model state.

@@ -3,7 +3,7 @@
 /**
  * @package		Joomla.Site
  * @subpackage	com_newsfeeds
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -31,7 +31,7 @@ if ($lang->isRTL() && $myrtl == 0) {
 					}
 ?>
 <div class="newsfeed<?php echo $this->pageclass_sfx?><?php echo $direction; ?>">
-<?php if ($this->params->get('show_page_heading', 1)) : ?>
+<?php if ($this->params->get('show_page_heading')) : ?>
 <h1 class="<?php echo $direction; ?>">
 	<?php echo $this->escape($this->params->get('page_heading')); ?>
 </h1>

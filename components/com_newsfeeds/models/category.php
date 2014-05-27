@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -162,10 +162,10 @@ class NewsfeedsModelCategory extends JModelList
 		$params	= JComponentHelper::getParams('com_newsfeeds');
 
 		// List state information
-		$limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'));
+		$limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'), 'uint');
 		$this->setState('list.limit', $limit);
 
-		$limitstart = JRequest::getVar('limitstart', 0, '', 'int');
+		$limitstart = JRequest::getUInt('limitstart', 0);
 		$this->setState('list.start', $limitstart);
 
 		$orderCol	= JRequest::getCmd('filter_order', 'ordering');

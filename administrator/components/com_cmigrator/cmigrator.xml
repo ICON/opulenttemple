@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+    <name>COM_CMIGRATOR</name>
+    <creationDate>2012-06-29</creationDate>
+    <author>compojoom.com</author>
+    <authorEmail>services@compojoom.com</authorEmail>
+    <authorUrl>https://compojoom.com</authorUrl>
+    <license>GNU/GPL</license>
+    <version>0.5</version>
+    <description>CompojoomMigrator (CM) imports the content from WordPress and Drupal and convert
+        it to Joomla format. Currently you can migrate WordPress and Drupal articals, pages, content types and tags.
+    </description>
+    <scriptfile>script.php</scriptfile>
+    <administration>
+        <menu img="../media/com_cmigrator/images/icon-16px-cmigrator.png">COM_CMIGRATOR</menu>
+        <submenu>
+            <menu img="../media/com_cmigrator/images/icon-16px-config.png" view="config">COM_CMIGRATOR_CONFIG</menu>
+            <menu img="../media/com_cmigrator/images/icon-16px-liveupdate.png" view="liveupdate">LIVEUPDATE</menu>
+        </submenu>
+        <files folder="administrator/components/com_cmigrator">
+            <file>cmigrator.php</file>
+<file>cmigrator.xml</file>
+<file>config.xml</file>
+<folder>controllers</folder>
+<folder>helpers</folder>
+<folder>includes</folder>
+<file>index.html</file>
+<folder>library</folder>
+<folder>liveupdate</folder>
+<folder>models</folder>
+<file>script.php</file>
+<folder>sql</folder>
+<folder>tables</folder>
+<file>toolbar.cmigrator.php</file>
+<folder>views</folder>
+        </files>
+
+        <languages folder="administrator/language/">
+            <language tag="en-GB">en-GB/en-GB.com_cmigrator.ini</language>
+<language tag="en-GB">en-GB/en-GB.com_cmigrator.sys.ini</language>
+<language tag="es-ES">es-ES/es-ES.com_cmigrator.ini</language>
+<language tag="sv-SE">sv-SE/sv-SE.com_cmigrator.ini</language>
+        </languages>
+    </administration>
+
+    <media destination="com_cmigrator" folder="media/com_cmigrator">
+        <folder>css</folder>
+<folder>images</folder>
+<file>index.html</file>
+<folder>js</folder>
+    </media>
+
+    <install>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/uninstall.mysql.sql</file>
+        </sql>
+    </uninstall>
+
+</extension>

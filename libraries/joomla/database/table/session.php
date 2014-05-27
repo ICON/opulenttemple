@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Database
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -110,7 +110,7 @@ class JTableSession extends JTable
 		$query->where($this->_db->quoteName('client_id') . ' IN (' . $clientIds . ')');
 		$this->_db->setQuery($query);
 
-		if (!$this->_db->query())
+		if (!$this->_db->execute())
 		{
 			$this->setError($this->_db->stderr());
 			return false;
@@ -137,7 +137,7 @@ class JTableSession extends JTable
 		$query->where($this->_db->quoteName('time') . ' < ' . (int) $past);
 		$this->_db->setQuery($query);
 
-		return $this->_db->query();
+		return $this->_db->execute();
 	}
 
 	/**
@@ -196,7 +196,7 @@ class JTableSession extends JTable
 		$query->where($this->_db->quoteName($this->_tbl_key) . ' = ' . $this->_db->quote($this->$k));
 		$this->_db->setQuery($query);
 
-		if ($this->_db->query())
+		if ($this->_db->execute())
 		{
 			return true;
 		}

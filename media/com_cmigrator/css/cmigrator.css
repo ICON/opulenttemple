@@ -1,0 +1,28 @@
+div#cmigrator {
+    background: #FFFFFF;
+    margin-right: 10px;
+    margin-top: 16px;
+}
+#cmigrator .cpanel {
+    border: 1px solid #CCC;
+    padding: 10px 10px 0 10px;
+}
+
+.icon-48-cmigrator-logo {
+    background-image: url('../images/press-to-power-logo.jpg');
+}
+.tip-wrap {
+    z-index: 9999;
+}
+.icon-32-loadbutton
+{
+    background-image: url('../images/load.png');
+    display: block;
+    float: none;
+    height: 32px;
+    margin: 0 auto;
+    width: 32px;
+}
+#box    { border:1px solid #ccc; width:200px; height:20px; border-radius: 10px; }
+#perc   { background: url('../images/loading-bar.png') repeat-x; height:20px; border-radius: 10px; }
+#text   { font-family:tahoma, arial, sans-serif; font-size:11px; color:#000; float:left; padding:3px 0 0 10px; }

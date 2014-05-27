@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Installer
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -145,9 +145,8 @@ class JInstallerComponent extends JAdapterInstance
 				$source = "$path/$folder";
 			}
 		}
-		$lang->load($extension . '.sys', $source, null, false, false) || $lang->load($extension . '.sys', JPATH_ADMINISTRATOR, null, false, false)
-			|| $lang->load($extension . '.sys', $source, $lang->getDefault(), false, false)
-			|| $lang->load($extension . '.sys', JPATH_ADMINISTRATOR, $lang->getDefault(), false, false);
+			$lang->load($extension . '.sys', $source, null, false, true)
+		||	$lang->load($extension . '.sys', JPATH_ADMINISTRATOR, null, false, true);
 	}
 
 	/**
@@ -213,12 +212,12 @@ class JInstallerComponent extends JAdapterInstance
 			// Update function available or
 			// Update tag detected
 
-			if ($this->parent->getUpgrade() || ($this->parent->manifestClass && method_exists($this->parent->manifestClass, 'update'))
+			if ($this->parent->isUpgrade() || ($this->parent->manifestClass && method_exists($this->parent->manifestClass, 'update'))
 				|| $updateElement)
 			{
 				return $this->update(); // transfer control to the update function
 			}
-			elseif (!$this->parent->getOverwrite())
+			elseif (!$this->parent->isOverwrite())
 			{
 				// Overwrite is set.
 				// We didn't have overwrite set, find an update function or find an update tag so lets call it safe
@@ -375,7 +374,7 @@ class JInstallerComponent extends JAdapterInstance
 		if ($installFile)
 		{
 			// Make sure it hasn't already been copied (this would be an error in the XML install file)
-			if (!file_exists($this->parent->getPath('extension_administrator') . '/' . $installFile) || $this->parent->getOverwrite())
+			if (!file_exists($this->parent->getPath('extension_administrator') . '/' . $installFile) || $this->parent->isOverwrite())
 			{
 				$path['src'] = $this->parent->getPath('source') . '/' . $installFile;
 				$path['dest'] = $this->parent->getPath('extension_administrator') . '/' . $installFile;
@@ -399,7 +398,7 @@ class JInstallerComponent extends JAdapterInstance
 		if ($uninstallFile)
 		{
 			// Make sure it hasn't already been copied (this would be an error in the XML install file)
-			if (!file_exists($this->parent->getPath('extension_administrator') . '/' . $uninstallFile) || $this->parent->getOverwrite())
+			if (!file_exists($this->parent->getPath('extension_administrator') . '/' . $uninstallFile) || $this->parent->isOverwrite())
 			{
 				$path['src'] = $this->parent->getPath('source') . '/' . $uninstallFile;
 				$path['dest'] = $this->parent->getPath('extension_administrator') . '/' . $uninstallFile;
@@ -419,7 +418,7 @@ class JInstallerComponent extends JAdapterInstance
 			$path['src'] = $this->parent->getPath('source') . '/' . $this->get('manifest_script');
 			$path['dest'] = $this->parent->getPath('extension_administrator') . '/' . $this->get('manifest_script');
 
-			if (!file_exists($path['dest']) || $this->parent->getOverwrite())
+			if (!file_exists($path['dest']) || $this->parent->isOverwrite())
 			{
 				if (!$this->parent->copyFiles(array($path)))
 				{
@@ -471,7 +470,7 @@ class JInstallerComponent extends JAdapterInstance
 		// Start legacy support
 		if ($this->get('install_script'))
 		{
-			if (is_file($this->parent->getPath('extension_administrator') . '/' . $this->get('install_script')) || $this->parent->getOverwrite())
+			if (is_file($this->parent->getPath('extension_administrator') . '/' . $this->get('install_script')) || $this->parent->isOverwrite())
 			{
 				$notdef = false;
 				$ranwell = false;
@@ -860,7 +859,7 @@ class JInstallerComponent extends JAdapterInstance
 		if ($installFile)
 		{
 			// Make sure it hasn't already been copied (this would be an error in the XML install file)
-			if (!file_exists($this->parent->getPath('extension_administrator') . '/' . $installFile) || $this->parent->getOverwrite())
+			if (!file_exists($this->parent->getPath('extension_administrator') . '/' . $installFile) || $this->parent->isOverwrite())
 			{
 				$path['src'] = $this->parent->getPath('source') . '/' . $installFile;
 				$path['dest'] = $this->parent->getPath('extension_administrator') . '/' . $installFile;
@@ -883,7 +882,7 @@ class JInstallerComponent extends JAdapterInstance
 		if ($uninstallFile)
 		{
 			// Make sure it hasn't already been copied (this would be an error in the XML install file)
-			if (!file_exists($this->parent->getPath('extension_administrator') . '/' . $uninstallFile) || $this->parent->getOverwrite())
+			if (!file_exists($this->parent->getPath('extension_administrator') . '/' . $uninstallFile) || $this->parent->isOverwrite())
 			{
 				$path['src'] = $this->parent->getPath('source') . '/' . $uninstallFile;
 				$path['dest'] = $this->parent->getPath('extension_administrator') . '/' . $uninstallFile;
@@ -904,7 +903,7 @@ class JInstallerComponent extends JAdapterInstance
 			$path['src'] = $this->parent->getPath('source') . '/' . $this->get('manifest_script');
 			$path['dest'] = $this->parent->getPath('extension_administrator') . '/' . $this->get('manifest_script');
 
-			if (!file_exists($path['dest']) || $this->parent->getOverwrite())
+			if (!file_exists($path['dest']) || $this->parent->isOverwrite())
 			{
 				if (!$this->parent->copyFiles(array($path)))
 				{
@@ -965,7 +964,7 @@ class JInstallerComponent extends JAdapterInstance
 		// Start legacy support
 		if ($this->get('install_script'))
 		{
-			if (is_file($this->parent->getPath('extension_administrator') . '/' . $this->get('install_script')) || $this->parent->getOverwrite())
+			if (is_file($this->parent->getPath('extension_administrator') . '/' . $this->get('install_script')) || $this->parent->isOverwrite())
 			{
 				$notdef = false;
 				$ranwell = false;
@@ -1298,7 +1297,7 @@ class JInstallerComponent extends JAdapterInstance
 		$query = $db->getQuery(true);
 		$query->delete()->from('#__schemas')->where('extension_id = ' . $id);
 		$db->setQuery($query);
-		$db->query();
+		$db->execute();
 
 		// Remove the component container in the assets table.
 		$asset = JTable::getInstance('Asset');
@@ -1312,7 +1311,7 @@ class JInstallerComponent extends JAdapterInstance
 		$query->delete()->from('#__categories')->where('extension=' . $db->quote($element), 'OR')
 			->where('extension LIKE ' . $db->quote($element . '.%'));
 		$db->setQuery($query);
-		$db->query();
+		$db->execute();
 		// Check for errors.
 		if ($db->getErrorNum())
 		{
@@ -1399,7 +1398,7 @@ class JInstallerComponent extends JAdapterInstance
 		{
 
 			// Don't do anything if overwrite has not been enabled
-			if (!$this->parent->getOverwrite())
+			if (!$this->parent->isOverwrite())
 			{
 				return true;
 			}
@@ -1445,9 +1444,39 @@ class JInstallerComponent extends JAdapterInstance
 
 			if (!$table->setLocation(1, 'last-child') || !$table->bind($data) || !$table->check() || !$table->store())
 			{
-				// Install failed, warn user and rollback changes
-				JError::raiseWarning(1, $table->getError());
-				return false;
+				// The menu item already exists. Delete it and retry instead of throwing an error.
+				$query = $db->getQuery(true);
+				$query->select('id');
+				$query->from('#__menu');
+				$query->where('menutype = '.$db->quote('main'));
+				$query->where('client_id = 1');
+				$query->where('link = '.$db->quote('index.php?option='.$option));
+				$query->where('type = '.$db->quote('component'));
+				$query->where('parent_id = 1');
+				$query->where('home = 0');
+
+				$db->setQuery($query);
+				$menu_id = $db->loadResult();
+
+				if(!$menu_id) {
+					// Oops! Could not get the menu ID. Go back and rollback changes.
+					JError::raiseWarning(1, $table->getError());
+					return false;
+				} else {
+					// Remove the old menu item
+					$query = $db->getQuery(true);
+					$query->delete('#__menu');
+					$query->where('id = '.(int)$menu_id);
+
+					$db->setQuery($query);
+					$db->query();
+
+					// Retry creating the menu item
+					if (!$table->setLocation(1, 'last-child') || !$table->bind($data) || !$table->check() || !$table->store()) {
+						// Install failed, rollback changes
+						return false;
+					}
+				}
 			}
 
 			/*
@@ -1927,7 +1956,7 @@ class JInstallerComponent extends JAdapterInstance
 		ob_start();
 		ob_implicit_flush(false);
 
-		if ($this->parent->manifestClass && method_exists($this->parent->manifestClass, 'discover_install'))
+		if ($this->parent->manifestClass && method_exists($this->parent->manifestClass, 'install'))
 		{
 
 			if ($this->parent->manifestClass->install($this) === false)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.7">
+        <name>gigCalendar upcom</name>
+        <author>Michael moore</author>
+	<version>3.0.0</version>
+	<description>Displays text list of Upcoming Gigs from the gigCalendar</description>
+	<files>
+          <filename module="mod_gigcal_upcom">mod_gigcal_upcom.php</filename>
+          <filename>mod_gigcal_upcom.xml</filename>
+          <filename>index.html</filename>
+	</files>
+	<params>
+        	<param name="moduleclass_sfx" type="text" default=""
+        	       label="Module Class Suffix"
+        	       description="A suffix to be applied to the css class of the module
+        	       (table.moduletable), this allows individual module styling" />
+    	</params>
+</install>
+

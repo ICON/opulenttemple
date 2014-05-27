@@ -3,7 +3,7 @@
  /**
  * @package		Joomla.Site
  * @subpackage	com_contact
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
@@ -19,7 +19,7 @@ JHtml::_('behavior.tooltip');
 <div class="contact-form">
 	<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate">
 		<fieldset>
-			<!--legend><?php echo JText::_('COM_CONTACT_FORM_LABEL'); ?></legend-->
+			<legend><?php echo JText::_('COM_CONTACT_FORM_LABEL'); ?></legend>
 			<dl>
 				<dt><?php echo $this->form->getLabel('contact_name'); ?></dt>
 				<dd><?php echo $this->form->getInput('contact_name'); ?></dd>
@@ -53,7 +53,7 @@ JHtml::_('behavior.tooltip');
 			          <?php endif ?>
 			     <?php endforeach;?>
 				<dt></dt>
-				<dd><button class="arrow_btn" type="submit"><?php echo JText::_('COM_CONTACT_CONTACT_SEND'); ?></button>
+				<dd><button class="button validate" type="submit"><?php echo JText::_('COM_CONTACT_CONTACT_SEND'); ?></button>
 					<input type="hidden" name="option" value="com_contact" />
 					<input type="hidden" name="task" value="contact.submit" />
 					<input type="hidden" name="return" value="<?php echo $this->return_page;?>" />

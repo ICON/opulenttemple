@@ -2,30 +2,30 @@
 /**
  * @package     Joomla.Administrator
  * @subpackage  com_joomlaupdate
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @since       2.5.2
+ * @since       2.5.4
  */
 
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.view');
 
 /**
  * Joomla! Update's Default View
  *
  * @package     Joomla.Administrator
  * @subpackage  com_installer
- * @since       2.5.2
+ * @since       2.5.4
  */
-class JoomlaupdateViewDefault extends JView
+class JoomlaupdateViewDefault extends JViewLegacy
 {
 	/**
 	 * Renders the view
-	 * 
+	 *
 	 * @param   string  $tpl  Template name
-	 * 
+	 *
 	 * @return void
+	 *
+	 * @since  2.5.4
 	 */
 	public function display($tpl=null)
 	{
@@ -45,14 +45,20 @@ class JoomlaupdateViewDefault extends JView
 		JToolBarHelper::title(JText::_('COM_JOOMLAUPDATE_OVERVIEW'), 'install');
 
 		// Add toolbar buttons
-		JToolBarHelper::preferences('com_joomlaupdate');
+		if (JFactory::getUser()->authorise('core.admin', 'com_joomlaupdate'))
+		{
+			JToolbarHelper::preferences('com_joomlaupdate');
+		}
+		JToolBarHelper::divider();
+		JToolBarHelper::help('JHELP_COMPONENTS_JOOMLA_UPDATE');
 
 		// Load mooTools
-		JHtml::_('behavior.framework');
+		JHtml::_('behavior.framework', true);
 
 		// Load our Javascript
 		$document = JFactory::getDocument();
 		$document->addScript('../media/com_joomlaupdate/default.js');
+		JHtml::_('stylesheet', 'media/mediamanager.css', array(), true);
 
 		// Render the view
 		parent::display($tpl);

@@ -2,7 +2,7 @@
 /**
  * @package     Joomla.Administrator
  * @subpackage  com_joomlaupdate
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
  *
  * @package     Joomla.Administrator
  * @subpackage  com_joomlaupdate
- * @since       2.5.2
+ * @since       2.5.4
  */
 class JoomlaupdateHelperSelect
 {
@@ -23,7 +23,9 @@ class JoomlaupdateHelperSelect
 	 * 
 	 * @param   string  $default  The default value of the select element
 	 * 
-	 * @return string
+	 * @return  string
+	 *
+	 * @since   2.5.4
 	 */
 	public static function getMethods($default = 'direct')
 	{

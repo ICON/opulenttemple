@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<params>
+		<param name="contrast" type="list" default="light" label="COM_RSMEDIAGALLERY_CONTRAST" description="COM_RSMEDIAGALLERY_CONTRAST_DESC">
+			<option value="light">COM_RSMEDIAGALLERY_LIGHT_CONTRAST</option>
+			<option value="dark">COM_RSMEDIAGALLERY_DARK_CONTRAST</option>
+		</param>
+		<param name="jquery" type="list" default="auto" label="COM_RSMEDIAGALLERY_JQUERY" description="COM_RSMEDIAGALLERY_JQUERY_DESC">
+			<option value="auto">COM_RSMEDIAGALLERY_JQUERY_AUTO</option>
+			<option value="own">COM_RSMEDIAGALLERY_JQUERY_OWN</option>
+			<option value="smart">COM_RSMEDIAGALLERY_JQUERY_SMART</option>
+			<option value="no">COM_RSMEDIAGALLERY_JQUERY_NOLOAD</option>
+		</param>
+		<param name="folder_perms" size="4" type="text" default="755" label="COM_RSMEDIAGALLERY_FOLDER_PERMS" description="COM_RSMEDIAGALLERY_FOLDER_PERMS_DESC" />
+		<param name="file_perms" size="4" type="text" default="644" label="COM_RSMEDIAGALLERY_FILE_PERMS" description="COM_RSMEDIAGALLERY_FILE_PERMS_DESC" />
+	</params>
+	<fieldset name="layout_optimization" label="COM_RSMEDIAGALLERY_LAYOUT_OPTIMIZATION" description="COM_RSMEDIAGALLERY_LAYOUT_OPTIMIZATION_DESC">
+		<field name="contrast" type="list" default="light" label="COM_RSMEDIAGALLERY_CONTRAST" description="COM_RSMEDIAGALLERY_CONTRAST_DESC">
+			<option value="light">COM_RSMEDIAGALLERY_LIGHT_CONTRAST</option>
+			<option value="dark">COM_RSMEDIAGALLERY_DARK_CONTRAST</option>
+		</field>
+		<field name="jquery" type="list" default="auto" label="COM_RSMEDIAGALLERY_JQUERY" description="COM_RSMEDIAGALLERY_JQUERY_DESC">
+			<option value="auto">COM_RSMEDIAGALLERY_JQUERY_AUTO</option>
+			<option value="own">COM_RSMEDIAGALLERY_JQUERY_OWN</option>
+			<option value="smart">COM_RSMEDIAGALLERY_JQUERY_SMART</option>
+			<option value="no">COM_RSMEDIAGALLERY_JQUERY_NOLOAD</option>
+		</field>
+	</fieldset>
+	<fieldset name="advanced" label="COM_RSMEDIAGALLERY_ADVANCED" description="COM_RSMEDIAGALLERY_ADVANCED_DESC">
+		<field name="folder_perms" size="4" type="text" default="755" label="COM_RSMEDIAGALLERY_FOLDER_PERMS" description="COM_RSMEDIAGALLERY_FOLDER_PERMS_DESC" />
+		<field name="file_perms" size="4" type="text" default="644" label="COM_RSMEDIAGALLERY_FILE_PERMS" description="COM_RSMEDIAGALLERY_FILE_PERMS_DESC" />
+	</fieldset>
+	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" filter="rules" component="com_rsmediagallery" section="component">
+			<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC" />
+			<action name="core.manage" title="JACTION_MANAGE" description="JACTION_MANAGE_COMPONENT_DESC" />
+		</field>
+	</fieldset>
+</config>

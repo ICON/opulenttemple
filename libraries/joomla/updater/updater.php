@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Updater
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -71,16 +71,9 @@ class JUpdater extends JAdapter
 	 */
 	public function findUpdates($eid = 0, $cacheTimeout = 0)
 	{
-		// Check if fopen is allowed
-		$result = ini_get('allow_url_fopen');
-		if (empty($result))
-		{
-			JError::raiseWarning('101', JText::_('JLIB_UPDATER_ERROR_COLLECTION_FOPEN'));
-			return false;
-		}
-
 		$dbo = $this->getDBO();
 		$retval = false;
+
 		// Push it into an array
 		if (!is_array($eid))
 		{
@@ -191,7 +184,7 @@ class JUpdater extends JAdapter
 			$query->set($dbo->quoteName('last_check_timestamp') . ' = ' . $dbo->quote($now));
 			$query->where($dbo->quoteName('update_site_id') . ' = ' . $dbo->quote($result['update_site_id']));
 			$dbo->setQuery($query);
-			$dbo->query();
+			$dbo->execute();
 		}
 		return $retval;
 	}

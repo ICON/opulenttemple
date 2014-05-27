@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  com_finder
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -14,6 +14,7 @@ define('FINDER_PATH_INDEXER', JPATH_ADMINISTRATOR . '/components/com_finder/help
 JLoader::register('FinderIndexerHelper', FINDER_PATH_INDEXER . '/helper.php');
 JLoader::register('FinderIndexerQuery', FINDER_PATH_INDEXER . '/query.php');
 JLoader::register('FinderIndexerResult', FINDER_PATH_INDEXER . '/result.php');
+JLoader::register('FinderIndexerStemmer', FINDER_PATH_INDEXER . '/stemmer.php');
 
 jimport('joomla.application.component.modellist');
 
@@ -1185,8 +1186,8 @@ class FinderModelSearch extends JModelList
 		$this->requiredTerms = $this->query->getRequiredTermIds();
 
 		// Load the list state.
-		$this->setState('list.start', $input->get('limitstart', 0, 'int'));
-		$this->setState('list.limit', $input->get('limit', $app->getCfg('list_limit', 20), 'int'));
+		$this->setState('list.start', $input->get('limitstart', 0, 'uint'));
+		$this->setState('list.limit', $input->get('limit', $app->getCfg('list_limit', 20), 'uint'));
 
 		// Load the sort ordering.
 		$order = $params->get('sort_order', 'relevance');
@@ -1200,9 +1201,12 @@ class FinderModelSearch extends JModelList
 				$this->setState('list.ordering', 'l.list_price');
 				break;
 
-			default:
 			case ($order == 'relevance' && !empty($this->includedTerms)):
 				$this->setState('list.ordering', 'm.weight');
+				break;
+
+			default:
+				$this->setState('list.ordering', 'l.link_id');
 				break;
 		}
 

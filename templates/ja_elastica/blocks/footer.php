@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
   document.write(now.getFullYear());
   </script>
   &nbsp;&nbsp;|&nbsp;&nbsp;All Rights Reserved
-  &nbsp;&nbsp;|&nbsp;&nbsp;Site by <a href="http://www.iconicreations.com" target="_blank">ICONICreations</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;Site by <a href="http://www.iconicreations.com" target="_blank">ICONICreations</a>.
 </div>
 
 <?php if($this->countModules('footnav')) : ?>

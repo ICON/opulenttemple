@@ -1,0 +1,66 @@
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="password"]
+textarea, #userForm input[type="text"],
+#userForm input[type="email"],
+#userForm input[type="password"]
+textarea {
+  background: #fff !important;
+  color: #333333 !important;
+  font-size: 1.2em !important;
+  padding: 5px !important;
+  margin-bottom: 10px !important;
+  border: 1px solid #6dcff6 !important;
+  width: 90% !important; }
+  #contact-form input[type="text"]:hover, #contact-form input[type="text"]:active, #contact-form input[type="text"]:focus,
+  #contact-form input[type="email"]:hover,
+  #contact-form input[type="email"]:active,
+  #contact-form input[type="email"]:focus,
+  #contact-form input[type="password"]
+  textarea:hover,
+  #contact-form input[type="password"]
+  textarea:active,
+  #contact-form input[type="password"]
+  textarea:focus, #userForm input[type="text"]:hover, #userForm input[type="text"]:active, #userForm input[type="text"]:focus,
+  #userForm input[type="email"]:hover,
+  #userForm input[type="email"]:active,
+  #userForm input[type="email"]:focus,
+  #userForm input[type="password"]
+  textarea:hover,
+  #userForm input[type="password"]
+  textarea:active,
+  #userForm input[type="password"]
+  textarea:focus {
+    background: white;
+    border-color: #ff7909; }
+#contact-form .rsform-button, #userForm .rsform-button {
+  background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
+  color: white;
+  display: block;
+  float: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: .85em;
+  line-height: 30px;
+  margin-top: 10px;
+  padding: 0 1.5em 0 1em;
+  border: 0; }
+
+#contact-form dl dd input.required,
+#contact-form dl dd textarea.required {
+  width: 60% !important; }
+#contact-form legend, #contact-form label {
+  font-size: 1em;
+  font-weight: normal; }
+
+.formResponsive .formHorizontal p.formDescription {
+  margin-top: 0 !important; }
+.formResponsive h2 {
+  display: none; }
+.formResponsive .formControlLabel {
+  width: 180px; }
+  .formResponsive .formControlLabel:after {
+    content: "*";
+    color: #ff7909; }
+.formResponsive strong.formRequired {
+  display: none !important; }

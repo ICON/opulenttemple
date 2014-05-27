@@ -1,13 +1,10 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// No direct access
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.view');
 
 /**
  * HTML Article View class for the Content component
@@ -16,7 +13,7 @@ jimport('joomla.application.component.view');
  * @subpackage	com_content
  * @since		1.5
  */
-class ContentViewArticle extends JView
+class ContentViewArticle extends JViewLegacy
 {
 	protected $item;
 	protected $params;
@@ -53,7 +50,7 @@ class ContentViewArticle extends JView
 		$item->parent_slug	= $item->category_alias ? ($item->parent_id.':'.$item->parent_alias) : $item->parent_id;
 
 		// TODO: Change based on shownoauth
-		$item->readmore_link = JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catslug));
+		$item->readmore_link = JRoute::_(ContentHelperRoute::getArticleRoute($item->slug, $item->catslug, $item->language));
 
 		// Merge article params. If this is single-article view, menu params override article params
 		// Otherwise, article params override menu item params

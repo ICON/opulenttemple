@@ -1,0 +1,1 @@
+ALTER TABLE `#__jforms_forms` ADD `options` LONGTEXT;

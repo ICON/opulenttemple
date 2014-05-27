@@ -1,13 +1,10 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// No direct access
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.view');
 
 /**
  * HTML View class for the Media component
@@ -16,7 +13,7 @@ jimport('joomla.application.component.view');
  * @subpackage	com_media
  * @since 1.0
  */
-class MediaViewMedia extends JView
+class MediaViewMedia extends JViewLegacy
 {
 	function display($tpl = null)
 	{
@@ -50,38 +47,9 @@ class MediaViewMedia extends JView
 			JHtml::_('stylesheet', 'media/mootree_rtl.css', array(), true);
 		endif;
 
-		if ($config->get('enable_flash', 1)) {
-			$fileTypes = $config->get('upload_extensions', 'bmp,gif,jpg,png,jpeg');
-			$types = explode(',', $fileTypes);
-			$displayTypes = '';		// this is what the user sees
-			$filterTypes = '';		// this is what controls the logic
-			$firstType = true;
-			foreach($types as $type) {
-				if(!$firstType) {
-					$displayTypes .= ', ';
-					$filterTypes .= '; ';
-				} else {
-					$firstType = false;
-				}
-				$displayTypes .= '*.'.$type;
-				$filterTypes .= '*.'.$type;
-			}
-			$typeString = '{ \''.JText::_('COM_MEDIA_FILES', 'true').' ('.$displayTypes.')\': \''.$filterTypes.'\' }';
-
-			JHtml::_('behavior.uploader', 'upload-flash',
-				array(
-					'onBeforeStart' => 'function(){ Uploader.setOptions({url: document.id(\'uploadForm\').action + \'&folder=\' + document.id(\'mediamanager-form\').folder.value}); }',
-					'onComplete' 	=> 'function(){ MediaManager.refreshFrame(); }',
-					'targetURL' 	=> '\\document.id(\'uploadForm\').action',
-					'typeFilter' 	=> $typeString,
-					'fileSizeMax'	=> (int) ($config->get('upload_maxsize', 0) * 1024 * 1024),
-				)
-			);
-		}
-
-		if (DS == '\\')
+		if (DIRECTORY_SEPARATOR == '\\')
 		{
-			$base = str_replace(DS, "\\\\", COM_MEDIA_BASE);
+			$base = str_replace(DIRECTORY_SEPARATOR, "\\\\", COM_MEDIA_BASE);
 		} else {
 			$base = COM_MEDIA_BASE;
 		}
@@ -103,9 +71,9 @@ class MediaViewMedia extends JView
 		$this->assignRef('session', $session);
 		$this->assignRef('config', $config);
 		$this->assignRef('state', $state);
-		$this->assign('require_ftp', $ftp);
-		$this->assign('folders_id', ' id="media-tree"');
-		$this->assign('folders', $this->get('folderTree'));
+		$this->require_ftp = $ftp;
+		$this->folders_id = ' id="media-tree"';
+		$this->folders = $this->get('folderTree');
 
 		// Set the toolbar
 		$this->addToolbar();

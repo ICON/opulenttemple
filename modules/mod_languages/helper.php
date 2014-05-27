@@ -2,14 +2,12 @@
 /**
  * @package		Joomla.Site
  * @subpackage	mod_languages
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // no direct access
 defined('_JEXEC') or die;
-
-jimport('joomla.utilities.utility');
 
 JLoader::register('MenusHelper', JPATH_ADMINISTRATOR . '/components/com_menus/helpers/menus.php');
 
@@ -31,9 +29,12 @@ abstract class modLanguagesHelper
 		}
 		
 		// Load associations
-		if ($app->get('menu_associations', 0)) {
+		$assoc = isset($app->menu_associations) ? $app->menu_associations : 0;
+		if ($assoc)
+		{
 			$active = $menu->getActive();
-			if ($active) {
+			if ($active)
+			{
 				$associations = MenusHelper::getAssociations($active->id);
 			}
 		}
@@ -65,7 +66,7 @@ abstract class modLanguagesHelper
 							$language->link = JRoute::_('index.php?lang='.$language->sef.'&Itemid='.$itemid);
 						}
 						else {
-							$language->link = 'index.php?lang='.$language->sef.'&Itemid='.$itemid;
+							$language->link = 'index.php?lang='.$language->sef.'&amp;Itemid='.$itemid;
 						}
 					}
 					else {

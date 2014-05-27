@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -36,12 +36,10 @@ abstract class ModulesHelper
 		$user	= JFactory::getUser();
 		$result	= new JObject;
 
-		$actions = array(
-			'core.admin', 'core.manage', 'core.create', 'core.edit', 'core.edit.state', 'core.delete'
-		);
+		$actions = JAccess::getActions('com_modules');
 
 		foreach ($actions as $action) {
-			$result->set($action, $user->authorise($action, 'com_modules'));
+			$result->set($action->name, $user->authorise($action->name, 'com_modules'));
 		}
 
 		return $result;
@@ -165,10 +163,8 @@ abstract class ModulesHelper
 			$extension = $module->value;
 			$path = $clientId ? JPATH_ADMINISTRATOR : JPATH_SITE;
 			$source = $path . "/modules/$extension";
-				$lang->load("$extension.sys", $path, null, false, false)
-			||	$lang->load("$extension.sys", $source, null, false, false)
-			||	$lang->load("$extension.sys", $path, $lang->getDefault(), false, false)
-			||	$lang->load("$extension.sys", $source, $lang->getDefault(), false, false);
+				$lang->load("$extension.sys", $path, null, false, true)
+			||	$lang->load("$extension.sys", $source, null, false, true);
 			$modules[$i]->text = JText::_($module->text);
 		}
 		JArrayHelper::sortObjects($modules, 'text', 1, true, $lang->getLocale());

@@ -1,0 +1,66 @@
+a {
+	cursor: pointer;
+}
+
+ul#rsmg_items {
+	z-index: -1;
+	position: relative;	
+}
+
+ul#rsmg_items li.rsmg_item {
+	z-index: -1;
+	position: relative;	
+}
+
+.rsmg_button {
+	padding-bottom: 0px;
+	line-height: 20px;
+}
+
+.sf-js-enabled {
+	z-index: 1000;
+	position: relative;
+}
+
+.rsmg_filter_toolbar ul li ul li {
+	border: solid 1px #434343;
+	display: block;
+	z-index: 1000;
+	position: relative;
+}
+	
+ul#rsmg_items {
+	margin-bottom: 20px;
+}
+
+#rsmg_container {
+	padding-bottom: 20px;
+}
+
+.ui-selectable-helper {
+	filter: alpha(opacity=20);
+}
+
+.ui-sortable-helper {
+	filter: alpha(opacity=70);
+}
+
+.rsmg_full_width {
+	width: 98%;
+}
+
+/* khepri overrides */
+
+#toolbar-box {
+	height: 85px !important;
+}
+
+#toolbar-box .m {
+	height: 80px !important;
+}
+
+/* bluestork overrides */
+
+.icon-48-rsmediagallery h2 {
+	height: 80px;
+}

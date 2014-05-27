@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Database
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -136,7 +136,7 @@ class JDatabaseMySQLi extends JDatabaseMySQL
 	 */
 	public function __destruct()
 	{
-		if (is_callable($this->connection, 'close'))
+		if (is_callable(array($this->connection, 'close')))
 		{
 			mysqli_close($this->connection);
 		}
@@ -336,7 +336,7 @@ class JDatabaseMySQLi extends JDatabaseMySQL
 	 * @since   11.1
 	 * @throws  JDatabaseException
 	 */
-	public function query()
+	public function execute()
 	{
 		if (!is_object($this->connection))
 		{

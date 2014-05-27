@@ -2,14 +2,11 @@
 /**
  * @package		Joomla.Site
  * @subpackage	com_weblinks
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// No direct access
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.controller');
 
 /**
  * Weblinks Component Controller
@@ -18,7 +15,7 @@ jimport('joomla.application.component.controller');
  * @subpackage	com_weblinks
  * @since 1.5
  */
-class WeblinksController extends JController
+class WeblinksController extends JControllerLegacy
 {
 	/**
 	 * Method to display a view.
@@ -48,8 +45,8 @@ class WeblinksController extends JController
 
 		$safeurlparams = array(
 			'id'				=> 'INT',
-			'limit'				=> 'INT',
-			'limitstart'		=> 'INT',
+			'limit'				=> 'UINT',
+			'limitstart'		=> 'UINT',
 			'filter_order'		=> 'CMD',
 			'filter_order_Dir'	=> 'CMD',
 			'lang'				=> 'CMD'

@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -194,7 +194,9 @@ class MenusModelItems extends JModelList
 		$query->join('LEFT', '#__viewlevels AS ag ON ag.id = a.access');
 
 		// Join over the associations.
-		if ($app->get('menu_associations', 0)) {
+		$assoc = isset($app->menu_associations) ? $app->menu_associations : 0;
+		if ($assoc)
+		{
 			$query->select('COUNT(asso2.id)>1 as association');
 			$query->join('LEFT', '#__associations AS asso ON asso.id = a.id AND asso.context='.$db->quote('com_menus.item'));
 			$query->join('LEFT', '#__associations AS asso2 ON asso2.key = asso.key');

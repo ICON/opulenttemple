@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<metadata>
+	<layout title="JFORMS_LAYOUT_FORM">
+	<message>
+		<![CDATA[JFORMS_LAYOUT_SHOW_FORM_LAYOUT]]>
+	</message></layout>
+
+	<fields name="request">
+
+		<fieldset name="request" addfieldpath="/administrator/components/com_jforms/models/fields">
+
+			<field name="frm"
+					type="modal_form"
+					label="JFORMS_JSEARCH_SELECT_FORM"
+					required="false"
+					default=""
+					description="JFORMS_JSEARCH_SELECT_FORM"/>
+		</fieldset>
+	</fields>
+</metadata>

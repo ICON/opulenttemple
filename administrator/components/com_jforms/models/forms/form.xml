@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<form>
+
+	<fieldset name="form.details"
+			multilanguage="true"
+			addfieldpath="/libraries/jdom/jform/fields"
+			label="JFORMS_JFORM_DETAILS">
+
+		<field name="name"
+				alias="name"
+				label="JFORMS_FIELD_NAME"
+				filter="STRING"
+				required="true"
+				class="validate[required]"
+				type="cktext"/>
+
+		<field name="description"
+				alias="description"
+				label="JFORMS_FIELD_DESCRIPTION"
+				filter="RAW"
+				type="ckeditor"/>
+
+		<field name="message_after_submit"
+				alias="message_after_submit"
+				label="JFORMS_FIELD_MESSAGE_AFTER_SUBMIT"
+				filter="RAW"
+				type="ckeditor"/>
+
+		<field name="language_file"
+				alias="language_file"
+				label="JFORMS_FIELD_LANGUAGE_FILE"
+				filter="STRING"
+				class="validate[custom[file_1698]]"
+				validate="file"
+				ruleInstance="file_8156"
+				indirect="true"
+				root="[DIR_FORMS_LANGUAGE_FILE]"
+				type="ckfile"
+				view="form"
+				actions="delete"
+				rename="language/{LANG}/{LANG}.{ID}_{RAND}_{ALIAS}.{EXT}"
+				allowedExtensions="*.ini"/>
+	</fieldset>
+
+	<fields name="fieldsets">
+		<fieldset name="form.fieldsets"
+			addfieldpath="/libraries/jdom/jform/fields"
+			label="JFORMS_JFORM_FIELDSETS"
+			repeatable="true"
+			editable="true"
+				>						
+				<field name="enabled"
+						alias="enabled"
+						label="JFORMS_FIELD_ENABLED"
+						filter="BOOL"
+						listKey="value"
+						default="0"
+						type="ckradio"
+						viewType="both">
+					<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+					<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+				</field>
+				
+				<field name="ordering"
+						alias="ordering"
+						label="JFORMS_FIELD_ORDERING"
+						filter="INT"
+						type="cktext"/>
+						
+				<field name="name"
+						alias="name"
+						label="JFORMS_FIELD_NAME"
+						filter="STRING"
+						type="cktext"/>
+
+				<field name="form_file"
+						alias="form_file"
+						label="JFORMS_FIELD_FORM_FILE"
+						filter="STRING"
+						class="validate[custom[file_2091]]"
+						validate="file"
+						ruleInstance="file_2091"
+						indirect="true"
+						root="[DIR_FORMS_FIELDSETS]"
+						type="ckfile"
+						view="form"
+						actions="delete"
+						rename="{ID}_{RAND}_{BASE}.{EXT}"
+						allowedExtensions="*.xml"/>						
+		</fieldset>
+	</fields>
+
+	<fieldset name="form.events"
+			addfieldpath="/libraries/jdom/jform/fields"
+			label="JFORMS_JFORM_EVENTS">
+
+		<field name="redirect_after_submit"
+				alias="redirect_after_submit"
+				label="JFORMS_FIELD_REDIRECT_AFTER_SUBMIT"
+				filter="STRING"
+				type="cktext"/>
+	</fieldset>
+
+
+		<fields name="events">
+			<fieldset name="form.events2"
+					repeatable="true"
+					editable="true"
+					>						
+					<field name="enabled"
+							alias="enabled"
+							label="JFORMS_FIELD_ENABLED"
+							filter="BOOL"
+							listKey="value"
+							default="0"
+							type="ckradio"
+							viewType="both">
+						<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+						<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+					</field>
+
+				<field name="name"
+						alias="name"
+						label="JFORMS_FIELD_NAME"
+						filter="STRING"
+						type="cktext"/>
+
+				<field name="event"
+						alias="event"
+						label="JFORMS_FIELD_EVENTS_EVENT"
+						filter="STRING"
+						listKey="value"
+						default="0"
+						type="cklist"
+						size="1"
+						nullLabel="JFORMS_FIELDS_EVENTS_EVENT_NULL"
+						viewType="both">
+					<option value="on_before_display" >JFORMS_FIELDS_ON_BEFORE_DISPLAY</option>
+					<option value="on_after_display" >JFORMS_FIELDS_ON_AFTER_DISPLAY</option>
+					<option value="on_before_save" >JFORMS_FIELDS_ON_BEFORE_SAVE</option>
+					<option value="on_after_save" >JFORMS_FIELDS_ON_AFTER_SAVE</option>
+				</field>
+						
+				<field name="file"
+						alias="file"
+						label="JFORMS_FIELD_EVENTS_FILE"
+						filter="STRING"
+						class="validate[custom[file_1236]]"
+						validate="file"
+						ruleInstance="file_1236"
+						indirect="true"
+						root="[DIR_FORMS_EVENTS]"
+						type="ckfile"
+						view="form"
+						actions="delete"
+						rename="{ID}_{RAND}_{BASE}.{EXT}"
+						allowedExtensions="*.html|*.php|*.txt|*.jpg|*.png|*.gif"/>						
+
+				<field name="script"
+						alias="script"
+						label="JFORMS_FIELD_EVENTS_SCRIPT"
+						filter="RAW"
+						width=" "
+						type="ckeditor"/>						
+			</fieldset>
+		</fields>
+		
+		<fields name="emails">
+			<fieldset name="emails"
+					repeatable="true"
+					editable="true"
+					>
+
+					<field
+						name="language"
+						type="ckcontentlanguage"
+						label="JFIELD_LANGUAGE_LABEL"
+						filter="STRING"
+						listKey="value"
+						labelKey="text"
+						size="1"
+						default="*"					
+						/>
+						
+					<field name="enabled"
+							alias="enabled"
+							label="JFORMS_FIELD_ENABLED"
+							filter="BOOL"
+							listKey="value"
+							default="0"
+							type="ckradio"
+							viewType="both">
+						<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+						<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+					</field>
+
+					<field name="html"
+							alias="html"
+							label="JFORMS_FIELD_HTML"
+							filter="BOOL"
+							listKey="value"
+							default="1"
+							type="ckradio"
+							viewType="both">
+						<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+						<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+					</field>
+
+					<field name="to"
+							alias="to"
+							label="JFORMS_FIELD_TO"
+							filter="STRING"
+							class="input-xlarge"
+							description="JFORMS_FIELD_TO_DESC"
+							type="cktext"/>
+							
+					<field name="from"
+							alias="from"
+							label="JFORMS_FIELD_FROM"
+							filter="STRING"
+							class="input-xlarge"
+							description="JFORMS_FIELD_FROM_DESC"
+							type="cktext"/>
+
+					<field name="reply_to"
+							alias="reply_to"
+							label="JFORMS_FIELD_REPLY_TO"
+							filter="STRING"
+							class="input-xlarge"
+							description="JFORMS_FIELD_REPLY_TO_DESC"
+							type="cktext"/>
+
+					<field name="cc"
+							alias="cc"
+							label="JFORMS_FIELD_CC"
+							filter="STRING"
+							class="input-xlarge"
+							description="JFORMS_FIELD_CC_DESC"
+							type="cktext"/>
+							
+					<field name="bcc"
+							alias="bcc"
+							label="JFORMS_FIELD_BCC"
+							filter="STRING"
+							class="input-xlarge"
+							description="JFORMS_FIELD_BCC_DESC"
+							type="cktext"/>
+
+					<field name="attach_pdf_submitted_form"
+							alias="attach_pdf_submitted_form"
+							label="JFORMS_FIELD_ATTACH_PDF_SUBMITTED_FORM"
+							filter="BOOL"
+							listKey="value"
+							default="1"
+							type="ckradio"
+							viewType="both">
+						<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+						<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+					</field>
+					
+					<field name="attachment_file"
+							alias="attachment_file"
+							label="JFORMS_FIELD_ATTACHMENT_FILE"
+							filter="STRING"
+							class="validate[custom[file_2441]]"
+							validate="file"
+							ruleInstance="file_2441"
+							indirect="true"
+							root="[DIR_FORMS_EMAILS]"
+							type="ckfile"
+							view="form"
+							actions="delete"
+							rename="{ID}_{RAND}_{BASE}.{EXT}"
+							allowedExtensions="*.txt|*.rar|*.zip|*.jpg|*.png|*.gif"/>
+				
+					<field name="subject"
+							alias="subject"
+							label="JFORMS_FIELD_SUBJECT"
+							filter="STRING"
+							class="input-xlarge"
+							type="cktext"/>
+							
+					<field name="body"
+							alias="body"
+							label="JFORMS_FIELD_BODY"
+							filter="RAW"
+							width=" "
+							type="ckeditor"/>
+			</fieldset>
+		</fields>
+
+	<fieldset name="form.options"
+			addfieldpath="/libraries/jdom/jform/fields"
+			label="JFORMS_JFORM_OPTIONS">
+
+		<field name="save_data_in_db"
+				alias="save_data_in_db"
+				label="JFORMS_FIELD_SAVE_DATA_IN_DB"
+				filter="BOOL"
+				listKey="value"
+				type="ckradio"
+				viewType="both">
+			<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+			<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+		</field>
+
+		<field name="generate_pdf"
+				alias="generate_pdf"
+				label="JFORMS_FIELD_GENERATE_PDF"
+				filter="BOOL"
+				listKey="value"
+				type="ckradio"
+				viewType="both">
+			<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+			<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+		</field>
+
+		<field name="layout_type"
+				alias="layout_type"
+				label="JFORMS_FIELD_LAYOUT_TYPE"
+				filter="STRING"
+				listKey="value"
+				labelKey="text"
+				type="ckcombo"
+				nullLabel="JFORMS_JSEARCH_SELECT_LAYOUT_TYPE"/>
+
+		<field name="published"
+				alias="published"
+				label="JFORMS_FIELD_PUBLISHED"
+				filter="INT"
+				class="validate[custom[numeric]]"
+				validate="numeric"
+				access="core.edit.state"
+				type="ckstate"/>
+
+		<field name="access"
+				alias="_access_title"
+				label="JFORMS_FIELD_ACCESS_TITLE"
+				filter="INT"
+				access="core.edit"
+				listKey="id"
+				labelKey="title"
+				type="ckaccesslevel"
+				nullLabel="JFORMS_FILTER_NULL_SELECT_ACCESS"/>
+	</fieldset>
+
+<!--
+	<fields name="options">
+		<fieldset name="form.other_options"
+				addfieldpath="/libraries/jdom/jform/fields"
+				label="JFORMS_JFORM_OPTIONS">
+
+			<field name="enable_password"
+					alias="enable_password"
+					label="JFORMS_FIELD_ENABLE_PASSWORD"
+					description="JFORMS_FIELD_ENABLE_PASSWORD_DESC"
+					filter="INT"
+					listKey="value"
+					default="1"
+					type="ckradio"
+					viewType="both">
+				<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+				<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+			</field>
+
+			<field name="enable_partial_save"
+					alias="enable_partial_save"
+					label="JFORMS_FIELD_ENABLE_PARTIAL_SAVE"
+					description="JFORMS_FIELD_ENABLE_PARTIAL_SAVE_DESC"
+					filter="INT"
+					listKey="value"
+					default="0"
+					type="ckradio"
+					viewType="both">
+				<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+				<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+			</field>
+		</fieldset>	
+	</fields>
+-->
+	
+	<fieldset name="default.filters" addfieldpath="/libraries/jdom/jform/fields">
+
+		<field name="filter_published"
+				type="ckstate"
+				access="core.edit.state"
+				submit="true"
+				nullLabel="JFORMS_FILTER_NULL_SELECT_STATE"
+				display="combo"
+				label="State"
+				class="element-filter span-2"
+				ui="chosen"/>
+
+		<field name="search_search"
+				type="cksearch"
+				placeholder="JFORMS_FILTER_NULL_NAME_ALIAS"
+				label="JFORMS_JSEARCH_NAME_ALIAS"
+				class="element-search search-query"
+				ui="chosen"/>
+
+		<field name="filter_save_data_in_db"
+				listKey="value"
+				type="ckcombo"
+				submit="true"
+				nullLabel="JFORMS_FILTER_NULL_SAVE_DATA_IN_DB"
+				class="span-2 element-filter"
+				label="JFORMS_JSEARCH_SAVE_DATA_IN_DB"
+				ui="chosen">
+			<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+			<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+		</field>
+
+		<field name="filter_layout_type"
+				listKey="value"
+				labelKey="text"
+				type="ckcombo"
+				submit="true"
+				nullLabel="JFORMS_FILTER_NULL_LAYOUT_TYPE"
+				class="span-2 element-filter"
+				label="JFORMS_JSEARCH_LAYOUT_TYPE"
+				ui="chosen"/>
+
+		<field name="sortTable"
+				type="cksort"
+				responsive="hidden-phone"
+				nullLabel="JGLOBAL_SORT_BY"
+				class="span-2 element-filter"
+				label="Sort by"
+				ui="chosen"/>
+
+		<field name="directionTable"
+				type="ckdirection"
+				responsive="hidden-phone"
+				nullLabel="JFIELD_ORDERING_DESC"
+				class="span-2 element-filter"
+				label="Direction"
+				ui="chosen"/>
+
+		<field name="limit"
+				type="cklimit"
+				submit="true"
+				class="span-2 element-filter"
+				label="Limit"
+				ui="chosen"/>
+	</fieldset>
+
+	<fieldset name="modal.filters" addfieldpath="/libraries/jdom/jform/fields">
+
+		<field name="filter_published"
+				type="ckstate"
+				access="core.edit.state"
+				submit="true"
+				nullLabel="JFORMS_FILTER_NULL_SELECT_STATE"
+				display="combo"
+				label="State"
+				class="element-filter span-2"
+				ui="chosen"/>
+
+		<field name="search_search_1"
+				type="cksearch"
+				placeholder="JFORMS_FILTER_NULL_NAME_ALIAS"
+				label="JFORMS_JSEARCH_NAME_ALIAS"
+				class="element-search search-query"
+				ui="chosen"/>
+
+		<field name="filter_save_data_in_db"
+				listKey="value"
+				type="ckcombo"
+				submit="true"
+				nullLabel="JFORMS_FILTER_NULL_SAVE_DATA_IN_DB"
+				class="span-2 element-filter"
+				label="JFORMS_JSEARCH_SAVE_DATA_IN_DB"
+				ui="chosen">
+			<option value="0" icon="icomoon-cancel" color="danger">JFORMS_FIELDS_BOOL_NO</option>
+			<option value="1" icon="icomoon-ok" color="success">JFORMS_FIELDS_BOOL_YES</option>
+		</field>
+
+		<field name="filter_layout_type"
+				listKey="value"
+				labelKey="text"
+				type="ckcombo"
+				submit="true"
+				nullLabel="JFORMS_FILTER_NULL_LAYOUT_TYPE"
+				class="span-2 element-filter"
+				label="JFORMS_JSEARCH_LAYOUT_TYPE"
+				ui="chosen"/>
+
+		<field name="limit"
+				type="cklimit"
+				submit="true"
+				class="span-2 element-filter"
+				label="Limit"
+				ui="chosen"/>
+	</fieldset>
+
+</form>

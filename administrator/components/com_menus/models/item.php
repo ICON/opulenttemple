@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_menus
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -671,10 +671,8 @@ class MenusModelItem extends JModelAdmin
 				if (isset($args['option'])) {
 					// Load the language file for the component.
 					$lang = JFactory::getLanguage();
-					$lang->load($args['option'], JPATH_ADMINISTRATOR, null, false, false)
-					||	$lang->load($args['option'], JPATH_ADMINISTRATOR.'/components/'.$args['option'], null, false, false)
-					||	$lang->load($args['option'], JPATH_ADMINISTRATOR, $lang->getDefault(), false, false)
-					||	$lang->load($args['option'], JPATH_ADMINISTRATOR.'/components/'.$args['option'], $lang->getDefault(), false, false);
+						$lang->load($args['option'], JPATH_ADMINISTRATOR, null, false, true)
+					||	$lang->load($args['option'], JPATH_ADMINISTRATOR . '/components/' . $args['option'], null, false, true);
 
 					// Determine the component id.
 					$component = JComponentHelper::getComponent($args['option']);
@@ -747,12 +745,9 @@ class MenusModelItem extends JModelAdmin
 		// We are only interested if the module is displayed on ALL or THIS menu item (or the inverse ID number).
 		//sqlsrv changes for modulelink to menu manager
 		$query->select('a.id, a.title, a.position, a.published, map.menuid');
-		$case_when = ' (CASE WHEN ';
-		$case_when .= 'map2.menuid < 0 THEN map2.menuid ELSE NULL END) as ' . $db->qn('except');
-		$case_when .=$query->select( $case_when);
 		$query->from('#__modules AS a');
-		$query->join('LEFT', '#__modules_menu AS map ON map.moduleid = a.id AND (map.menuid = 0 OR ABS(map.menuid) = '.(int) $this->getState('item.id').')');
-		$query->join('LEFT', '#__modules_menu AS map2 ON map2.moduleid = a.id AND map2.menuid < 0');
+		$query->join('LEFT', sprintf('#__modules_menu AS map ON map.moduleid = a.id AND map.menuid IN (0, %1$d, -%1$d)', $this->getState('item.id')));
+		$query->select('(SELECT COUNT(*) FROM #__modules_menu WHERE moduleid = a.id AND menuid < 0) AS ' . $db->qn('except'));
 
 		// Join on the asset groups table.
 		$query->select('ag.title AS access_title');
@@ -931,7 +926,8 @@ class MenusModelItem extends JModelAdmin
 			}
 		}
 
-		if ($formFile) {
+		if ($formFile)
+		{
 			// If an XML file was found in the component, load it first.
 			// We need to qualify the full path to avoid collisions with component file names.
 
@@ -946,15 +942,48 @@ class MenusModelItem extends JModelAdmin
 
 			// Get the help data from the XML file if present.
 			$help = $xml->xpath('/metadata/layout/help');
-			if (!empty($help)) {
-				$helpKey = trim((string) $help[0]['key']);
-				$helpURL = trim((string) $help[0]['url']);
-				$helpLoc = trim((string) $help[0]['local']);
+		}
+		else
+		{
 
-				$this->helpKey = $helpKey ? $helpKey : $this->helpKey;
-				$this->helpURL = $helpURL ? $helpURL : $this->helpURL;
-				$this->helpLocal = (($helpLoc == 'true') || ($helpLoc == '1') || ($helpLoc == 'local')) ? true : false;
+			// We don't have a component. Load the form XML to get the help path
+
+			$xmlFile = JPath::find(JPATH_ROOT . '/administrator/components/com_menus/models/forms', 'item_' . $type . '.xml');
+
+
+
+			// Attempt to load the xml file.
+
+			if ($xmlFile && !$xml = simplexml_load_file($xmlFile))
+			{
+
+				throw new Exception(JText::_('JERROR_LOADFILE_FAILED'));
+
 			}
+
+
+
+			// Get the help data from the XML file if present.
+
+			$help = $xml->xpath('/form/help');
+		}
+
+		if (!empty($help))
+		{
+
+			$helpKey = trim((string) $help[0]['key']);
+
+			$helpURL = trim((string) $help[0]['url']);
+
+			$helpLoc = trim((string) $help[0]['local']);
+
+
+
+			$this->helpKey = $helpKey ? $helpKey : $this->helpKey;
+
+			$this->helpURL = $helpURL ? $helpURL : $this->helpURL;
+
+			$this->helpLocal = (($helpLoc == 'true') || ($helpLoc == '1') || ($helpLoc == 'local')) ? true : false;
 
 		}
 
@@ -1376,7 +1405,10 @@ class MenusModelItem extends JModelAdmin
 		$table = $this->getTable();
 		while ($table->load(array('alias' => $alias, 'parent_id' => $parent_id)))
 		{
-			$title = JString::increment($title);
+			if ($title == $table->title)
+			{
+				$title = JString::increment($title);
+			}
 			$alias = JString::increment($alias, 'dash');
 		}
 

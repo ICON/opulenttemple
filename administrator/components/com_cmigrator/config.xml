@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+	<fieldset name="backend" label="COM_CMIGRATOR_CONFIG_BACKEND_HEADER_LABEL" description="COM_CMIGRATOR_CONFIG_LIVE_UPFATE_HEADER_DESC">
+		<field name="downloadid" type="text" default="" size="30" label="Download ID"
+			description ="Enter the download ID to our site in order to enable Live Updates" />
+	</fieldset>
+</config>

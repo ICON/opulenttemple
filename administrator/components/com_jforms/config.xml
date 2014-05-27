@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<config>
+
+	<fieldset name="configuration"
+			label="JFORMS_CONFIG_COMPONENT_CONFIGURATION"
+			description="JFORMS_CONFIG_COMPONENT_CONFIGURATION_1"
+			addfieldpath="/libraries/jdom/jform/fields">
+
+		<field name="upload_maxsize"
+				label="JFORMS_FIELD_UPLOAD_MAX_SIZE"
+				filter="STRING"
+				description="JFORMS_FIELD_UPLOAD_MAX_SIZE_INFORMATION"
+				type="cktext"/>
+
+		<field name="trash_dir"
+				label="JFORMS_FIELD_TRASH_DIR"
+				filter="STRING"
+				default="images/trash"
+				class="input-xlarge"
+				description="JFORMS_FIELD_TRASH_DIR_INFORMATION"
+				type="cktext"/>
+
+		<field name="upload_dir_forms_language_file"
+				label="JFORMS_FIELD_UPLOAD_DIR_FORMS_LANGUAGE_FILE"
+				filter="STRING"
+				default="[COM_SITE]/files/forms_language_file"
+				class="input-xlarge"
+				description="JFORMS_FIELD_UPLOAD_DIR_INFORMATION"
+				type="cktext"/>
+				
+		<field name="upload_dir_forms_emails"
+				label="JFORMS_FIELD_UPLOAD_DIR_FORMS_EMAILS"
+				filter="STRING"
+				default="[COM_SITE]/files/forms_emails"
+				class="input-xlarge"
+				description="JFORMS_FIELD_UPLOAD_DIR_INFORMATION"
+				type="cktext"/>
+				
+		<field name="upload_dir_forms_events"
+				label="JFORMS_FIELD_UPLOAD_DIR_FORMS_EVENTS"
+				filter="STRING"
+				default="[COM_SITE]/files/forms_events"
+				class="input-xlarge"
+				description="JFORMS_FIELD_UPLOAD_DIR_INFORMATION"
+				type="cktext"/>
+
+		<field name="upload_dir_submissions_pdf"
+				label="JFORMS_FIELD_UPLOAD_DIR_SUBMISSIONS_PDF"
+				filter="STRING"
+				default="[COM_SITE]/files/submissions_pdf"
+				class="input-xlarge"
+				description="JFORMS_FIELD_UPLOAD_DIR_INFORMATION"
+				type="cktext"/>
+				
+		<field name="upload_dir_submissions_attached_files"
+				label="JFORMS_FIELD_UPLOAD_DIR_SUBMISSIONS_ATTACHED_FILES"
+				filter="STRING"
+				default="[COM_SITE]/files/submissions_attached_files"
+				class="input-xlarge"
+				description="JFORMS_FIELD_UPLOAD_DIR_INFORMATION"
+				type="cktext"/>
+	</fieldset>
+	
+	<fieldset name="permissions"
+			label="JFORMS_CONFIG_PERMISSIONS"
+			description="JFORMS_CONFIG_DEFAULT_PERMISSIONS_USED_FOR_ALL_CONTENT_IN_THIS_COMPONENT"
+			addfieldpath="/libraries/jdom/jform/fields">
+
+		<field name="rules"
+				label="JFORMS_FIELD_PERMISSIONS"
+				filter="rules"
+				type="rules"
+				validate="rules"
+				section="component"
+				component="com_jforms"/>
+	</fieldset>
+</config>

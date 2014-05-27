@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5" method="upgrade" client="site">
+	<name>RSMediaGallery! Slideshow Module</name>
+	<author>RSJoomla!</author>
+	<creationDate>January 2012</creationDate>
+	<copyright>(C) 2012 www.rsjoomla.com</copyright>
+	<license>GNU General Public License</license>
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0.0 R3</version>
+	<description><![CDATA[MOD_RSMG_SS_DESC]]></description>
+	<files>
+		<filename module="mod_rsmediagallery_slideshow">mod_rsmediagallery_slideshow.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_rsmediagallery_slideshow.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_rsmediagallery_slideshow.sys.ini</language>
+	</languages>
+	<params addPath="/administrator/components/com_rsmediagallery/elements">
+		<param name="spacer0" type="separator" value="RSMG_PARAM_WHAT_TO_SHOW" />
+		<param name="tags" type="tags" label="RSMG_PARAM_TAGS" description="RSMG_PARAM_TAGS_DESC" />
+		<param name="spacer2" type="separator" value="RSMG_PARAM_SLIDESHOW_IMAGES" />
+		<param name="use_original" type="list" default="0" label="RSMG_PARAM_USE_ORIGINAL" description="RSMG_PARAM_USE_ORIGINAL_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="thumb_resolution" size="5"	type="resolution" default="w,280" label="RSMG_PARAM_THUMB_RESOLUTION" description="RSMG_PARAM_THUMB_RESOLUTION_DESC" />
+		<param name="ordering" type="list" default="ordering" label="RSMG_PARAM_ORDERING" description="RSMG_PARAM_ORDERING_DESC">
+			<option value="ordering">RSMG_FREE_ORDERING</option>
+			<option value="random">RSMG_RANDOM</option>
+			<option value="title">RSMG_TITLE</option>
+			<option value="description">RSMG_DESC</option>
+			<option value="hits">RSMG_HITS</option>
+			<option value="created">RSMG_CREATED_DATE</option>
+			<option value="modified">RSMG_MODIFIED_DATE</option>
+		</param>
+		<param name="direction" type="list" default="asc" label="RSMG_PARAM_DIRECTION" description="RSMG_PARAM_DIRECTION_DESC">
+			<option value="asc">RSMG_ASCENDING</option>
+			<option value="desc">RSMG_DESCENDING</option>
+		</param>
+		<param name="limit" size="10" type="text" default="5" label="RSMG_PARAM_LIMIT" description="RSMG_PARAM_LIMIT_DESC" />
+		<param name="open_in_new_page" type="radio" default="0" label="RSMG_PARAM_OPEN_IMAGES_IN_NEW_PAGE" description="RSMG_PARAM_OPEN_IMAGES_IN_NEW_PAGE_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="spacer4" type="separator" value="RSMG_PARAM_SLIDESHOW_APPEARANCE" />
+		<param name="use_fixed_width" type="radio" default="0" label="RSMG_PARAM_FIXED_WIDTH" description="RSMG_PARAM_FIXED_WIDTH_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="width" type="text" default="700" label="RSMG_PARAM_WRAPPER_WIDTH" description="RSMG_PARAM_WRAPPER_WIDTH_DESC" />
+		<param name="show_controls" type="radio" default="1" label="RSMG_PARAM_SHOW_CONTROLS" description="RSMG_PARAM_SHOW_CONTROLS_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="show_pager" type="radio" default="1" label="RSMG_PARAM_SHOW_PAGER" description="RSMG_PARAM_SHOW_PAGER_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="pager_position" type="list" default="bottom-outside" label="RSMG_PARAM_PAGER_POSITION" description="RSMG_PARAM_PAGER_POSITION_DESC">
+			<option value="top-outside">RSMG_PARAM_TOP_OUTSIDE</option>
+			<option value="top-inside">RSMG_PARAM_TOP_INSIDE</option>
+			<option value="bottom-inside">RSMG_PARAM_BOTTOM_INSIDE</option>
+			<option value="bottom-outside">RSMG_PARAM_BOTTOM_OUTSIDE</option>
+		</param>
+		<param name="pager_text_position" type="list" default="center" label="RSMG_PARAM_PAGER_TEXT_POSITION" description="RSMG_PARAM_PAGER_TEXT_POSITION_DESC">
+			<option value="left">RSMG_PARAM_LEFT</option>
+			<option value="center">RSMG_PARAM_CENTER</option>
+			<option value="right">RSMG_PARAM_RIGHT</option>
+		</param>
+		<param name="pager_type" type="list" default="full" label="RSMG_PARAM_PAGER_TYPE" description="RSMG_PARAM_PAGER_TYPE_DESC">
+			<option value="short">RSMG_PARAM_SHORT</option>
+			<option value="full">RSMG_PARAM_FULL</option>
+		</param>
+		<param name="spacer6" type="separator" value="RSMG_PARAM_SLIDESHOW_SETTINGS" />
+		<param name="auto" type="radio" default="1" label="RSMG_PARAM_AUTOSTART" description="RSMG_PARAM_AUTOSTART_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="auto_hover" type="radio" default="1" label="RSMG_PARAM_AUTOHOVER" description="RSMG_PARAM_AUTOHOVER_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="random_slide" type="radio" default="0" label="RSMG_PARAM_RANDOM_SLIDE" description="RSMG_PARAM_RANDOM_SLIDE_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="infinite_loop" type="radio" default="0" label="RSMG_PARAM_INFINITE_LOOP" description="RSMG_PARAM_INFINITE_LOOP_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="spacer5" type="separator" value="RSMG_PARAM_SLIDESHOW_EFFECTS" />
+		<param name="mode" type="list" default="horizontal" label="RSMG_PARAM_MODE" description="RSMG_PARAM_MODE_DESC">
+			<option value="horizontal">RSMG_PARAM_HORIZONTAL</option>
+			<option value="vertical">RSMG_PARAM_VERTICAL</option>
+			<option value="fade">RSMG_PARAM_FADE</option>
+		</param>
+		<param name="easing" type="list" default="swing" label="RSMG_PARAM_EASING" description="RSMG_PARAM_EASING_DESC">
+			<option value="swing">swing</option>
+			<option value="easeInQuad">easeInQuad</option>
+			<option value="easeOutQuad">easeOutQuad</option>
+			<option value="easeInOutQuad">easeInOutQuad</option>
+			<option value="easeInCubic">easeInCubic</option>
+			<option value="easeOutCubic">easeOutCubic</option>
+			<option value="easeInOutCubic">easeInOutCubic</option>
+			<option value="easeInQuart">easeInQuart</option>
+			<option value="easeOutQuart">easeOutQuart</option>
+			<option value="easeInOutQuart">easeInOutQuart</option>
+			<option value="easeInQuint">easeInQuint</option>
+			<option value="easeOutQuint">easeOutQuint</option>
+			<option value="easeInOutQuint">easeInOutQuint</option>
+			<option value="easeInSine">easeInSine</option>
+			<option value="easeOutSine">easeOutSine</option>
+			<option value="easeInOutSine">easeInOutSine</option>
+			<option value="easeInExpo">easeInExpo</option>
+			<option value="easeOutExpo">easeOutExpo</option>
+			<option value="easeInOutExpo">easeInOutExpo</option>
+			<option value="easeInCirc">easeInCirc</option>
+			<option value="easeOutCirc">easeOutCirc</option>
+			<option value="easeInOutCirc">easeInOutCirc</option>
+			<option value="easeInElastic">easeInElastic</option>
+			<option value="easeOutElastic">easeOutElastic</option>
+			<option value="easeInOutElastic">easeInOutElastic</option>
+			<option value="easeInBack">easeInBack</option>
+			<option value="easeOutBack">easeOutBack</option>
+			<option value="easeInOutBack">easeInOutBack</option>
+			<option value="easeInBounce">easeInBounce</option>
+			<option value="easeOutBounce">easeOutBounce</option>
+			<option value="easeInOutBounce">easeInOutBounce</option>
+		</param>
+		<param name="speed" type="list" default="1500" label="RSMG_PARAM_SPEED" description="RSMG_PARAM_SPEED_DESC">
+			<option value="2500">RSMG_PARAM_SLOW</option>
+			<option value="1500">RSMG_PARAM_MEDIUM</option>
+			<option value="500">RSMG_PARAM_FAST</option>
+		</param>
+		<param name="pause" type="list" default="3000" label="RSMG_PARAM_PAUSE" description="RSMG_PARAM_PAUSE_DESC">
+			<option value="5000">RSMG_PARAM_SLOW</option>
+			<option value="3000">RSMG_PARAM_MEDIUM</option>
+			<option value="1500">RSMG_PARAM_FAST</option>
+		</param>
+		<param name="spacer3" type="separator" value="RSMG_PARAM_SLIDE_APPEARANCE" />
+		<param name="image_position" type="list" default="left" label="RSMG_PARAM_IMAGE_POSITION" description="RSMG_PARAM_IMAGE_POSITION_DESC">
+			<option value="left">RSMG_PARAM_LEFT</option>
+			<option value="center">RSMG_PARAM_CENTER</option>
+			<option value="right">RSMG_PARAM_RIGHT</option>
+		</param>
+		<param name="image_borders" type="radio" default="1" label="RSMG_PARAM_IMAGE_BORDERS" description="RSMG_PARAM_IMAGE_BORDERS_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="use_url" type="radio" default="1" label="RSMG_PARAM_USE_URL" description="RSMG_PARAM_USE_URL_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="show_title" type="radio" default="1" label="RSMG_PARAM_SHOW_TITLE" description="RSMG_PARAM_SHOW_TITLE_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="show_description" type="radio" default="1" label="RSMG_PARAM_SHOW_DESCRIPTION" description="RSMG_PARAM_SHOW_DESCRIPTION_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="spacer7" type="separator" value="RSMG_PARAM_OTHER" />
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_rsmediagallery/fields">
+				<field name="spacer0" type="spacer" class="text" label="RSMG_PARAM_WHAT_TO_SHOW" />
+				<field name="tags" type="tags" label="RSMG_PARAM_TAGS" description="RSMG_PARAM_TAGS_DESC" />
+				<field name="spacer2" type="spacer" class="text" label="RSMG_PARAM_SLIDESHOW_IMAGES" />
+				<field name="use_original" type="list" default="0" label="RSMG_PARAM_USE_ORIGINAL" description="RSMG_PARAM_USE_ORIGINAL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="thumb_resolution" size="5"	type="resolution" default="w,280" label="RSMG_PARAM_THUMB_RESOLUTION" description="RSMG_PARAM_THUMB_RESOLUTION_DESC" />
+				<field name="ordering" type="list" default="ordering" label="RSMG_PARAM_ORDERING" description="RSMG_PARAM_ORDERING_DESC">
+					<option value="ordering">RSMG_FREE_ORDERING</option>
+					<option value="random">RSMG_RANDOM</option>
+					<option value="title">RSMG_TITLE</option>
+					<option value="description">RSMG_DESC</option>
+					<option value="hits">RSMG_HITS</option>
+					<option value="created">RSMG_CREATED_DATE</option>
+					<option value="modified">RSMG_MODIFIED_DATE</option>
+				</field>
+				<field name="direction" type="list" default="asc" label="RSMG_PARAM_DIRECTION" description="RSMG_PARAM_DIRECTION_DESC">
+					<option value="asc">RSMG_ASCENDING</option>
+					<option value="desc">RSMG_DESCENDING</option>
+				</field>
+				<field name="limit" size="10" type="text" default="5" label="RSMG_PARAM_LIMIT" description="RSMG_PARAM_LIMIT_DESC" />
+				<field name="open_in_new_page" type="radio" default="0" label="RSMG_PARAM_OPEN_IMAGES_IN_NEW_PAGE" description="RSMG_PARAM_OPEN_IMAGES_IN_NEW_PAGE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="spacer4" type="spacer" class="text" label="RSMG_PARAM_SLIDESHOW_APPEARANCE" />
+				<field name="use_fixed_width" type="radio" default="0" label="RSMG_PARAM_FIXED_WIDTH" description="RSMG_PARAM_FIXED_WIDTH_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="width" type="text" default="700" label="RSMG_PARAM_WRAPPER_WIDTH" description="RSMG_PARAM_WRAPPER_WIDTH_DESC" />
+				<field name="show_controls" type="radio" default="1" label="RSMG_PARAM_SHOW_CONTROLS" description="RSMG_PARAM_SHOW_CONTROLS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_pager" type="radio" default="1" label="RSMG_PARAM_SHOW_PAGER" description="RSMG_PARAM_SHOW_PAGER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="pager_position" type="list" default="bottom-outside" label="RSMG_PARAM_PAGER_POSITION" description="RSMG_PARAM_PAGER_POSITION_DESC">
+					<option value="top-outside">RSMG_PARAM_TOP_OUTSIDE</option>
+					<option value="top-inside">RSMG_PARAM_TOP_INSIDE</option>
+					<option value="bottom-inside">RSMG_PARAM_BOTTOM_INSIDE</option>
+					<option value="bottom-outside">RSMG_PARAM_BOTTOM_OUTSIDE</option>
+				</field>
+				<field name="pager_text_position" type="list" default="center" label="RSMG_PARAM_PAGER_TEXT_POSITION" description="RSMG_PARAM_PAGER_TEXT_POSITION_DESC">
+					<option value="left">RSMG_PARAM_LEFT</option>
+					<option value="center">RSMG_PARAM_CENTER</option>
+					<option value="right">RSMG_PARAM_RIGHT</option>
+				</field>
+				<field name="pager_type" type="list" default="full" label="RSMG_PARAM_PAGER_TYPE" description="RSMG_PARAM_PAGER_TYPE_DESC">
+					<option value="short">RSMG_PARAM_SHORT</option>
+					<option value="full">RSMG_PARAM_FULL</option>
+				</field>
+				<field name="spacer6" type="spacer" class="text" label="RSMG_PARAM_SLIDESHOW_SETTINGS" />
+				<field name="auto" type="radio" default="1" label="RSMG_PARAM_AUTOSTART" description="RSMG_PARAM_AUTOSTART_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="auto_hover" type="radio" default="1" label="RSMG_PARAM_AUTOHOVER" description="RSMG_PARAM_AUTOHOVER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="random_slide" type="radio" default="0" label="RSMG_PARAM_RANDOM_SLIDE" description="RSMG_PARAM_RANDOM_SLIDE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="infinite_loop" type="radio" default="0" label="RSMG_PARAM_INFINITE_LOOP" description="RSMG_PARAM_INFINITE_LOOP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="spacer5" type="spacer" class="text" label="RSMG_PARAM_SLIDESHOW_EFFECTS" />
+				<field name="mode" type="list" default="horizontal" label="RSMG_PARAM_MODE" description="RSMG_PARAM_MODE_DESC">
+					<option value="horizontal">RSMG_PARAM_HORIZONTAL</option>
+					<option value="vertical">RSMG_PARAM_VERTICAL</option>
+					<option value="fade">RSMG_PARAM_FADE</option>
+				</field>
+				<field name="easing" type="list" default="swing" label="RSMG_PARAM_EASING" description="RSMG_PARAM_EASING_DESC">
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field name="speed" type="list" default="1500" label="RSMG_PARAM_SPEED" description="RSMG_PARAM_SPEED_DESC">
+					<option value="2500">RSMG_PARAM_SLOW</option>
+					<option value="1500">RSMG_PARAM_MEDIUM</option>
+					<option value="500">RSMG_PARAM_FAST</option>
+				</field>
+				<field name="pause" type="list" default="3000" label="RSMG_PARAM_PAUSE" description="RSMG_PARAM_PAUSE_DESC">
+					<option value="5000">RSMG_PARAM_SLOW</option>
+					<option value="3000">RSMG_PARAM_MEDIUM</option>
+					<option value="1500">RSMG_PARAM_FAST</option>
+				</field>
+				<field name="spacer3" type="spacer" class="text" label="RSMG_PARAM_SLIDE_APPEARANCE" />
+				<field name="image_position" type="list" default="left" label="RSMG_PARAM_IMAGE_POSITION" description="RSMG_PARAM_IMAGE_POSITION_DESC">
+					<option value="left">RSMG_PARAM_LEFT</option>
+					<option value="center">RSMG_PARAM_CENTER</option>
+					<option value="right">RSMG_PARAM_RIGHT</option>
+				</field>
+				<field name="image_borders" type="radio" default="1" label="RSMG_PARAM_IMAGE_BORDERS" description="RSMG_PARAM_IMAGE_BORDERS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="use_url" type="radio" default="1" label="RSMG_PARAM_USE_URL" description="RSMG_PARAM_USE_URL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_title" type="radio" default="1" label="RSMG_PARAM_SHOW_TITLE" description="RSMG_PARAM_SHOW_TITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_description" type="radio" default="1" label="RSMG_PARAM_SHOW_DESCRIPTION" description="RSMG_PARAM_SHOW_DESCRIPTION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="spacer7" type="spacer" class="text" label="RSMG_PARAM_OTHER" />
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</install>

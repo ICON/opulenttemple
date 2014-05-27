@@ -3,13 +3,11 @@
  * @package     Joomla.Site
  * @subpackage  com_finder
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.controller');
 
 JLoader::register('FinderHelperLanguage', JPATH_ADMINISTRATOR . '/components/com_finder/helpers/language.php');
 
@@ -20,7 +18,7 @@ JLoader::register('FinderHelperLanguage', JPATH_ADMINISTRATOR . '/components/com
  * @subpackage  com_finder
  * @since       2.5
  */
-class FinderController extends JController
+class FinderController extends JControllerLegacy
 {
 	/**
 	 * Method to display a view.
@@ -38,10 +36,6 @@ class FinderController extends JController
 		// Initialise variables.
 		$input = JFactory::getApplication()->input;
 		$cachable = true;
-		$user = JFactory::getUser();
-
-		// Load plug-in language files.
-		FinderHelperLanguage::loadPluginLanguage();
 
 		// Load plug-in language files.
 		FinderHelperLanguage::loadPluginLanguage();

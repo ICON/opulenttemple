@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_finder
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -52,7 +52,7 @@ class FinderControllerIndex extends JControllerAdmin
 		@set_time_limit(0);
 
 		// Initialize variables.
-		$model = &$this->getModel('Index', 'FinderModel');
+		$model = $this->getModel('Index', 'FinderModel');
 
 		// Attempt to purge the index.
 		$return = $model->purge();

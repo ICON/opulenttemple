@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="component" version="1.6" method="upgrade">
+	<name><![CDATA[jforms]]></name>
+	<author><![CDATA[Girolamo Tomaselli]]></author>
+	<creationDate><![CDATA[09 Feb 2014]]></creationDate>
+	<copyright><![CDATA[G. Tomaselli]]></copyright>
+	<authorEmail><![CDATA[girotomaselli@gmail.com]]></authorEmail>
+	<authorUrl><![CDATA[http://bygiro.com]]></authorUrl>
+	<version><![CDATA[0.3.0]]></version>
+	<license><![CDATA[GNU GPL v3 or later]]></license>
+	<description>JFORMS_COMPONENT_DESCRIPTION</description>
+
+	<files folder="site">
+		<folder>controllers</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>layouts</folder>
+		<folder>images</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>jforms.php</filename>
+		<filename>router.php</filename>
+		<filename>LICENSE.txt</filename>
+	</files>
+
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_jforms.ini</language>
+	</languages>
+
+	<administration>
+
+		<files folder="admin">
+			<folder>classes</folder>
+			<folder>controllers</folder>
+			<folder>css</folder>
+			<folder>helpers</folder>
+			<folder>images</folder>
+			<folder>js</folder>
+			<folder>legacy</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>CHANGELOG.php</filename>
+			<filename>index.html</filename>
+			<filename>jforms.php</filename>
+		</files>
+
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB.com_jforms.ini</language>
+			<language tag="en-GB">language/en-GB.com_jforms.sys.ini</language>
+		</languages>
+		<menu img="components/com_jforms/images/icon-16-jforms.png">JFORMS_MENU_JFORMS</menu>
+
+		<submenu>
+			<menu img="components/com_jforms/images/icon-16-jforms_forms.png" link="option=com_jforms&amp;view=forms&amp;layout=default">JFORMS_MENU_FORMS</menu>
+			<menu img="components/com_jforms/images/icon-16-jforms_submissions.png" link="option=com_jforms&amp;view=submissions&amp;layout=default">JFORMS_MENU_SUBMISSIONS</menu>
+		</submenu>
+	</administration>
+	<scriptfile>script.php</scriptfile>
+
+	<install>
+
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	
+	<update> 
+		<schemas> 
+			<schemapath type="mysql">sql/updates/mysql</schemapath> 
+		</schemas> 
+	</update>
+
+	<updateservers>
+		<server type="extension" priority="1" name="jForms">http://bygiro.com/images/downloads/updates/com_jforms_update.xml</server>
+	</updateservers>	
+</extension>

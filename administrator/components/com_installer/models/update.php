@@ -2,7 +2,7 @@
 /**
  * @package		Joomla.Administrator
  * @subpackage	com_installer
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -190,7 +190,7 @@ class InstallerModelUpdate extends JModelList
 	{
 		$app = JFactory::getApplication();
 		if (isset($update->get('downloadurl')->_data)) {
-			$url = $update->downloadurl->_data;
+			$url = trim($update->downloadurl->_data);
 		} else {
 			JError::raiseWarning('', JText::_('COM_INSTALLER_INVALID_EXTENSION_UPDATE'));
 			return false;

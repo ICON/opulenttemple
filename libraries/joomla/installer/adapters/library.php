@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Installer
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -42,10 +42,8 @@ class JInstallerLibrary extends JAdapterInstance
 		$name = strtolower((string) $this->manifest->libraryname);
 		$lang = JFactory::getLanguage();
 		$source = $path ? $path : JPATH_PLATFORM . "/$name";
-		$lang->load($extension . '.sys', $source, null, false, false)
-			|| $lang->load($extension . '.sys', JPATH_SITE, null, false, false)
-			|| $lang->load($extension . '.sys', $source, $lang->getDefault(), false, false)
-			|| $lang->load($extension . '.sys', JPATH_SITE, $lang->getDefault(), false, false);
+			$lang->load($extension . '.sys', $source, null, false, true)
+		||	$lang->load($extension . '.sys', JPATH_SITE, null, false, true);
 	}
 
 	/**
@@ -79,7 +77,7 @@ class JInstallerLibrary extends JAdapterInstance
 		if ($result)
 		{
 			// Already installed, can we upgrade?
-			if ($this->parent->getOverwrite() || $this->parent->getUpgrade())
+			if ($this->parent->isOverwrite() || $this->parent->isUpgrade())
 			{
 				// We can upgrade, so uninstall the old one
 				$installer = new JInstaller; // we don't want to compromise this instance!

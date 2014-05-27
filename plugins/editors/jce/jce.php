@@ -2,7 +2,7 @@
 
 /**
  * @package   	JCE
- * @copyright 	Copyright © 2009-2011 Ryan Demmer. All rights reserved.
+ * @copyright 	Copyright (c) 2009-2012 Ryan Demmer. All rights reserved.
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -13,7 +13,6 @@
 defined('_JEXEC') or die('RESTRICTED');
 
 jimport('joomla.plugin.plugin');
-jimport('joomla.application.component.model');
 
 /**
  * JCE WYSIWYG Editor Plugin
@@ -37,9 +36,10 @@ class plgEditorJCE extends JPlugin {
      * Method to handle the onInit event.
      *  - Initializes the JCE WYSIWYG Editor
      *
-     * @access public
-     * @return string JavaScript Initialization string
-     * @since 1.5
+     * @access  public
+     * @param   $toString Return javascript and css as a string
+     * @return  string JavaScript Initialization string
+     * @since   1.5
      */
     public function onInit() {
         $app = JFactory::getApplication();
@@ -49,22 +49,21 @@ class plgEditorJCE extends JPlugin {
         // set IE mode
         //$document->setMetaData('X-UA-Compatible', 'IE=Edge', true);
         // Check for existence of Admin Component
-        if (!is_dir(JPATH_SITE . DS . 'components' . DS . 'com_jce') || !is_dir(JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_jce')) {
+        if (!is_dir(JPATH_SITE . '/components/com_jce') || !is_dir(JPATH_ADMINISTRATOR . '/components/com_jce')) {
             JError::raiseWarning('SOME_ERROR_CODE', 'WF_COMPONENT_MISSING');
         }
 
         $language->load('plg_editors_jce', JPATH_ADMINISTRATOR);
         $language->load('com_jce', JPATH_ADMINISTRATOR);
 
-        // set admin base path
-        $base = JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_jce';
         // load constants and loader
-        require_once($base . DS . 'includes' . DS . 'base.php');
-        // load model
-        JModel::addIncludePath($base . DS . 'models');
-        $model = JModel::getInstance('editor', 'WFModel');
+        require_once(JPATH_ADMINISTRATOR . '/components/com_jce/includes/base.php');
 
-        $model->buildEditor();
+        wfimport('admin.models.editor');
+
+        $model = new WFModelEditor();
+
+        return $model->buildEditor();
     }
 
     /**
@@ -126,7 +125,6 @@ class plgEditorJCE extends JPlugin {
         $editor = '<label for="' . $id . '" style="display:none;" aria-visible="false">' . $id . '_textarea</label><textarea id="' . $id . '" name="' . $name . '" cols="' . $col . '" rows="' . $row . '" style="width:' . $width . ';height:' . $height . ';" class="wfEditor mce_editable source" wrap="off">' . $content . '</textarea>';
         $editor .= $this->_displayButtons($id, $buttons, $asset, $author);
 
-
         return $editor;
     }
 
@@ -144,6 +142,9 @@ class plgEditorJCE extends JPlugin {
         $return = '';
         $results[] = $this->update($args);
 
+        $version = new JVersion;
+        $JOOMLA3 = (float) $version->RELEASE >= 3;
+
         foreach ($results as $result) {
             if (is_string($result) && trim($result)) {
                 $return .= $result;
@@ -156,21 +157,45 @@ class plgEditorJCE extends JPlugin {
             /*
              * This will allow plugins to attach buttons or change the behavior on the fly using AJAX
              */
-            $return .= "\n<div id=\"editor-xtd-buttons\">\n";
+            $return .= "\n<div id=\"editor-xtd-buttons\"";
+
+            if ($JOOMLA3) {
+                $return .= " class=\"btn-toolbar pull-left\">\n\n<div class=\"btn-toolbar\"";
+            }
+
+            $return .= ">\n";
 
             foreach ($results as $button) {
                 /*
                  * Results should be an object
                  */
                 if ($button->get('name')) {
-                    $modal = ($button->get('modal')) ? 'class="modal-button"' : null;
-                    $href = ($button->get('link')) ? 'href="' . JURI::base() . $button->get('link') . '"' : null;
-                    $onclick = ($button->get('onclick')) ? 'onclick="' . $button->get('onclick') . '"' : 'onclick="IeCursorFix(); return false;"';
+                    $modal = ($button->get('modal')) ? ' class="modal-button btn"' : '';
+                    $href = ($button->get('link')) ? ' class="btn" href="' . JURI::base() . $button->get('link') . '"' : '';
+                    $onclick = ($button->get('onclick')) ? ' onclick="' . $button->get('onclick') . '"' : ' onclick="IeCursorFix(); return false;"';
                     $title = ($button->get('title')) ? $button->get('title') : $button->get('text');
-                    $return .= "<div class=\"button2-left\"><div class=\"" . $button->get('name') . "\"><a " . $modal . " title=\"" . $title . "\" " . $href . " " . $onclick . " rel=\"" . $button->get('options') . "\">" . $button->get('text') . "</a></div></div>\n";
+
+                    if ((float) $version->RELEASE < 3) {
+                        $return .= '<div class="button2-left"><div class="' . $button->get('name') . '">';
+                    }
+
+                    $return .= '<a' . $modal . ' title="' . $title . '"' . $href . $onclick . ' rel="' . $button->get('options') . '">';
+                    
+                    // add icon class
+                    if ($JOOMLA3) {
+                        $return .= '<i class="icon-' . $button->get('name') . '"></i> ';
+                    }
+                    
+                    $return .= $button->get('text') . '</a>';
+
+                    if (!$JOOMLA3) {
+                        $return .= '</div></div>';
+                    }
                 }
             }
-
+            if ($JOOMLA3) {
+                $return .= "</div>\n";
+            }
             $return .= "</div>\n";
         }
 

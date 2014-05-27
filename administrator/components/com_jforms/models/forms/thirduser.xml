@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<form>
+
+	<fieldset name="modal.filters" addfieldpath="/libraries/jdom/jform/fields">
+
+		<field name="search_search"
+				type="cksearch"
+				placeholder="JFORMS_FILTER_NULL_SEARCH"
+				label="JFORMS_JSEARCH_SEARCH"
+				class="element-search search-query"
+				ui="chosen"/>
+
+		<field name="limit"
+				type="cklimit"
+				submit="true"
+				class="span-2 element-filter"
+				label="Limit"
+				ui="chosen"/>
+	</fieldset>
+</form>

@@ -1,13 +1,10 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// No direct access
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.view');
 
 /**
  * Categories view class for the Category package.
@@ -16,7 +13,7 @@ jimport('joomla.application.component.view');
  * @subpackage	com_categories
  * @since		1.6
  */
-class CategoriesViewCategories extends JView
+class CategoriesViewCategories extends JViewLegacy
 {
 	protected $items;
 	protected $pagination;
@@ -55,7 +52,7 @@ class CategoriesViewCategories extends JView
 		$options[]	= JHtml::_('select.option', '9', JText::_('J9'));
 		$options[]	= JHtml::_('select.option', '10', JText::_('J10'));
 
-		$this->assign('f_levels', $options);
+		$this->f_levels = $options;
 
 		$this->addToolbar();
 		parent::display($tpl);
@@ -82,10 +79,8 @@ class CategoriesViewCategories extends JView
 
 		// Need to load the menu language file as mod_menu hasn't been loaded yet.
 		$lang = JFactory::getLanguage();
-			$lang->load($component, JPATH_BASE, null, false, false)
-		||	$lang->load($component, JPATH_ADMINISTRATOR.'/components/'.$component, null, false, false)
-		||	$lang->load($component, JPATH_BASE, $lang->getDefault(), false, false)
-		||	$lang->load($component, JPATH_ADMINISTRATOR.'/components/'.$component, $lang->getDefault(), false, false);
+			$lang->load($component, JPATH_BASE, null, false, true)
+		||	$lang->load($component, JPATH_ADMINISTRATOR . '/components/' . $component, null, false, true);
 
  		// Load the category helper.
 		require_once JPATH_COMPONENT.'/helpers/categories.php';

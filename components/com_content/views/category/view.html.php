@@ -2,14 +2,11 @@
 /**
  * @package		Joomla.Site
  * @subpackage	com_content
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.view');
 
 /**
  * HTML View class for the Content component
@@ -18,7 +15,7 @@ jimport('joomla.application.component.view');
  * @subpackage	com_content
  * @since 1.5
  */
-class ContentViewCategory extends JView
+class ContentViewCategory extends JViewLegacy
 {
 	protected $state;
 	protected $items;
@@ -46,16 +43,19 @@ class ContentViewCategory extends JView
 		$pagination = $this->get('Pagination');
 
 		// Check for errors.
-		if (count($errors = $this->get('Errors'))) {
+		if (count($errors = $this->get('Errors')))
+		{
 			JError::raiseError(500, implode("\n", $errors));
 			return false;
 		}
 
-		if ($category == false) {
+		if ($category == false)
+		{
 			return JError::raiseError(404, JText::_('JGLOBAL_CATEGORY_NOT_FOUND'));
 		}
 
-		if ($parent == false) {
+		if ($parent == false)
+		{
 			return JError::raiseError(404, JText::_('JGLOBAL_CATEGORY_NOT_FOUND'));
 		}
 
@@ -92,19 +92,26 @@ class ContentViewCategory extends JView
 
 			$dispatcher = JDispatcher::getInstance();
 
-			// Ignore content plugins on links.
-			if ($i < $numLeading + $numIntro) {
-				$item->introtext = JHtml::_('content.prepare', $item->introtext, '', 'com_content.category');
-
-				$results = $dispatcher->trigger('onContentAfterTitle', array('com_content.article', &$item, &$item->params, 0));
-				$item->event->afterDisplayTitle = trim(implode("\n", $results));
-
-				$results = $dispatcher->trigger('onContentBeforeDisplay', array('com_content.article', &$item, &$item->params, 0));
-				$item->event->beforeDisplayContent = trim(implode("\n", $results));
-
-				$results = $dispatcher->trigger('onContentAfterDisplay', array('com_content.article', &$item, &$item->params, 0));
-				$item->event->afterDisplayContent = trim(implode("\n", $results));
+			// Old plugins: Ensure that text property is available
+			if (!isset($item->text))
+			{
+				$item->text = $item->introtext;
 			}
+
+			JPluginHelper::importPlugin('content');
+			$results = $dispatcher->trigger('onContentPrepare', array ('com_content.category', &$item, &$this->params, 0));
+
+			// Old plugins: Use processed text as introtext
+			$item->introtext = $item->text;
+
+			$results = $dispatcher->trigger('onContentAfterTitle', array('com_content.category', &$item, &$item->params, 0));
+			$item->event->afterDisplayTitle = trim(implode("\n", $results));
+
+			$results = $dispatcher->trigger('onContentBeforeDisplay', array('com_content.category', &$item, &$item->params, 0));
+			$item->event->beforeDisplayContent = trim(implode("\n", $results));
+
+			$results = $dispatcher->trigger('onContentAfterDisplay', array('com_content.category', &$item, &$item->params, 0));
+			$item->event->afterDisplayContent = trim(implode("\n", $results));
 		}
 
 		// Check for layout override only if this is not the active menu item
@@ -161,7 +168,7 @@ class ContentViewCategory extends JView
 		//Escape strings for HTML output
 		$this->pageclass_sfx = htmlspecialchars($params->get('pageclass_sfx'));
 
-		$this->assign('maxLevel', $params->get('maxLevel', -1));
+		$this->maxLevel = $params->get('maxLevel', -1);
 		$this->assignRef('state', $state);
 		$this->assignRef('items', $items);
 		$this->assignRef('category', $category);

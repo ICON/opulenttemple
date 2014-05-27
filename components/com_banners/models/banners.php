@@ -2,7 +2,7 @@
 /**
  * @package		Joomla.Site
  * @subpackage	com_banners
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -38,11 +38,11 @@ class BannersModelBanners extends JModelList
 	protected function getStoreId($id = '')
 	{
 		// Compile the store id.
-		$id	.= ':'.$this->getState('filter.search');
-		$id	.= ':'.$this->getState('filter.tag_search');
-		$id	.= ':'.$this->getState('filter.client_id');
-		$id	.= ':'.$this->getState('filter.category_id');
-		$id	.= ':'.$this->getState('filter.keywords');
+		$id	.= ':' . $this->getState('filter.search');
+		$id	.= ':' . $this->getState('filter.tag_search');
+		$id	.= ':' . $this->getState('filter.client_id');
+		$id	.= ':' . serialize($this->getState('filter.category_id'));
+		$id	.= ':' . serialize($this->getState('filter.keywords'));
 
 		return parent::getStoreId($id);
 	}

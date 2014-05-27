@@ -1,7 +1,7 @@
 <?php
 /**
  * @package		Joomla.Site
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -24,7 +24,7 @@ function ContentBuildRoute(&$query)
 	$app		= JFactory::getApplication();
 	$menu		= $app->getMenu();
 	$params		= JComponentHelper::getParams('com_content');
-	$advanced	= $params->get('sef_advanced_link', 1);
+	$advanced	= $params->get('sef_advanced_link', 0);
 
 	// we need a menu item.  Either the one specified in the query, or the current active one if none specified
 	if (empty($query['Itemid'])) {
@@ -205,7 +205,7 @@ function ContentParseRoute($segments)
 	$menu	= $app->getMenu();
 	$item	= $menu->getActive();
 	$params = JComponentHelper::getParams('com_content');
-	$advanced = $params->get('sef_advanced_link', 1);
+	$advanced = $params->get('sef_advanced_link', 0);
 	$db = JFactory::getDBO();
 
 	// Count route segments
@@ -225,11 +225,11 @@ function ContentParseRoute($segments)
 	// then we assume it is a category.  If they don't we assume it is an article
 	if ($count == 1) {
 		// we check to see if an alias is given.  If not, we assume it is an article
-		/*if (strpos($segments[0], ':') === false) {
+		if (strpos($segments[0], ':') === false) {
 			$vars['view'] = 'article';
 			$vars['id'] = (int)$segments[0];
 			return $vars;
-		}*/
+		}
 
 		list($id, $alias) = explode(':', $segments[0], 2);
 

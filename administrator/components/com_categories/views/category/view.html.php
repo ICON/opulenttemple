@@ -1,13 +1,10 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.view');
 
 /**
  * HTML View class for the Categories component
@@ -16,7 +13,7 @@ jimport('joomla.application.component.view');
  * @package		Joomla.Administrator
  * @subpackage	com_categories
  */
-class CategoriesViewCategory extends JView
+class CategoriesViewCategory extends JViewLegacy
 {
 	protected $form;
 	protected $item;
@@ -70,10 +67,8 @@ class CategoriesViewCategory extends JView
 
 		// Need to load the menu language file as mod_menu hasn't been loaded yet.
 		$lang = JFactory::getLanguage();
-			$lang->load($component, JPATH_BASE, null, false, false)
-		||	$lang->load($component, JPATH_ADMINISTRATOR.'/components/'.$component, null, false, false)
-		||	$lang->load($component, JPATH_BASE, $lang->getDefault(), false, false)
-		||	$lang->load($component, JPATH_ADMINISTRATOR.'/components/'.$component, $lang->getDefault(), false, false);
+			$lang->load($component, JPATH_BASE, null, false, true)
+		||	$lang->load($component, JPATH_ADMINISTRATOR . '/components/' . $component, null, false, true);
 
 		// Load the category helper.
 		require_once JPATH_COMPONENT.'/helpers/categories.php';

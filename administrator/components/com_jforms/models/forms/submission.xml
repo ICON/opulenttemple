@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<form>
+
+	<fieldset name="default.filters" addfieldpath="/libraries/jdom/jform/fields">
+
+		<field name="search_search"
+				listKey="id"
+				labelKey="name"
+				type="cksearch"
+				placeholder="JFORMS_FILTER_NULL_CREATED_BY_NAME_IP_ADDRESS_PDF"
+				label="JFORMS_JSEARCH_CREATED_BY_NAME_IP_ADDRESS_PDF"
+				class="element-search search-query"
+				ui="chosen"/>
+
+		<field name="filter_form_id"
+				listKey="id"
+				labelKey="name"
+				type="ckcombo"
+				submit="true"
+				nullLabel="JFORMS_FILTER_NULL_FORM_NAME"
+				class="span-2 element-filter"
+				label="JFORMS_JSEARCH_FORM_NAME"
+				ui="chosen"/>
+
+		<field name="filter_creation_date_from"
+				placeholder="JFORMS_FILTER_CREATION_DATE_FROM"
+				type="ckcalendar"
+				submit="true"
+				format="d-m-Y H:i:s"
+				label="JFORMS_JSEARCH_CREATION_DATE"
+				class="element-filter input-small"
+				ui="chosen"/>
+
+		<field name="filter_creation_date_to"
+				placeholder="JFORMS_FILTER_CREATION_DATE_TO"
+				type="ckcalendar"
+				submit="true"
+				format="d-m-Y H:i:s"
+				label="JFORMS_JSEARCH_CREATION_DATE"
+				class="element-filter input-small"
+				ui="chosen"/>
+
+		<field name="sortTable"
+				type="cksort"
+				responsive="hidden-phone"
+				nullLabel="JGLOBAL_SORT_BY"
+				class="span-2 element-filter"
+				label="Sort by"
+				ui="chosen"/>
+
+		<field name="directionTable"
+				type="ckdirection"
+				responsive="hidden-phone"
+				nullLabel="JFIELD_ORDERING_DESC"
+				class="span-2 element-filter"
+				label="Direction"
+				ui="chosen"/>
+
+		<field name="limit"
+				type="cklimit"
+				submit="true"
+				class="span-2 element-filter"
+				label="Limit"
+				ui="chosen"/>
+	</fieldset>
+
+	<fieldset name="modal.filters" addfieldpath="/libraries/jdom/jform/fields">
+
+		<field name="search_search_1"
+				listKey="id"
+				labelKey="name"
+				type="cksearch"
+				placeholder="JFORMS_FILTER_NULL_CREATED_BY_NAME_IP_ADDRESS_PDF"
+				label="JFORMS_JSEARCH_CREATED_BY_NAME_IP_ADDRESS_PDF"
+				class="element-search search-query"
+				ui="chosen"/>
+
+		<field name="filter_form_id"
+				listKey="id"
+				labelKey="name"
+				type="ckcombo"
+				submit="true"
+				nullLabel="JFORMS_FILTER_NULL_FORM_NAME"
+				class="span-2 element-filter"
+				label="JFORMS_JSEARCH_FORM_NAME"
+				ui="chosen"/>
+
+		<field name="filter_creation_date_from"
+				placeholder="JFORMS_FILTER_CREATION_DATE_FROM"
+				type="ckcalendar"
+				submit="true"
+				format="d-m-Y H:i:s"
+				label="JFORMS_JSEARCH_CREATION_DATE"
+				class="element-filter input-small"
+				ui="chosen"/>
+
+		<field name="filter_creation_date_to"
+				placeholder="JFORMS_FILTER_CREATION_DATE_TO"
+				type="ckcalendar"
+				submit="true"
+				format="d-m-Y H:i:s"
+				label="JFORMS_JSEARCH_CREATION_DATE"
+				class="element-filter input-small"
+				ui="chosen"/>
+
+		<field name="limit"
+				type="cklimit"
+				submit="true"
+				class="span-2 element-filter"
+				label="Limit"
+				ui="chosen"/>
+	</fieldset>
+
+	<fields name="form_data"/>
+</form>

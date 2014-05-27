@@ -6,13 +6,10 @@
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// no direct access
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.model');
-
 require_once JPATH_SITE . '/components/com_weblinks/helpers/route.php';
-JModel::addIncludePath(JPATH_SITE . '/components/com_weblinks/models', 'WeblinksModel');
+JModelLegacy::addIncludePath(JPATH_SITE . '/components/com_weblinks/models', 'WeblinksModel');
 
 class modWeblinksHelper
 {
@@ -20,7 +17,7 @@ class modWeblinksHelper
 	{
 
 		// Get an instance of the generic articles model
-		$model = JModel::getInstance('Category', 'WeblinksModel', array('ignore_request' => true));
+		$model = JModelLegacy::getInstance('Category', 'WeblinksModel', array('ignore_request' => true));
 
 		// Set application parameters in model
 		$app = JFactory::getApplication();
@@ -32,6 +29,7 @@ class modWeblinksHelper
 		$model->setState('list.limit', (int) $params->get('count', 5));
 
 		$model->setState('filter.state', 1);
+		$model->setState('filter.publish_date', true);
 		$model->setState('filter.archived', 0);
 		$model->setState('filter.approved', 1);
 
