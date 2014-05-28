@@ -1,0 +1,47 @@
+// mixins
+@mixin rollover {
+  &:hover, &:focus, &:active {
+    background-position: right bottom !important;
+    color: white;
+  }
+}
+@mixin button($path) {
+  background:url($path) no-repeat right top;
+  color: white;
+  display: block;
+  float: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include rollover;
+}
+@mixin imghover {
+  &:hover, &:active, &:focus {
+    border-color: $orange; 
+  }
+}
+@mixin rounded-corners {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+@mixin border-image {
+  border-width: 10px;
+  border-style: solid;
+  -moz-border-image:$border-img 10 10 round;
+  -webkit-border-image:$border-img 10 10 round;
+  border-image:$border-img 10 10 round;
+}
+@mixin header-gradient($x-start-color) {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, $x-start-color),
+    color-stop(1, $transparent)
+  );
+  background-image: -o-linear-gradient(right, $x-start-color 0%, $transparent 100%);
+  background-image: -moz-linear-gradient(right, $x-start-color 0%, $transparent 100%);
+  background-image: -webkit-linear-gradient(right, $x-start-color 0%, $transparent 100%);
+  background-image: -ms-linear-gradient(right, $x-start-color 0%, $transparent 100%);
+  background-image: linear-gradient(to right, $x-start-color 0%, $transparent 100%);
+}

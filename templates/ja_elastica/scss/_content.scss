@@ -1,0 +1,251 @@
+// jquery hide/show selector
+.info { 
+  display: none;
+  padding-bottom: 1em;
+}
+.mix_row, .resdj, .merch_row {
+  border-bottom: $border;
+  padding-bottom: 10px;
+
+}
+.resdj {  // resident djs
+  padding-top: 20px;
+  position: relative;
+  h3 {
+    margin: 0;
+  }
+  ul.dj-desc {
+    list-style-type: none;
+    li {
+      margin: 15px 0;
+      background: none;
+      padding-left: 0;
+      line-height: 1.5em;
+    }
+  }
+  ul.dj-links {
+    margin: 1.5em 0 0;
+    li.icon-bg-sm {
+      background-repeat: no-repeat;
+      background-position: 0 bottom;
+      margin-right: 15px;
+      padding-left: 25px !important;
+      float: left;
+      height: 20px;
+      line-height: 100%;
+      &.link {
+        background-image:url('../images/icons/icon-link-sm.png');
+      }
+      &.fb {
+        background-image:url('../images/icons/icon-fb-sm.png');
+      }
+      &.twitter {
+        background-image:url('../images/icons/icon-tweet-sm.png');
+      }
+      &.link {
+        background-image:url('../images/icons/icon-link-sm.png');
+      }
+      &.soundcloud {
+        background-image:url('../images/icons/icon-soundcloud-sm.png');
+      }
+      &.youtube {
+        background-image:url('../images/icons/icon-youtube-sm.png');
+      }
+    }
+  }
+  img {
+    width: 200px;
+  }
+  .badge_btn {
+    top: 25px;
+    left: 155px;
+  }
+  .arrow_btn {
+    margin-top: 0;
+  }
+}
+.first_row {
+  border-top: $border;
+  padding-top: 15px;
+}
+.last_row {
+  border-bottom: none !important;
+}
+.otmixes { //dj mixes 
+  margin-bottom: 20px;
+  .article_img {
+    width: 200px;
+  }
+  ul {
+    li {
+      width: 220px;
+      background: none;
+      margin: 0 20px 20px 0;
+      padding-left: 0;
+      float: left;
+    }
+  }
+}
+.mix_row {
+  .article_img {
+    width: 200px;
+  }
+}
+.btn_row {
+  padding-top: 1em;
+}
+.guestdj, .otcore {
+  float: left;
+  margin: 0 30px 30px 0;
+  width: 230px;
+  position: relative;
+  h3 {
+    span {
+      font-size: 0.6em !important;
+    }
+  }
+  h4 {
+    margin: 5px 0 0 0;
+  }
+  p {
+    margin: 0;
+  }
+  .article_img {
+    width: 200px;
+    margin: 0 0 10px 0;
+    float: none;
+  }
+  .badge_btn {
+    top: 5px;
+    right: 25px;
+  }
+}
+.otcore {
+  h3 {
+    margin: 0;
+  }
+}
+.merch_row {
+  padding: 1em 0;
+  .merch_item {
+    float: left;
+    width: 45%;
+    min-width: 250px;
+    margin-right: 5%;
+    position: relative;
+    .badge_btn {
+      top: 5px;
+      left: 20px;
+      padding: 10px 6px 0 9px;
+      text-align: center;
+      &:hover, &:active, &:focus {
+        background-position: right top !important;
+        cursor: pointer;
+      }
+    }
+  }
+  .item_info {
+    width: 65%;
+    min-width: 250px;
+    float: left;
+    h3 {
+      margin: 10px 0 10px 0;
+      color: $cyan-blue;
+    }
+    ul.item_thumbs {
+      margin-bottom: 10px;
+      li {
+        background: none;
+        float: left;
+        margin: 0 15px 0 0;
+        padding-left: 0;
+        img {
+          width: 50px;
+          max-width: 50px;
+          border: 2px solid $medium-grey;
+          &:hover, &:active, &:focus {
+            border-color: $cyan-blue; 
+          }
+        }
+      }
+    }
+    form table td {
+      padding: 3px 0 0 0;
+    }
+  }
+}
+.lineup_row {
+  border-bottom: $border;
+  padding: 15px 0;
+  &.first {
+    border-top: $border;
+  }
+  dl.lineup {
+    float: left;
+    margin: 20px 20px 0 0;
+    dt, dd {
+      float: left;
+      padding: 0 0 10px;
+    }
+    dt {
+      font-weight: bold;
+      width: 100px;
+      clear: left;
+    }
+  }
+  ul.lineup_pics {
+    width: 32%;
+    float: right;
+    margin: 20px 0 0;
+    list-style: none;
+    background-color: $medium-grey;
+    background-image: none;
+    li {
+      padding: 0;
+      margin: 0;
+      float: left;
+      width: 50%;
+      line-height: 50%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+// podcasts
+#podframe {
+  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  min-height:5000px;
+  width:110%; 
+  margin-top: 10px;
+  &.archives {
+    min-height:8800px !important;
+  }
+}
+.video_container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; 
+  height: 0; 
+  overflow: hidden;
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+table.rvs {
+  width: 100%;
+  border: 1px solid $dark-grey;
+  thead {
+    background-color: $light-grey;
+    color: white;
+  }
+  tr {
+    border-top: 1px solid $dark-grey;
+  }
+}

@@ -2,10 +2,10 @@
 <layout name="desktop">
   <!--Extra css load for this layout-->
   <stylesheets>
+    <file media="all">css/main.css</file>
     <file media="all">css/layout.css</file>
     <file media="all">css/template.css</file>
     <file media="all">css/modules.css</file>
-    <file media="all">css/custom.css</file>
     <file media="all">css/forms.css</file>
 	  <file media="all">css/podcasts.css</file>
     <file media="only screen and (max-width:719px)">css/layout-mobile.css</file>

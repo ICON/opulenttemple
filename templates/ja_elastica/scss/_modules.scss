@@ -1,0 +1,212 @@
+#ja-social {
+  display: none;
+}
+.frontpage #ja-social {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  .social {
+    a {
+      float: left;
+      display: block;
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+      &.fb {
+        background:url('../images/icons/social_icons.png');
+      }
+      &.twitter {
+        background:url('../images/icons/social_icons.png') no-repeat -32px 0;
+      }
+      &.rss {
+        background:url('../images/icons/social_icons.png') no-repeat -64px 0;
+      }
+      &:hover, &:focus, &:active {
+        background-position-y: bottom !important;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.mod-contrast a.arrow_btn, input[type="submit"] {
+  background-image:url('../images/arrow-bg-blue-orange.png');
+  color: white !important;
+  margin-top: 10px;
+  border: 0;
+}
+#Mod88 { //FB Like Box
+  .moduletable-inner {
+    padding: 0;
+    min-height: 270px;
+    iframe {
+      @include rounded-corners;
+    }
+  }
+}
+#Mod89, #Mod99 { // Twitter Feed
+  .moduletable-inner {
+    padding: 0;
+    border-top: 0;
+    min-height: 260px;
+    .twtr-widget {
+     padding-bottom: 10px;
+    }
+    .twtr-ft {
+      display: none;
+    }
+    .tweet,
+    .query {
+      color: $medium-grey;
+    }
+    .tweet_list {
+      -webkit-border-radius: 0.5em;
+      -moz-border-radius: 0.5em;
+      border-radius: 0.5em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow-y: hidden;
+      background-color: white;
+      li {
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: .75em;
+        margin-bottom: 0;
+        list-style-type: none;
+        background: none;
+        line-height: 100%;
+      }
+      .tweet_even {
+        background-color: #ebebeb;
+      }
+      .tweet_avatar {
+        padding-right: .5em; float: left;
+        img {
+          vertical-align: middle;
+        }
+      }
+      .tweet_time {
+        font-size: .75em;
+      }
+    }
+    p.loading {
+      padding: .5em;
+    }
+  }
+}
+#Mod90 {
+  a {
+    font-size: 0.8em;
+  }
+}
+#Mod92 { // Upcoming Events
+  .moduletable-inner {
+    background: $medium-grey;
+    color: #ffffff;
+    a {
+      color: $orange;
+    }
+    h3 {
+      color: $cyan-blue;
+    }
+    table.mailinglist {
+      width: 100%;
+      border-collapse: collapse;
+      td {
+        padding: 10px;
+      }
+    }
+  }
+}
+#Mod93 { // Mailing List
+  label {
+    display: block;
+    margin-bottom: 3px;
+  }
+  input[type="text"], input[type="email"] {
+    background: $form-field;
+    color: $dark-grey;
+    font-size: 1.2em;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 0;
+    width: 90%;
+    &:hover, &:focus {
+      background: white;
+    }
+  }
+}
+#Mod102 { // RSS feed
+  .moduletable-inner {
+    padding: 15px;
+  }
+  .syndicate-module {
+    background:url('../images/icons/icon-rss-sm.png') no-repeat 0 0;
+    padding: 7px 0 8px 36px;
+    display: block;
+  }
+  a {
+    color: white !important;
+    &:hover,&:active,&:focus {
+      color: $cyan-blue !important;
+    }
+  }
+}
+#Mod104 .moduletable-inner { // podcast feed
+  p, div {
+    margin-top: 10px;
+  }
+  .itunes {
+    @include button('../images/logo_itunes.png');
+    width: 100px;
+    height: 29px;
+  }
+  .icon-bg.podcasts {
+    min-height: 30px;
+    padding-top: 5px;
+  }
+}
+#Mod106, #Mod107 {
+  ul li {
+    background: none;
+    padding-left: 0;
+    margin-bottom: 3px !important;
+  }
+  a {
+    color: white !important; 
+    text-transform: none;
+    &:hover, &:active {
+      color: $orange !important;
+    }
+  }
+}
+// frontpage: dark modules 
+.frontpage {
+  h1.contentheading,
+  h2.contentheading,
+  .contentheading, 
+  #ja-content-main h1 {
+    @include header-gradient($light-grey);
+  }
+  .contentpaneopen {
+    background-color: $medium-grey !important;
+    color: white;
+  }
+  .img-intro-left img, .article_img_full {
+    border-color: white;
+  }
+  .moduletable-inner {
+    background-color: #7d7d7d !important;
+    h3 {
+      color: #2fcef9 !important;
+    }
+  }
+  #Mod88, #Mod89, #Mod99 {
+    .moduletable-inner {
+      background-color: white !important;
+    }
+  }
+}

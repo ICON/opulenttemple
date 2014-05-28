@@ -4,3 +4,4 @@
 *.eps
 *.ai
 .DS_Store
+.sass-cache/*

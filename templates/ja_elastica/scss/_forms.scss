@@ -1,0 +1,201 @@
+// form fields
+form {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    @include rounded-corners;
+    height: inherit;
+    line-height: inherit;
+    width: 70%;
+    background: #ebebeb;
+    color: #333333;
+    font-size: 1.2em;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #6dcff6;
+    &:hover, &:active, &:focus {
+      background: white;
+      border-color: $orange;
+    }
+  }
+  button[type="submit"] {
+    @extend .arrow_btn;
+  }
+}
+.login {
+  form {
+    margin-top: 1em;
+  }
+  label {
+    width: 15%;
+  }
+  button {
+    margin-left: 16%;
+  }
+}
+.login-links {
+  padding-left: 15%;
+  ul li {
+    background: none;
+  }
+}
+.star, .red {
+  color: $orange;
+}
+.form-validate {
+  dd, dt {
+    margin-bottom: 1rem;
+    min-height: 0;
+  }
+  dl dd input.required,
+  dl dd textarea.required {
+    width: 60% !important;
+  }
+  label {
+    font-size: 1em;
+    font-weight: normal;
+  }
+}
+// recaptcha
+.recaptcha_input_area {
+  input[type="text"] {
+    border: 1px solid $cyan-blue !important;
+    &:hover {
+      border-color: $orange !important;
+    }
+  }
+}
+// contact form
+.contact-form {
+  input.invalid {
+    border: 1px solid #ff0000 !important;
+  }
+}
+.contact-miscinfo, .contact-image {
+  float: left;
+}
+.contact-miscinfo {
+  width: 80%;
+}
+.contact-image {
+  margin: 15px 15px 0 0;
+  width: 100px;
+  border-width: 6px
+}
+// account registration form
+#member-registration {
+  dt:first-child {
+    margin: 0;
+  }
+}
+// member registration form
+.formResponsive {
+  .formDescription {
+    margin-top: 0 !important;
+    font-size: 90%;
+  }
+  h2 {
+    display: none;
+  }
+  .formControls, .formControlLabel {
+    margin-bottom: 0.5em;
+  }
+  .formControlLabel {
+    padding-right: 10px;
+    line-height: 100%;
+    .formRequired {
+      color: $orange;
+    }
+  }
+  .formError {
+    color: red;
+    padding-left: 0;
+    font-size: inherit;
+  }
+  .rsform-block {
+    margin-bottom: 1.25rem !important;
+    &.rsform-block-referral, &.rsform-block-accommodations {
+      width: 45%;
+      float: left;
+      select {
+        width: 100% !important;
+      }
+    }
+    &.rsform-block-referral-friend, &.rsform-block-accommodation-info {
+      width: 40%;
+      float: left;
+      .formControlLabel {
+        display: none;
+      }
+      .formBody {
+        height: 30px;
+      }
+      .formControls {
+        margin-left: 30px;
+      }
+      input {
+        width: 100% !important;
+      }
+    }
+    &.rsform-block-dues-paid {
+      display: none;
+    }
+    &.rsform-block-captcha, &.rsform-block-arrival-date {
+      clear: both;
+    }
+  }
+  .rsform-button {
+    background: url("../images/arrow-bg-blue-orange.png") no-repeat right top;
+    color: white;
+    display: block;
+    float: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: .85em;
+    line-height: 30px;
+    margin-top: 10px;
+    padding: 0 1.5em 0 1em;
+    border: 0;
+  }
+  .rsform-input-box {
+    margin-bottom: 0;
+  }
+  select {
+    width: 40% !important;
+    font-size: 14px;
+  }
+  input[type="text"] {
+    margin-bottom: 0 !important;
+  }
+  input[type="submit"], button {
+    @extend .arrow_btn;
+    background-color: transparent !important;
+  }
+}
+@media only screen and (max-width:720px) {
+  //forms
+  form {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      width: 100%;
+    } 
+  }
+  .login {
+    label {
+      width: 100%;
+      text-align: left;
+    }
+    button {
+      margin-left: 0;
+    }
+    .login-links {
+      padding-left: 0;
+    }
+  }
+  .rsform-block-referral {
+    width: 100% !important;
+  }
+}
