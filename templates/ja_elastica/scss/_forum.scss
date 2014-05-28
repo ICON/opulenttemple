@@ -1,0 +1,10 @@
+#Kunena {
+  a {
+    color: $cyan-blue !important;
+    text-decoration: none;
+    &:hover, &:active, &:focus {
+      color: $orange !important;
+      text-decoration: none;
+    }
+  }
+}

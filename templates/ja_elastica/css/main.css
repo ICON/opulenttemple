@@ -875,3 +875,10 @@ table.rvs {
 
 .tour_notes, .tour_notes th {
   text-align: left; }
+
+#Kunena a {
+  color: #00aeef !important;
+  text-decoration: none; }
+  #Kunena a:hover, #Kunena a:active, #Kunena a:focus {
+    color: #ff7909 !important;
+    text-decoration: none; }
