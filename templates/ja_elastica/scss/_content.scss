@@ -11,16 +11,17 @@
 .resdj {  // resident djs
   padding-top: 20px;
   position: relative;
-  h3 {
-    margin: 0;
-  }
   ul.dj-desc {
     list-style-type: none;
+    margin-top: 0;
     li {
       margin: 15px 0;
       background: none;
       padding-left: 0;
       line-height: 1.5em;
+      &:first-child {
+        margin-top: 0 !important;
+      }
     }
   }
   ul.dj-links {
@@ -108,7 +109,7 @@
     margin: 5px 0 0 0;
   }
   p {
-    margin: 0;
+    margin: 0 !important;
   }
   .article_img {
     width: 200px;
@@ -120,9 +121,9 @@
     right: 25px;
   }
 }
-.otcore {
+.resdj, .otcore {
   h3 {
-    margin: 0;
+    margin: 0 !important;
   }
 }
 .merch_row {

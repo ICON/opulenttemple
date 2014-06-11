@@ -147,6 +147,9 @@
     background:url('../images/icons/icon-rss-sm.png') no-repeat 0 0;
     padding: 7px 0 8px 36px;
     display: block;
+    img {
+      display: none;
+    }
   }
   a {
     color: white !important;

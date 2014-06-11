@@ -18,7 +18,7 @@ JHtml::_('behavior.formvalidation');
 	<h1><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
 <?php endif; ?>
 
-	<form id="member-registration" action="<?php echo JRoute::_('index.php?option=com_users&task=registration.register'); ?>" method="post" class="form-validate" enctype="multipart/form-data">
+<form id="member-registration" action="<?php echo JRoute::_('index.php?option=com_users&task=registration.register'); ?>" method="post" class="form-validate" enctype="multipart/form-data">
 <?php foreach ($this->form->getFieldsets() as $fieldset): // Iterate through the form fieldsets and display each one.?>
 	<?php $fields = $this->form->getFieldset($fieldset->name);?>
 	<?php if (count($fields)):?>
@@ -26,6 +26,7 @@ JHtml::_('behavior.formvalidation');
 		<?php if (isset($fieldset->label)):// If the fieldset has a label set, display it as the legend.
 		?>
 			<legend><?php echo JText::_($fieldset->label);?></legend>
+			<blockquote>In case you didn't read the message on the login page: Do not create an account until you've been in touch and approved to camp with us first.</blockquote>
 		<?php endif;?>
 			<dl>
 		<?php foreach($fields as $field):// Iterate through the fields in the set and display them.?>

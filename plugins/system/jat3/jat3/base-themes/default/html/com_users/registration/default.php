@@ -25,6 +25,9 @@ JHtml::_('behavior.formvalidation');
 		<fieldset>
 		<?php if (isset($fieldset->label)):// If the fieldset has a label set, display it as the legend.?>
 			<legend><?php echo JText::_($fieldset->label);?></legend>
+			<blockquote>
+				<p class="icon-bg exclamation">For those who didn't read the message on the login page, please do not create an account until you've already <a href="/contact">been in touch</a> and approved to camp with us.</p>
+			</blockquote>
 		<?php endif;?>
 			<dl>
 		<?php foreach($fields as $field):// Iterate through the fields in the set and display them.?>
